@@ -15,6 +15,11 @@ namespace Bank
         public Main()
         {
             InitializeComponent();
+            //balance.Text = user.balance;
         }
+
+
+        //Func(); //function
+
     }
 }
