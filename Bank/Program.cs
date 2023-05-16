@@ -10,7 +10,9 @@ namespace Bank
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            //wtf? ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Autorisation());
         }
     }
