@@ -14,9 +14,11 @@ namespace Bank
         public string cardNumber;         //пройтись реджексом и преобразовать в нужный формат
         public string password;
         public string balance;
-        public string[] history;
+        public string[] income;
+        public string[] costs;
 
-        public User(string _cardnumber, string _password, string _name, string _surname, string _lastname, string _balance, string[] _history)
+
+        public User(string _cardnumber, string _password, string _name, string _surname, string _lastname, string _balance, string[] _income, string[] _costs)
         {
             name = _name;
             surname = _surname;
@@ -24,7 +26,8 @@ namespace Bank
             cardNumber = _cardnumber;
             password = _password;
             balance = _balance;
-            history = _history;
+            income = _income;
+            costs = _costs;
         }
         //public string ToString()
         //{
