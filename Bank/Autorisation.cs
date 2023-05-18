@@ -21,8 +21,6 @@ namespace Bank
             this.PasswordField.AutoSize = false;
             this.PasswordField.Height = this.LoginField.Height;
         }
-
-
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,21 +58,18 @@ namespace Bank
                 this.Top += e.Y - lastPoint.Y;
             }
         }
-
         private void AutorisationDownPanel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
         }
-        static Database rn = new Database();
-        string[] logins = new string[rn.Length];
         private void AutorisationButton_Click(object sender, EventArgs e)
         {
+            //добавить проверку на пустое поле, чтобы сразу просило ввести хоть что-то
             bool isRight = false;
             string loginUser = LoginField.Text;
             string passUser = PasswordField.Text;
-            for (int j = 1; j < rn.Length; j++)
-                logins[j] = rn[j].cardNumber;
-            if (!logins.Contains(loginUser))
+            Database d = new Database();
+            if (!Database.logins.Contains(loginUser))
             {
                 MessageBox.Show("Пользователя с такими данными не существует");
                 LoginField.Clear();
@@ -82,15 +77,15 @@ namespace Bank
             }
             else
             {
-                for (int i = 1; i < rn.Length; i++)
+                for (int i = 1; i < Database.arr.Count; i++)
                 {
-                    if (rn[i].cardNumber == loginUser && rn[i].password == passUser)
+                    if (Database.arr[i].cardNumber == loginUser && Database.arr[i].password == passUser)
                     {
                         Hide();
-                        new Main().ShowDialog();
                         Show();
                         isRight = true;
-                        User user = new User(rn[i].cardNumber, rn[i].password, rn[i].name, rn[i].surname, rn[i].lastname, rn[i].balance, rn[i].history);
+                        Objects.user = Database.arr[i];
+                        new Main().ShowDialog();
                     }
                 }
                 if (!isRight)

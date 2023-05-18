@@ -12,7 +12,6 @@ namespace Bank
             // see https://aka.ms/applicationconfiguration.
             //wtf? ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Autorisation());
         }
     }
