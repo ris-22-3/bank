@@ -17,7 +17,6 @@ namespace Bank
         public Autorisation()
         {
             InitializeComponent();
-
             this.PasswordField.AutoSize = false;
             this.PasswordField.Height = this.LoginField.Height;
         }

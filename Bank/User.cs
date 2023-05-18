@@ -29,6 +29,14 @@ namespace Bank
             income = _income;
             costs = _costs;
         }
+        public void Add(int operation) //добавляем в массив строк и изменяем баланс
+        {
+            
+        }
+        public void Cost()
+        {
+
+        }
         //public string ToString()
         //{
         //    return this.name + " " + this.surname + " " + this.lastname + " " + this.cardNumber + " " + this.password;
