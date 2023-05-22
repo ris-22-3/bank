@@ -14,7 +14,7 @@ namespace Bank
     {
         public static List<User> arr = new List<User>();
         public static List<string> logins = new List<string>();
-        public static string address = "./Data/UserDataBase.csv";
+        public static string address = "../../../Data/UserDataBase.csv";
         public static int Length
         {
             get => File.ReadAllLines(address).Length;
@@ -38,7 +38,7 @@ namespace Bank
             for (int i = 1; i < data.Length; i++)
             {
                 string[] ones = data[i].Split(new char[] { ';' });
-                string[] operations = ReadFile("./Data/" + ones[0].ToString() + ".csv");
+                string[] operations = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
                 string[] income = operations[1].Split(new char[] { ';' }); //сделать срез (убрать название строки) 
                 string[] costs = operations[2].Split(new char[] { ';' });
                 User time = new User(ones[1], ones[2], ones[3], ones[4], ones[5], ones[6], income, costs);
