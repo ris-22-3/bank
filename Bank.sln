@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{0B0BE4E1-34D2-4EE1-B3E0-30F8839352DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{0B0BE4E1-34D2-4EE1-B3E0-30F8839352DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Credit", "Bank.Credit\Bank.Credit.csproj", "{4349FCDA-4CC7-4E31-9A85-5379CC39FC90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Credit", "Bank.Credit\Bank.Credit.csproj", "{4349FCDA-4CC7-4E31-9A85-5379CC39FC90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.ATM", "Bank.ATM\Bank.ATM.csproj", "{A3F28BA1-AE1F-44C8-B91C-80EB81F61DDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.ATM", "Bank.ATM\Bank.ATM.csproj", "{A3F28BA1-AE1F-44C8-B91C-80EB81F61DDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Operation", "Bank.Operation\Bank.Operation.csproj", "{83217F5D-5F5A-48F2-9EF6-92EC55AE7F05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Operation", "Bank.Operation\Bank.Operation.csproj", "{83217F5D-5F5A-48F2-9EF6-92EC55AE7F05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Stats", "Bank.Stats\Bank.Stats.csproj", "{E437AB60-B19C-485E-A0E2-4E229A6FFA55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank.Stats", "Bank.Stats\Bank.Stats.csproj", "{E437AB60-B19C-485E-A0E2-4E229A6FFA55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Tests", "Bank.Tests\Bank.Tests.csproj", "{2392C0D8-C012-477C-96BC-D58A3442517F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E437AB60-B19C-485E-A0E2-4E229A6FFA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E437AB60-B19C-485E-A0E2-4E229A6FFA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E437AB60-B19C-485E-A0E2-4E229A6FFA55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2392C0D8-C012-477C-96BC-D58A3442517F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2392C0D8-C012-477C-96BC-D58A3442517F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2392C0D8-C012-477C-96BC-D58A3442517F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2392C0D8-C012-477C-96BC-D58A3442517F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
