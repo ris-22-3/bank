@@ -15,11 +15,9 @@ namespace Bank
         public string password;
         public bool isMortgage;
         public bool isDeposit;
-        CurencyAccounts rub;
-        CurencyAccounts usd;
-        CurencyAccounts tenge;
-        //public string[] income;
-        //public string[] costs;
+        public CurencyAccounts rub;
+        public CurencyAccounts usd;
+        public CurencyAccounts tenge;
         public int clientNumber;
 
 
@@ -37,17 +35,5 @@ namespace Bank
             isMortgage = _isMortgage;
             isDeposit = _isDeposit;
         }
-        public void Add(int operation) //добавляем в массив строк и изменяем баланс
-        {
-            
-        }
-        public void Cost()
-        {
-
-        }
-        //public string ToString()
-        //{
-        //    return this.name + " " + this.surname + " " + this.lastname + " " + this.cardNumber + " " + this.password;
-        //}
     }
 }

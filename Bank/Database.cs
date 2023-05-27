@@ -22,10 +22,8 @@ namespace Bank
         public List<String> ReadFile(string address)
         {
             List<string> strs = new List<string>();
-            //string[] strs = new string[Length];
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             StreamReader rd = new StreamReader(address, Encoding.GetEncoding(1251));
-            //int i = 0;
             while (!rd.EndOfStream)
             {
                 string str = rd.ReadLine();
@@ -43,7 +41,6 @@ namespace Bank
                 CurencyAccounts rub = new CurencyAccounts();
                 CurencyAccounts usd = new CurencyAccounts();
                 CurencyAccounts tenge = new CurencyAccounts();
-                //User user = new User(ones[1], ones[2], ones[3], ones[4], ones[5], ones[6], );
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
@@ -63,9 +60,14 @@ namespace Bank
                 logins.Add(user.cardNumber);
             }
         }
-        public void AddOperation() //запись в файл и добавление в arr
+        public static void AddOperation(Operation op)
         {
-
+            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, op.date.ToString() }; 
+            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
+            rd.WriteLine(String.Join(";", operation));
+            rd.Close();
+            // изменить в файле UserDataBase баланс при добавлении операции
+            //обернуть в try catch?
         }
         public User this[int index]
         {
