@@ -14,8 +14,7 @@ namespace Bank
     {
         public Main()
         {
-            InitializeComponent();
-            balance.Text = Objects.user.balance;
+            InitializeComponent(); 
         }
 
 

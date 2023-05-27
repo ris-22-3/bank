@@ -14,9 +14,9 @@ namespace Bank.Operation
             // 
         }
 
-        public static Operation[] LoadOperations(string filePath) 
-        {
-            // загрузка операций из файла 
-        }
+        //public static Operation[] LoadOperations(string filePath) 
+        //{
+        //    // загрузка операций из файла 
+        //}
     }
 }
