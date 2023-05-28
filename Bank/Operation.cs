@@ -17,15 +17,6 @@ namespace Bank
         public string category;
         public string type;
         public DateTime date;
-        //public decimal Sum
-        //{
-        //    get => sum;
-        //    set
-        //    {
-        //        decimal.Parse(value, sum);
-
-        //    }
-        //}
         public Operation()
         {
             sum = 0;

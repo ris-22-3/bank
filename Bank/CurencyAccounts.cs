@@ -32,6 +32,7 @@ namespace Bank
                 income.Add(op);
             else
                 costs.Add(op);
+            Database.AddOperation(op);
         }
     }
 }

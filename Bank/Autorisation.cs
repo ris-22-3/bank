@@ -84,7 +84,7 @@ namespace Bank
                         Show();
                         isRight = true;
                         Objects.user = Database.arr[i];
-                        new Main().ShowDialog();
+                        //new Main().ShowDialog();
                     }
                 }
                 if (!isRight)
