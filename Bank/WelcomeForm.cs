@@ -1,3 +1,5 @@
+using WinFormsTest;
+
 namespace Bank
 {
     public partial class WelcomeForm : Form
@@ -7,6 +9,9 @@ namespace Bank
             InitializeComponent();
         }
 
-
+        private void MortgageButton_Click(object sender, EventArgs e)
+        {
+            new Mortgage().ShowDialog();
+        }
     }
 }

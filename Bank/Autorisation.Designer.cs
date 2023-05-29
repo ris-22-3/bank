@@ -143,7 +143,6 @@
             ClientSize = new Size(600, 400);
             Controls.Add(AutorisationTopPanel);
             Controls.Add(AutorisationDownPanel);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;

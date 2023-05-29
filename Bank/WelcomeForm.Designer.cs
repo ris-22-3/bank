@@ -37,21 +37,27 @@
             label3 = new Label();
             UserPictureBox = new PictureBox();
             panel2 = new Panel();
-            StatisticButton = new Button();
-            ATMButton = new Button();
-            MortgageButton = new Button();
-            DepositButton = new Button();
-            MyAccountsButton = new Button();
-            label4 = new Label();
             panel5 = new Panel();
-            label5 = new Label();
             label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            MyAccountsButton = new Button();
+            DepositButton = new Button();
+            MortgageButton = new Button();
+            ATMButton = new Button();
+            StatisticButton = new Button();
+            panel6 = new Panel();
+            label7 = new Label();
+            panel7 = new Panel();
+            label8 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UserPictureBox).BeginInit();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -149,61 +155,48 @@
             panel2.Size = new Size(413, 553);
             panel2.TabIndex = 1;
             // 
-            // StatisticButton
+            // panel5
             // 
-            StatisticButton.BackColor = Color.FromArgb(16, 45, 105);
-            StatisticButton.Dock = DockStyle.Bottom;
-            StatisticButton.FlatStyle = FlatStyle.Flat;
-            StatisticButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            StatisticButton.ForeColor = SystemColors.ButtonFace;
-            StatisticButton.Location = new Point(0, 478);
-            StatisticButton.Name = "StatisticButton";
-            StatisticButton.Size = new Size(413, 75);
-            StatisticButton.TabIndex = 1;
-            StatisticButton.Text = "Статистика";
-            StatisticButton.UseVisualStyleBackColor = false;
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(label6);
+            panel5.Controls.Add(label5);
+            panel5.Location = new Point(22, 54);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(371, 108);
+            panel5.TabIndex = 7;
             // 
-            // ATMButton
+            // label6
             // 
-            ATMButton.BackColor = Color.FromArgb(16, 45, 105);
-            ATMButton.Dock = DockStyle.Bottom;
-            ATMButton.FlatStyle = FlatStyle.Flat;
-            ATMButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            ATMButton.ForeColor = SystemColors.ButtonFace;
-            ATMButton.Location = new Point(0, 403);
-            ATMButton.Name = "ATMButton";
-            ATMButton.Size = new Size(413, 75);
-            ATMButton.TabIndex = 2;
-            ATMButton.Text = "Банкомат";
-            ATMButton.UseVisualStyleBackColor = false;
+            label6.AutoSize = true;
+            label6.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(99, 57);
+            label6.Name = "label6";
+            label6.Size = new Size(201, 23);
+            label6.TabIndex = 1;
+            label6.Text = "HSE-card 12** **** **** ****";
             // 
-            // MortgageButton
+            // label5
             // 
-            MortgageButton.BackColor = Color.FromArgb(16, 45, 105);
-            MortgageButton.Dock = DockStyle.Bottom;
-            MortgageButton.FlatStyle = FlatStyle.Flat;
-            MortgageButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            MortgageButton.ForeColor = SystemColors.ButtonFace;
-            MortgageButton.Location = new Point(0, 328);
-            MortgageButton.Name = "MortgageButton";
-            MortgageButton.Size = new Size(413, 75);
-            MortgageButton.TabIndex = 3;
-            MortgageButton.Text = "Ипотека";
-            MortgageButton.UseVisualStyleBackColor = false;
+            label5.AutoSize = true;
+            label5.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(121, 26);
+            label5.Name = "label5";
+            label5.Size = new Size(98, 31);
+            label5.TabIndex = 0;
+            label5.Text = "4732,56 ";
             // 
-            // DepositButton
+            // label4
             // 
-            DepositButton.BackColor = Color.FromArgb(16, 45, 105);
-            DepositButton.Dock = DockStyle.Bottom;
-            DepositButton.FlatStyle = FlatStyle.Flat;
-            DepositButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            DepositButton.ForeColor = SystemColors.ButtonFace;
-            DepositButton.Location = new Point(0, 253);
-            DepositButton.Name = "DepositButton";
-            DepositButton.Size = new Size(413, 75);
-            DepositButton.TabIndex = 4;
-            DepositButton.Text = "Депозит";
-            DepositButton.UseVisualStyleBackColor = false;
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Dock = DockStyle.Top;
+            label4.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(0, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(413, 38);
+            label4.TabIndex = 6;
+            label4.Text = "Кошелёк:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MyAccountsButton
             // 
@@ -219,56 +212,120 @@
             MyAccountsButton.Text = "Мои счета";
             MyAccountsButton.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // DepositButton
             // 
-            label4.BorderStyle = BorderStyle.Fixed3D;
-            label4.Dock = DockStyle.Top;
-            label4.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(413, 38);
-            label4.TabIndex = 6;
-            label4.Text = "Кошелёк:";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            DepositButton.BackColor = Color.FromArgb(16, 45, 105);
+            DepositButton.Dock = DockStyle.Bottom;
+            DepositButton.FlatStyle = FlatStyle.Flat;
+            DepositButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            DepositButton.ForeColor = SystemColors.ButtonFace;
+            DepositButton.Location = new Point(0, 253);
+            DepositButton.Name = "DepositButton";
+            DepositButton.Size = new Size(413, 75);
+            DepositButton.TabIndex = 4;
+            DepositButton.Text = "Депозит";
+            DepositButton.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // MortgageButton
             // 
-            panel5.BackColor = Color.White;
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(label5);
-            panel5.Location = new Point(22, 54);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(371, 108);
-            panel5.TabIndex = 7;
+            MortgageButton.BackColor = Color.FromArgb(16, 45, 105);
+            MortgageButton.Dock = DockStyle.Bottom;
+            MortgageButton.FlatStyle = FlatStyle.Flat;
+            MortgageButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            MortgageButton.ForeColor = SystemColors.ButtonFace;
+            MortgageButton.Location = new Point(0, 328);
+            MortgageButton.Name = "MortgageButton";
+            MortgageButton.Size = new Size(413, 75);
+            MortgageButton.TabIndex = 3;
+            MortgageButton.Text = "Ипотека";
+            MortgageButton.UseVisualStyleBackColor = false;
+            MortgageButton.Click += MortgageButton_Click;
             // 
-            // label5
+            // ATMButton
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(121, 26);
-            label5.Name = "label5";
-            label5.Size = new Size(98, 31);
-            label5.TabIndex = 0;
-            label5.Text = "4732,56 ";
+            ATMButton.BackColor = Color.FromArgb(16, 45, 105);
+            ATMButton.Dock = DockStyle.Bottom;
+            ATMButton.FlatStyle = FlatStyle.Flat;
+            ATMButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            ATMButton.ForeColor = SystemColors.ButtonFace;
+            ATMButton.Location = new Point(0, 403);
+            ATMButton.Name = "ATMButton";
+            ATMButton.Size = new Size(413, 75);
+            ATMButton.TabIndex = 2;
+            ATMButton.Text = "Банкомат";
+            ATMButton.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // StatisticButton
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(99, 57);
-            label6.Name = "label6";
-            label6.Size = new Size(201, 23);
-            label6.TabIndex = 1;
-            label6.Text = "HSE-card 12** **** **** ****";
+            StatisticButton.BackColor = Color.FromArgb(16, 45, 105);
+            StatisticButton.Dock = DockStyle.Bottom;
+            StatisticButton.FlatStyle = FlatStyle.Flat;
+            StatisticButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            StatisticButton.ForeColor = SystemColors.ButtonFace;
+            StatisticButton.Location = new Point(0, 478);
+            StatisticButton.Name = "StatisticButton";
+            StatisticButton.Size = new Size(413, 75);
+            StatisticButton.TabIndex = 1;
+            StatisticButton.Text = "Статистика";
+            StatisticButton.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(16, 45, 105);
+            panel6.Controls.Add(label7);
+            panel6.Location = new Point(596, 133);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(427, 220);
+            panel6.TabIndex = 2;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.FromArgb(16, 45, 105);
+            label7.BorderStyle = BorderStyle.Fixed3D;
+            label7.Dock = DockStyle.Top;
+            label7.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(0, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(427, 38);
+            label7.TabIndex = 7;
+            label7.Text = "Курсы валют:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(16, 45, 105);
+            panel7.Controls.Add(label8);
+            panel7.Location = new Point(596, 406);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(427, 220);
+            panel7.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.BackColor = Color.FromArgb(16, 45, 105);
+            label8.BorderStyle = BorderStyle.Fixed3D;
+            label8.Dock = DockStyle.Top;
+            label8.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(427, 38);
+            label8.TabIndex = 7;
+            label8.Text = "Последние операции:";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 653);
+            Controls.Add(panel7);
+            Controls.Add(panel6);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "WelcomeForm";
             Text = "Form1";
             panel1.ResumeLayout(false);
@@ -278,6 +335,8 @@
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -300,5 +359,9 @@
         private Label label6;
         private Label label5;
         private Label label4;
+        private Panel panel6;
+        private Label label7;
+        private Panel panel7;
+        private Label label8;
     }
 }
