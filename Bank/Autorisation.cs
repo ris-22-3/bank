@@ -20,20 +20,7 @@ namespace Bank
             this.PasswordField.AutoSize = false;
             this.PasswordField.Height = this.LoginField.Height;
         }
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void CloseButton_MouseEnter(object sender, EventArgs e)
-        {
-            CloseButton.BackColor = Color.Gray;
-        }
-
-        private void CloseButton_MouseLeave(object sender, EventArgs e)
-        {
-            CloseButton.BackColor = SystemColors.Control;
-        }
         Point lastPoint;
         private void AutorisationTopPanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -84,7 +71,7 @@ namespace Bank
                         Show();
                         isRight = true;
                         Objects.user = Database.arr[i];
-                        //new Main().ShowDialog();
+                        new WelcomeForm().ShowDialog();
                     }
                 }
                 if (!isRight)
@@ -94,5 +81,7 @@ namespace Bank
                 }
             }
         }
+
+
     }
 }
