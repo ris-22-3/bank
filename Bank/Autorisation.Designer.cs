@@ -59,7 +59,7 @@
             // label3
             // 
             label3.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(269, 119);
+            label3.Location = new Point(264, 101);
             label3.Name = "label3";
             label3.Size = new Size(82, 27);
             label3.TabIndex = 4;
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(269, 34);
+            label2.Location = new Point(264, 16);
             label2.Name = "label2";
             label2.Size = new Size(71, 27);
             label2.TabIndex = 3;
@@ -97,7 +97,7 @@
             // PasswordField
             // 
             PasswordField.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            PasswordField.Location = new Point(130, 150);
+            PasswordField.Location = new Point(125, 132);
             PasswordField.Margin = new Padding(3, 4, 3, 4);
             PasswordField.Name = "PasswordField";
             PasswordField.Size = new Size(340, 45);
@@ -107,7 +107,7 @@
             // LoginField
             // 
             LoginField.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            LoginField.Location = new Point(130, 65);
+            LoginField.Location = new Point(125, 47);
             LoginField.Margin = new Padding(3, 4, 3, 4);
             LoginField.Name = "LoginField";
             LoginField.Size = new Size(340, 45);
