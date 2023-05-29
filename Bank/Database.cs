@@ -33,13 +33,26 @@ namespace Bank
             rd.Close();
             return strs;
         }
+        public static int ToInt(string n)
+        {
+            int nn = 0;
+            bool isInt = int.TryParse(n, out nn);
+            return nn;
+        }
         public static DateTime ToDateTime(string date)
         {
-            string[] months = { "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Ноября", "Декабря" };
-            string[] data = date.Split('.');
-            int n;
-            bool isdAY = int.TryParse(data[0], out n);
-            DateTime time = new DateTime(int.Parse(data[2]), int.Parse(data[1]), int.Parse(data[0]));
+            string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "ноября", "декабря" };
+            string[] data = date.Split(' ');
+            int month = 0 + 1;
+            for (int i = 0; i < months.Length; i++)
+            {
+                if (data[1] == months[i])
+                {
+                    month = i + 1;
+                    break;
+                }
+            }
+            DateTime time = new DateTime(ToInt(data[2]), month, ToInt(data[0]));
             //прописать проверку
             return time;
         }
