@@ -13,5 +13,11 @@ namespace Bank
         {
             new Mortgage().ShowDialog();
         }
+
+        private void StatisticButton_Click(object sender, EventArgs e)
+        {
+            StatisticsForm statisticsForm = new StatisticsForm();
+            statisticsForm.Show();
+        }
     }
 }

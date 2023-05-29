@@ -59,5 +59,15 @@ namespace Bank.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap лендинг_1_2 {
+            get {
+                object obj = ResourceManager.GetObject("лендинг 1-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
