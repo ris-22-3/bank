@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Text.RegularExpressions;
 
 namespace Bank
 {
@@ -29,7 +30,18 @@ namespace Bank
                 string str = rd.ReadLine();
                 strs.Add(str);
             }
+            rd.Close();
             return strs;
+        }
+        public static DateTime ToDateTime(string date)
+        {
+            string[] months = { "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Ноября", "Декабря" };
+            string[] data = date.Split('.');
+            int n;
+            bool isdAY = int.TryParse(data[0], out n);
+            DateTime time = new DateTime(int.Parse(data[2]), int.Parse(data[1]), int.Parse(data[0]));
+            //прописать проверку
+            return time;
         }
         public Database()
         {
@@ -37,14 +49,20 @@ namespace Bank
             for (int i = 1; i < data.Count; i++)
             {
                 string[] ones = data[i].Split(new char[] { ';' });
+                if (ones[0] == "")
+                    break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
                 CurencyAccounts rub = new CurencyAccounts();
                 CurencyAccounts usd = new CurencyAccounts();
                 CurencyAccounts tenge = new CurencyAccounts();
+                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
-                    Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], DateTime.Parse(operations[8]));
+                    if (operations[0] == "")
+                        break;
+                    DateTime date = ToDateTime(operations[8]);
+                    Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
                     if (op.billeType == "$")
                         usd.Add(op);
                     if (op.billeType == "руб")
@@ -55,9 +73,8 @@ namespace Bank
                 rub.Balance = decimal.Parse(ones[6]);
                 usd.Balance = decimal.Parse(ones[10]);
                 tenge.Balance = decimal.Parse(ones[11]);
-                User user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
-                arr.Add(user);
-                logins.Add(user.cardNumber);
+                arr.Add(Objects.user);
+                logins.Add(Objects.user.cardNumber);
             }
         }
         public static void AddOperation(Operation op)

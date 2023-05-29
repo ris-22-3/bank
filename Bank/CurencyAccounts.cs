@@ -26,13 +26,14 @@ namespace Bank
             income = _incomes;
             costs = _costs;
         }
-        public void Add(Operation op)
+        public void Add(Operation op, bool isNew = false)
         {
             if (op.isIncome == true)
                 income.Add(op);
             else
                 costs.Add(op);
-            Database.AddOperation(op);
+            if (isNew)
+                Database.AddOperation(op); //добавление в файл
         }
     }
 }
