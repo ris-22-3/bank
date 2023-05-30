@@ -63,6 +63,26 @@ namespace Bank.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5094894_hamburger_menu_icon_white_back_icon_png_png {
+            get {
+                object obj = ResourceManager.GetObject("5094894_hamburger-menu-icon-white-back-icon-png-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_youtube_computer_icons_logo_left_arrow_text_logo {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-youtube-computer-icons-logo-left-arrow-text-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap лендинг_1_2 {
             get {
                 object obj = ResourceManager.GetObject("лендинг 1-2", resourceCulture);

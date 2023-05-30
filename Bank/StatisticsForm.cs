@@ -23,8 +23,8 @@ namespace Bank
 
             tabPage1.Text = "Анализ финансов";
             tabPage2.Text = "Статистика расходов по типам";
-            tabPage3.Text = "           Расходы              ";
-            tabPage4.Text = "         Зачисления              ";
+            tabPage3.Text = "                                       Расходы                                       ";
+            tabPage4.Text = "                                      Зачисления                                    ";
 
             // Установка DrawMode в OwnerDrawFixed
             tabControl2.DrawMode = TabDrawMode.OwnerDrawFixed;
@@ -54,61 +54,8 @@ namespace Bank
             }
         }
 
-        private void StatisticsForm_Load(object sender, EventArgs e)
-        {
-            // Добавление элементов в ComboBox с выбором типа периода
-            comboBoxPeriodType.Items.AddRange(new string[] { "Год", "Месяц" });
-            comboBoxPeriodType.SelectedIndex = 0;
 
-            // Добавление элементов в ComboBox с выбором типа диаграммы
-            comboBoxChartType.Items.AddRange(new string[] { "Столбчатая", "Круговая", "Линейная" });
-            comboBoxChartType.SelectedIndex = 0;
 
-            // Добавление всех 12 месяцев в ComboBox
-            comboBoxMonth.Items.AddRange(GetMonthsArray());
-            comboBoxMonth.SelectedIndex = 0;
-
-            // Добавление элементов в ComboBox с выбором типа периода
-            comboBoxPeriodType1.Items.AddRange(new string[] { "Год", "Месяц" });
-            comboBoxPeriodType1.SelectedIndex = 0;
-
-            // Добавление элементов в ComboBox с выбором типа диаграммы
-            comboBoxChartType1.Items.AddRange(new string[] { "Столбчатая", "Круговая", "Линейная" });
-            comboBoxChartType1.SelectedIndex = 0;
-
-            // Добавление всех 12 месяцев в ComboBox
-            comboBoxMonth1.Items.AddRange(GetMonthsArray());
-            comboBoxMonth1.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
-            // Вызов метода ShowChart для отображения диаграммы
-            ShowExpenseChart();
-        }
-        private void comboBoxYearMonth_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            // Проверка выбранного типа периода и отображение или скрытие ComboBox для выбора месяца
-            if (comboBoxPeriodType.SelectedIndex == 1) // Месяц
-            {
-                comboBoxMonth.Visible = true;
-            }
-            else
-            {
-                comboBoxMonth.Visible = false;
-            }
-
-            // Обновление диаграммы при изменении типа периода
-            ShowExpenseChart();
-        }
-
-        private void comboBoxChartType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Обновление диаграммы при изменении выбранного типа диаграммы
-            ShowExpenseChart();
-        }
-
-        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Обновление диаграммы при изменении выбранного месяца
-            ShowExpenseChart();
-        }
         private List<ChartData> LoadChartData()
         {
             List<ChartData> chartData = new List<ChartData>();
@@ -155,10 +102,11 @@ namespace Bank
 
             // Создание объекта диаграммы
             Chart chart = new Chart();
+            chart.MouseMove += Chart_MouseMove;
             chartToolTip.SetToolTip(chart, " "); // Пустая подсказка по умолчанию
             chartToolTip.ShowAlways = true; // Показывать подсказку всегда
             // Настройка свойств диаграммы
-            chart.Size = new Size(740, 430);
+            chart.Size = new Size(800, 460);
             chart.ChartAreas.Add(new ChartArea());
             chart.Series.Add(new Series());
             chart.Series[0].BorderWidth = 5;
@@ -182,7 +130,7 @@ namespace Bank
             // Проверка выбранного периода
             if (isYearSelected)
             {
-                comboBoxChartType.Location = new Point(194, 36);
+                comboBoxChartType.Location = new Point(221, 48);
                 // Получение данных по месяцам за год
                 Dictionary<int, double> monthData = new Dictionary<int, double>();
 
@@ -236,7 +184,7 @@ namespace Bank
             }
             else
             {
-                comboBoxChartType.Location = new Point(395, 36);
+                comboBoxChartType.Location = new Point(452, 48);
                 // Получение выбранного месяца
                 int selectedMonth = comboBoxMonth.SelectedIndex + 1;
 
@@ -369,18 +317,6 @@ namespace Bank
             }
         }
 
-        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Проверяем выбранную вкладку и обновляем графики
-            if (tabControl2.SelectedTab == tabPage3)
-            {
-                ShowExpenseChart();
-            }
-            else if (tabControl2.SelectedTab == tabPage4)
-            {
-                ShowIncomeChart();
-            }
-        }
         private void ShowIncomeChart()
         {
             // Очистка существующих элементов диаграммы
@@ -402,7 +338,7 @@ namespace Bank
             chartToolTip.ShowAlways = true; // Показывать подсказку всегда
 
             // Настройка свойств диаграммы
-            chart1.Size = new Size(740, 430);
+            chart1.Size = new Size(800, 450);
             chart1.ChartAreas.Add(new ChartArea());
             chart1.Series.Add(new Series());
             chart1.Series[0].BorderWidth = 5;
@@ -425,7 +361,7 @@ namespace Bank
             // Проверка выбранного периода
             if (isYearSelected)
             {
-                comboBoxChartType1.Location = new Point(194, 36);
+                comboBoxChartType1.Location = new Point(221, 48);
                 // Получение данных по месяцам за год
                 Dictionary<int, double> monthData = new Dictionary<int, double>();
 
@@ -465,7 +401,7 @@ namespace Bank
             }
             else
             {
-                comboBoxChartType1.Location = new Point(395, 36);
+                comboBoxChartType1.Location = new Point(452, 48);
                 // Получение выбранного месяца
                 int selectedMonth = comboBoxMonth1.SelectedIndex + 1;
 
@@ -526,7 +462,82 @@ namespace Bank
             panelCharts1.Controls.Add(chart1);
         }
 
-        private void comboBoxMonth1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxPeriodType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Проверка выбранного типа периода и отображение или скрытие ComboBox для выбора месяца
+            if (comboBoxPeriodType.SelectedIndex == 1) // Месяц
+            {
+                comboBoxMonth.Visible = true;
+            }
+            else
+            {
+                comboBoxMonth.Visible = false;
+            }
+
+            // Обновление диаграммы при изменении типа периода
+            ShowExpenseChart();
+        }
+
+        private void comboBoxMonth_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Обновление диаграммы при изменении выбранного месяца
+            ShowExpenseChart();
+        }
+
+        private void comboBoxChartType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Обновление диаграммы при изменении выбранного месяца
+            ShowExpenseChart();
+        }
+
+        private void StatisticsForm_Load_1(object sender, EventArgs e)
+        {
+            // Добавление элементов в ComboBox с выбором типа периода
+            comboBoxPeriodType.Items.AddRange(new string[] { "Год", "Месяц" });
+            comboBoxPeriodType.SelectedIndex = 0;
+
+            // Добавление элементов в ComboBox с выбором типа диаграммы
+            comboBoxChartType.Items.AddRange(new string[] { "Столбчатая", "Круговая", "Линейная" });
+            comboBoxChartType.SelectedIndex = 0;
+
+            // Добавление всех 12 месяцев в ComboBox
+            comboBoxMonth.Items.AddRange(GetMonthsArray());
+            comboBoxMonth.SelectedIndex = 0;
+
+            // Добавление элементов в ComboBox с выбором типа периода
+            comboBoxPeriodType1.Items.AddRange(new string[] { "Год", "Месяц" });
+            comboBoxPeriodType1.SelectedIndex = 0;
+
+            // Добавление элементов в ComboBox с выбором типа диаграммы
+            comboBoxChartType1.Items.AddRange(new string[] { "Столбчатая", "Круговая", "Линейная" });
+            comboBoxChartType1.SelectedIndex = 0;
+
+            // Добавление всех 12 месяцев в ComboBox
+            comboBoxMonth1.Items.AddRange(GetMonthsArray());
+            comboBoxMonth1.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
+            // Вызов метода ShowChart для отображения диаграммы
+            ShowExpenseChart();
+        }
+
+        private void tabControl2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Проверяем выбранную вкладку и обновляем графики
+            if (tabControl2.SelectedTab == tabPage3)
+            {
+                ShowExpenseChart();
+            }
+            else if (tabControl2.SelectedTab == tabPage4)
+            {
+                ShowIncomeChart();
+            }
+        }
+
+        private void comboBoxPeriodType1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ShowIncomeChart();
+        }
+
+        private void comboBoxMonth1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             // Проверка выбранного типа периода и отображение или скрытие ComboBox для выбора месяца
             if (comboBoxPeriodType1.SelectedIndex == 1) // Месяц
@@ -542,30 +553,19 @@ namespace Bank
             ShowIncomeChart();
         }
 
-        private void comboBoxPeriodType1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxChartType1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             ShowIncomeChart();
         }
 
-        private void comboBoxChartType1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ShowIncomeChart();
+            Close();
         }
 
-        private void comboBoxPeriodType_SelectedIndexChanged(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            // Проверка выбранного типа периода и отображение или скрытие ComboBox для выбора месяца
-            if (comboBoxPeriodType.SelectedIndex == 1) // Месяц
-            {
-                comboBoxMonth.Visible = true;
-            }
-            else
-            {
-                comboBoxMonth.Visible = false;
-            }
-
-            // Обновление диаграммы при изменении типа периода
-            ShowExpenseChart();
+            Close();
         }
     }
 }
