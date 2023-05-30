@@ -462,15 +462,13 @@
             // 
             // Mortgage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1182, 653);
             Controls.Add(label8);
             Controls.Add(panel9);
             Controls.Add(panel7);
             Controls.Add(panel2);
             Controls.Add(MainTopPanel);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Mortgage";
