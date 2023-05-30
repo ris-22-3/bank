@@ -113,7 +113,7 @@ namespace Bank
         {
             List<ChartData> chartData = new List<ChartData>();
 
-            string csvFilePath = @"C:\Users\Сергей\Desktop\1.csv";
+            string csvFilePath = @"../../../Data/4.csv";
             using (var reader = new StreamReader(csvFilePath))
             {
                 // Пропускаем заголовок
