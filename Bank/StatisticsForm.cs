@@ -76,7 +76,8 @@ namespace Bank
                         Date = DateTime.Parse(values[8]),
                         Amount = double.Parse(values[3]),
                         Income = bool.Parse(values[4]),
-                        Currency = values[5]
+                        Currency = values[5],
+                        Category = values[6]
                     };
 
                     chartData.Add(data);
@@ -106,7 +107,7 @@ namespace Bank
             chartToolTip.SetToolTip(chart, " "); // Пустая подсказка по умолчанию
             chartToolTip.ShowAlways = true; // Показывать подсказку всегда
             // Настройка свойств диаграммы
-            chart.Size = new Size(800, 460);
+            chart.Size = new Size(940, 460);
             chart.ChartAreas.Add(new ChartArea());
             chart.Series.Add(new Series());
             chart.Series[0].BorderWidth = 5;
@@ -283,6 +284,25 @@ namespace Bank
                 return SeriesChartType.Column; // По умолчанию столбчатая диаграмма
             }
         }
+        private SeriesChartType GetSelectedChartType2()
+        {
+            if (comboBoxChartType2.SelectedIndex == 0)
+            {
+                return SeriesChartType.Column;
+            }
+            else if (comboBoxChartType2.SelectedIndex == 1)
+            {
+                return SeriesChartType.Pie;
+            }
+            else if (comboBoxChartType2.SelectedIndex == 2)
+            {
+                return SeriesChartType.Line;
+            }
+            else
+            {
+                return SeriesChartType.Column; // По умолчанию столбчатая диаграмма
+            }
+        }
         private string[] GetMonthsArray()
         {
             string[] months = new string[12];
@@ -338,7 +358,7 @@ namespace Bank
             chartToolTip.ShowAlways = true; // Показывать подсказку всегда
 
             // Настройка свойств диаграммы
-            chart1.Size = new Size(800, 450);
+            chart1.Size = new Size(940, 460);
             chart1.ChartAreas.Add(new ChartArea());
             chart1.Series.Add(new Series());
             chart1.Series[0].BorderWidth = 5;
@@ -515,6 +535,17 @@ namespace Bank
             // Добавление всех 12 месяцев в ComboBox
             comboBoxMonth1.Items.AddRange(GetMonthsArray());
             comboBoxMonth1.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
+                                              // Добавление элементов в ComboBox с выбором типа периода
+            comboBoxPeriodType2.Items.AddRange(new string[] { "Год", "Месяц" });
+            comboBoxPeriodType2.SelectedIndex = 0;
+
+            // Добавление элементов в ComboBox с выбором типа диаграммы
+            comboBoxChartType2.Items.AddRange(new string[] { "Столбчатая", "Круговая", "Линейная" });
+            comboBoxChartType2.SelectedIndex = 0;
+
+            // Добавление всех 12 месяцев в ComboBox
+            comboBoxMonth2.Items.AddRange(GetMonthsArray());
+            comboBoxMonth2.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
             // Вызов метода ShowChart для отображения диаграммы
             ShowExpenseChart();
         }
@@ -566,6 +597,187 @@ namespace Bank
         private void Back_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void ShowExpenseByCategoryChart()
+        {
+            // Очистка существующих элементов диаграммы
+            panelCharts2.Controls.Clear();
+            comboBoxMonth2.Visible = true;
+
+            // Получение выбранного типа диаграммы
+            SeriesChartType chartType = GetSelectedChartType2();
+
+            // Загрузка данных из файла
+            List<ChartData> chartData = LoadChartData();
+
+            // Получение выбранного типа периода (год или месяц)
+            bool isYearSelected = comboBoxPeriodType2.SelectedIndex == 0;
+
+            // Создание объекта диаграммы
+            Chart chart2 = new Chart();
+            chart2.MouseMove += Chart_MouseMove;
+            chartToolTip.SetToolTip(chart2, " "); // Пустая подсказка по умолчанию
+            chartToolTip.ShowAlways = true; // Показывать подсказку всегда
+
+            // Настройка свойств диаграммы
+            chart2.Size = new Size(940, 460);
+            chart2.ChartAreas.Add(new ChartArea());
+            chart2.Series.Add(new Series());
+            chart2.Series[0].BorderWidth = 5;
+            chart2.Series["Series1"].Name = "Расходы";
+
+            // Настройка свойства IsValueShownAsLabel для типа Pie
+            if (chartType == SeriesChartType.Pie)
+            {
+                chart2.Series[0].IsValueShownAsLabel = true;
+                chart2.Series[0].Label = " ";
+            }
+
+            // Настройка свойств осей и меток
+            chart2.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart2.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chart2.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
+
+            // Определение и инициализация переменной columnColors
+            Color[] columnColors = new Color[] { Color.Red, Color.Blue, Color.Green, Color.Yellow, Color.Orange, Color.Aqua, Color.GreenYellow, Color.Lime, Color.Purple, Color.SkyBlue, Color.Tomato, Color.Plum, Color.DeepPink, Color.Indigo, Color.LemonChiffon, Color.Olive, Color.Salmon, Color.SeaGreen, Color.LawnGreen, Color.Maroon, Color.MistyRose, Color.Gainsboro, Color.MediumSeaGreen, Color.PowderBlue, Color.Crimson, Color.Khaki, Color.Moccasin, Color.Orchid, Color.PeachPuff, Color.Peru, Color.Tan, Color.OldLace };
+
+            // Проверка выбранного периода
+            if (isYearSelected)
+            {
+                comboBoxChartType2.Location = new Point(221, 48);
+                // Получение данных по типам расходов за год
+                Dictionary<string, double> expenseData = new Dictionary<string, double>();
+
+                // Инициализация данных по типам расходов
+                foreach (ChartData data in chartData)
+                {
+                    if (!data.Income && data.Currency == "руб")
+                    {
+                        if (!expenseData.ContainsKey(data.Category))
+                            expenseData[data.Category] = 0;
+
+                        expenseData[data.Category] += data.Amount;
+                    }
+                }
+
+                // Добавление данных в диаграмму
+                int colorIndex = 0;
+                foreach (KeyValuePair<string, double> entry in expenseData)
+                {
+                    DataPoint dataPoint = new DataPoint();
+                    dataPoint.AxisLabel = entry.Key;
+                    dataPoint.YValues = new double[] { entry.Value };
+
+                    // Задание цвета столбца
+                    dataPoint.Color = columnColors[colorIndex];
+
+                    chart2.Series[0].Points.Add(dataPoint);
+
+                    // Увеличение индекса цвета и проверка на выход за пределы массива columnColors
+                    colorIndex++;
+                    if (colorIndex >= columnColors.Length)
+                    {
+                        colorIndex = 0;
+                    }
+                }
+            }
+            else
+            {
+                comboBoxChartType2.Location = new Point(452, 48);
+                // Получение выбранного месяца
+                int selectedMonth = comboBoxMonth2.SelectedIndex + 1;
+
+                // Проверка наличия данных для выбранного месяца
+                bool hasDataForSelectedMonth = false;
+                int colorIndex = 0;
+                // Добавление данных в диаграмму
+                Dictionary<string, double> expenseData = new Dictionary<string, double>();
+                foreach (ChartData data in chartData)
+                {
+                    bool isInSelectedMonth = data.Date.Month == selectedMonth;
+                    if (!data.Income && data.Currency == "руб" && isInSelectedMonth)
+                    {
+                        if (!expenseData.ContainsKey(data.Category))
+                            expenseData[data.Category] = 0;
+
+                        expenseData[data.Category] += data.Amount;
+
+                        hasDataForSelectedMonth = true;
+                    }
+                }
+
+                // Добавление данных в диаграмму
+                foreach (KeyValuePair<string, double> entry in expenseData)
+                {
+                    DataPoint dataPoint = new DataPoint();
+                    dataPoint.AxisLabel = entry.Key;
+                    dataPoint.YValues = new double[] { entry.Value };
+
+                    // Задание цвета столбца
+                    dataPoint.Color = columnColors[colorIndex];
+
+                    chart2.Series[0].Points.Add(dataPoint);
+
+                    // Увеличение индекса цвета и проверка на выход за пределы массива columnColors
+                    colorIndex++;
+                    if (colorIndex >= columnColors.Length)
+                    {
+                        colorIndex = 0;
+                    }
+                }
+
+                // Проверка наличия данных для выбранного месяца
+                if (!hasDataForSelectedMonth)
+                {
+                    Label label = new Label();
+                    label.Text = "В этом месяце не было расходов";
+                    label.AutoSize = true;
+                    label.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    panelCharts2.Controls.Add(label);
+                    label.BringToFront();
+                    panelCharts2.AutoScroll = true;
+                }
+            }
+
+            // Настройка типа диаграммы
+            chart2.Series[0].ChartType = chartType;
+
+            // Добавление диаграммы в панель
+            panelCharts2.Controls.Add(chart2);
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl2.SelectedTab == tabPage2)
+            {
+                ShowExpenseByCategoryChart();
+            }
+        }
+
+        private void comboBoxPeriodType2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowExpenseByCategoryChart();
+        }
+
+        private void comboBoxMonth2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Проверка выбранного типа периода и отображение или скрытие ComboBox для выбора месяца
+            if (comboBoxPeriodType2.SelectedIndex == 1) // Месяц
+            {
+                comboBoxMonth2.Visible = true;
+            }
+            else
+            {
+                comboBoxMonth2.Visible = false;
+            }
+
+            // Обновление диаграммы при изменении типа периода
+            ShowExpenseByCategoryChart();
+        }
+
+        private void comboBoxChartType2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowExpenseByCategoryChart();
         }
     }
 }

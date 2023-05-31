@@ -49,6 +49,10 @@
             this.comboBoxPeriodType1 = new System.Windows.Forms.ComboBox();
             this.panelCharts1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBoxChartType2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMonth2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPeriodType2 = new System.Windows.Forms.ComboBox();
+            this.panelCharts2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -56,6 +60,7 @@
             this.panelCharts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,6 +74,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1182, 653);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -259,6 +265,10 @@
             // 
             this.tabPage2.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.comboBoxChartType2);
+            this.tabPage2.Controls.Add(this.comboBoxMonth2);
+            this.tabPage2.Controls.Add(this.comboBoxPeriodType2);
+            this.tabPage2.Controls.Add(this.panelCharts2);
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -266,6 +276,44 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxChartType2
+            // 
+            this.comboBoxChartType2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxChartType2.FormattingEnabled = true;
+            this.comboBoxChartType2.Location = new System.Drawing.Point(450, 48);
+            this.comboBoxChartType2.Name = "comboBoxChartType2";
+            this.comboBoxChartType2.Size = new System.Drawing.Size(240, 48);
+            this.comboBoxChartType2.TabIndex = 3;
+            this.comboBoxChartType2.SelectedIndexChanged += new System.EventHandler(this.comboBoxChartType2_SelectedIndexChanged);
+            // 
+            // comboBoxMonth2
+            // 
+            this.comboBoxMonth2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxMonth2.FormattingEnabled = true;
+            this.comboBoxMonth2.Location = new System.Drawing.Point(221, 48);
+            this.comboBoxMonth2.Name = "comboBoxMonth2";
+            this.comboBoxMonth2.Size = new System.Drawing.Size(223, 48);
+            this.comboBoxMonth2.TabIndex = 2;
+            this.comboBoxMonth2.SelectedIndexChanged += new System.EventHandler(this.comboBoxMonth2_SelectedIndexChanged);
+            // 
+            // comboBoxPeriodType2
+            // 
+            this.comboBoxPeriodType2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxPeriodType2.FormattingEnabled = true;
+            this.comboBoxPeriodType2.Location = new System.Drawing.Point(7, 48);
+            this.comboBoxPeriodType2.Name = "comboBoxPeriodType2";
+            this.comboBoxPeriodType2.Size = new System.Drawing.Size(208, 48);
+            this.comboBoxPeriodType2.TabIndex = 1;
+            this.comboBoxPeriodType2.SelectedIndexChanged += new System.EventHandler(this.comboBoxPeriodType2_SelectedIndexChanged);
+            // 
+            // panelCharts2
+            // 
+            this.panelCharts2.BackColor = System.Drawing.Color.White;
+            this.panelCharts2.Location = new System.Drawing.Point(7, 102);
+            this.panelCharts2.Name = "panelCharts2";
+            this.panelCharts2.Size = new System.Drawing.Size(969, 445);
+            this.panelCharts2.TabIndex = 0;
             // 
             // StatisticsForm
             // 
@@ -286,6 +334,7 @@
             this.panelCharts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,5 +358,9 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart;
         private Button Back;
         private Button button1;
+        private ComboBox comboBoxChartType2;
+        private ComboBox comboBoxMonth2;
+        private ComboBox comboBoxPeriodType2;
+        private Panel panelCharts2;
     }
 }
