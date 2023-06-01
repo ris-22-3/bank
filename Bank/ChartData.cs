@@ -18,5 +18,48 @@ namespace Bank
         public string Category { get; set; }
         public string OperationType { get; set; }
         public DateTime Date { get; set; }
+        public static List<ChartData> LoadChartData()
+        {
+            List<ChartData> chartData = new List<ChartData>();
+
+            string csvFilePath = @"../../../Data/4.csv";
+            using (var reader = new StreamReader(csvFilePath))
+            {
+                // Пропускаем заголовок
+                reader.ReadLine();
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+
+                    ChartData data = new ChartData
+                    {
+                        Date = DateTime.Parse(values[8]),
+                        Amount = double.Parse(values[3]),
+                        Income = bool.Parse(values[4]),
+                        Currency = values[5],
+                        Category = values[6]
+                    };
+
+                    chartData.Add(data);
+                }
+            }
+
+            return chartData;
+        }
+        public static string[] GetMonthsArray()
+        {
+            string[] months = new string[12];
+
+            for (int i = 0; i < 12; i++)
+            {
+                DateTime month = new DateTime(1, i + 1, 1);
+                months[i] = month.ToString("MMMM");
+            }
+
+            return months;
+        }
     }
+
 }

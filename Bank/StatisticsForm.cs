@@ -56,36 +56,7 @@ namespace Bank
 
 
 
-        private List<ChartData> LoadChartData()
-        {
-            List<ChartData> chartData = new List<ChartData>();
 
-            string csvFilePath = @"../../../Data/4.csv";
-            using (var reader = new StreamReader(csvFilePath))
-            {
-                // Пропускаем заголовок
-                reader.ReadLine();
-
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var values = line.Split(';');
-
-                    ChartData data = new ChartData
-                    {
-                        Date = DateTime.Parse(values[8]),
-                        Amount = double.Parse(values[3]),
-                        Income = bool.Parse(values[4]),
-                        Currency = values[5],
-                        Category = values[6]
-                    };
-
-                    chartData.Add(data);
-                }
-            }
-
-            return chartData;
-        }
         private void ShowExpenseChart()
         {
 
@@ -96,7 +67,7 @@ namespace Bank
             SeriesChartType chartType = GetSelectedChartType();
 
             // Загрузка данных из файла
-            List<ChartData> chartData = LoadChartData();
+            List<ChartData> chartData = ChartData.LoadChartData();
 
             // Получение выбранного типа периода (год или месяц)
             bool isYearSelected = comboBoxPeriodType.SelectedIndex == 0;
@@ -303,18 +274,7 @@ namespace Bank
                 return SeriesChartType.Column; // По умолчанию столбчатая диаграмма
             }
         }
-        private string[] GetMonthsArray()
-        {
-            string[] months = new string[12];
 
-            for (int i = 0; i < 12; i++)
-            {
-                DateTime month = new DateTime(1, i + 1, 1);
-                months[i] = month.ToString("MMMM");
-            }
-
-            return months;
-        }
 
         private void Chart_MouseMove(object sender, MouseEventArgs e)
         {
@@ -346,7 +306,7 @@ namespace Bank
             SeriesChartType chartType = GetSelectedChartType1();
 
             // Загрузка данных из файла
-            List<ChartData> chartData = LoadChartData();
+            List<ChartData> chartData = ChartData.LoadChartData();
 
             // Получение выбранного типа периода (год или месяц)
             bool isYearSelected = comboBoxPeriodType1.SelectedIndex == 0;
@@ -521,7 +481,7 @@ namespace Bank
             comboBoxChartType.SelectedIndex = 0;
 
             // Добавление всех 12 месяцев в ComboBox
-            comboBoxMonth.Items.AddRange(GetMonthsArray());
+            comboBoxMonth.Items.AddRange(ChartData.GetMonthsArray());
             comboBoxMonth.SelectedIndex = 0;
 
             // Добавление элементов в ComboBox с выбором типа периода
@@ -533,7 +493,7 @@ namespace Bank
             comboBoxChartType1.SelectedIndex = 0;
 
             // Добавление всех 12 месяцев в ComboBox
-            comboBoxMonth1.Items.AddRange(GetMonthsArray());
+            comboBoxMonth1.Items.AddRange(ChartData.GetMonthsArray());
             comboBoxMonth1.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
                                               // Добавление элементов в ComboBox с выбором типа периода
             comboBoxPeriodType2.Items.AddRange(new string[] { "Год", "Месяц" });
@@ -544,7 +504,7 @@ namespace Bank
             comboBoxChartType2.SelectedIndex = 0;
 
             // Добавление всех 12 месяцев в ComboBox
-            comboBoxMonth2.Items.AddRange(GetMonthsArray());
+            comboBoxMonth2.Items.AddRange(ChartData.GetMonthsArray());
             comboBoxMonth2.SelectedIndex = 0; // Устанавливаем индекс января (0 - январь)
             // Вызов метода ShowChart для отображения диаграммы
             ShowExpenseChart();
@@ -608,7 +568,7 @@ namespace Bank
             SeriesChartType chartType = GetSelectedChartType2();
 
             // Загрузка данных из файла
-            List<ChartData> chartData = LoadChartData();
+            List<ChartData> chartData = ChartData.LoadChartData();
 
             // Получение выбранного типа периода (год или месяц)
             bool isYearSelected = comboBoxPeriodType2.SelectedIndex == 0;
