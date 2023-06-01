@@ -36,14 +36,12 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBoxChartType = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType = new System.Windows.Forms.ComboBox();
             this.panelCharts = new System.Windows.Forms.Panel();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.Back = new System.Windows.Forms.Button();
             this.comboBoxChartType1 = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth1 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType1 = new System.Windows.Forms.ComboBox();
@@ -53,7 +51,10 @@
             this.comboBoxMonth2 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType2 = new System.Windows.Forms.ComboBox();
             this.panelCharts2 = new System.Windows.Forms.Panel();
-            this.Back1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -62,15 +63,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1182, 653);
@@ -105,7 +107,6 @@
             // 
             this.tabPage3.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.comboBoxChartType);
             this.tabPage3.Controls.Add(this.comboBoxMonth);
             this.tabPage3.Controls.Add(this.comboBoxPeriodType);
@@ -117,20 +118,6 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(1030, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 61);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBoxChartType
             // 
@@ -194,7 +181,6 @@
             // 
             this.tabPage4.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage4.Controls.Add(this.Back);
             this.tabPage4.Controls.Add(this.comboBoxChartType1);
             this.tabPage4.Controls.Add(this.comboBoxMonth1);
             this.tabPage4.Controls.Add(this.comboBoxPeriodType1);
@@ -206,20 +192,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.Color.DarkBlue;
-            this.Back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Back.ForeColor = System.Drawing.SystemColors.Window;
-            this.Back.Location = new System.Drawing.Point(1030, 0);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(134, 61);
-            this.Back.TabIndex = 4;
-            this.Back.Text = "Назад";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // comboBoxChartType1
             // 
@@ -266,7 +238,6 @@
             // 
             this.tabPage2.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.Back1);
             this.tabPage2.Controls.Add(this.comboBoxChartType2);
             this.tabPage2.Controls.Add(this.comboBoxMonth2);
             this.tabPage2.Controls.Add(this.comboBoxPeriodType2);
@@ -317,25 +288,61 @@
             this.panelCharts2.Size = new System.Drawing.Size(969, 445);
             this.panelCharts2.TabIndex = 0;
             // 
-            // Back1
+            // button1
             // 
-            this.Back1.Click += new System.EventHandler(this.Back1_Click);
-            this.Back1.BackColor = System.Drawing.Color.DarkBlue;
-            this.Back1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Back1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Back1.ForeColor = System.Drawing.SystemColors.Window;
-            this.Back1.Location = new System.Drawing.Point(1044, 0);
-            this.Back1.Name = "Back1";
-            this.Back1.Size = new System.Drawing.Size(134, 61);
-            this.Back1.TabIndex = 6;
-            this.Back1.Text = "Назад";
-            this.Back1.UseVisualStyleBackColor = false;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(1026, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 91);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Назад";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1182, 713);
+            this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(226, 58);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "HSE Bank";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(445, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 58);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Статистика";
             // 
             // StatisticsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1182, 713);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -351,6 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,12 +381,13 @@
         private Panel panelCharts1;
         private TabPage tabPage2;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart;
-        private Button Back;
         private Button button1;
         private ComboBox comboBoxChartType2;
         private ComboBox comboBoxMonth2;
         private ComboBox comboBoxPeriodType2;
         private Panel panelCharts2;
-        private Button Back1;
+        private Panel panel1;
+        private Label label1;
+        private Label label2;
     }
 }
