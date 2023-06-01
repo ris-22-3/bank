@@ -20,5 +20,11 @@ namespace Bank
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.Show();
         }
+
+        private void ATMButton_Click(object sender, EventArgs e)
+        {
+            ATMForm aTMForm = new ATMForm();
+            aTMForm.Show();
+        }
     }
 }
