@@ -779,5 +779,10 @@ namespace Bank
         {
             ShowExpenseByCategoryChart();
         }
+
+        private void Back1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

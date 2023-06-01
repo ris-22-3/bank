@@ -53,6 +53,7 @@
             this.comboBoxMonth2 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType2 = new System.Windows.Forms.ComboBox();
             this.panelCharts2 = new System.Windows.Forms.Panel();
+            this.Back1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -265,6 +266,7 @@
             // 
             this.tabPage2.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.Back1);
             this.tabPage2.Controls.Add(this.comboBoxChartType2);
             this.tabPage2.Controls.Add(this.comboBoxMonth2);
             this.tabPage2.Controls.Add(this.comboBoxPeriodType2);
@@ -315,6 +317,20 @@
             this.panelCharts2.Size = new System.Drawing.Size(969, 445);
             this.panelCharts2.TabIndex = 0;
             // 
+            // Back1
+            // 
+            this.Back1.Click += new System.EventHandler(this.Back1_Click);
+            this.Back1.BackColor = System.Drawing.Color.DarkBlue;
+            this.Back1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Back1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Back1.ForeColor = System.Drawing.SystemColors.Window;
+            this.Back1.Location = new System.Drawing.Point(1044, 0);
+            this.Back1.Name = "Back1";
+            this.Back1.Size = new System.Drawing.Size(134, 61);
+            this.Back1.TabIndex = 6;
+            this.Back1.Text = "Назад";
+            this.Back1.UseVisualStyleBackColor = false;
+            // 
             // StatisticsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -362,5 +378,6 @@
         private ComboBox comboBoxMonth2;
         private ComboBox comboBoxPeriodType2;
         private Panel panelCharts2;
+        private Button Back1;
     }
 }
