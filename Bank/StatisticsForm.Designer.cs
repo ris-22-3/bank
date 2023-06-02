@@ -122,6 +122,7 @@
             // comboBoxChartType
             // 
             this.comboBoxChartType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxChartType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChartType.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxChartType.FormattingEnabled = true;
             this.comboBoxChartType.Location = new System.Drawing.Point(452, 48);
@@ -133,6 +134,7 @@
             // comboBoxMonth
             // 
             this.comboBoxMonth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonth.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxMonth.FormattingEnabled = true;
             this.comboBoxMonth.Location = new System.Drawing.Point(221, 48);
@@ -144,6 +146,7 @@
             // comboBoxPeriodType
             // 
             this.comboBoxPeriodType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPeriodType.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPeriodType.FormattingEnabled = true;
             this.comboBoxPeriodType.Location = new System.Drawing.Point(7, 48);
@@ -196,6 +199,7 @@
             // comboBoxChartType1
             // 
             this.comboBoxChartType1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxChartType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChartType1.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxChartType1.FormattingEnabled = true;
             this.comboBoxChartType1.Location = new System.Drawing.Point(452, 48);
@@ -207,6 +211,7 @@
             // comboBoxMonth1
             // 
             this.comboBoxMonth1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxMonth1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonth1.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxMonth1.FormattingEnabled = true;
             this.comboBoxMonth1.Location = new System.Drawing.Point(221, 48);
@@ -218,6 +223,7 @@
             // comboBoxPeriodType1
             // 
             this.comboBoxPeriodType1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxPeriodType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPeriodType1.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPeriodType1.FormattingEnabled = true;
             this.comboBoxPeriodType1.Location = new System.Drawing.Point(7, 48);
@@ -252,6 +258,7 @@
             // 
             // comboBoxChartType2
             // 
+            this.comboBoxChartType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChartType2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxChartType2.FormattingEnabled = true;
             this.comboBoxChartType2.Location = new System.Drawing.Point(450, 48);
@@ -262,6 +269,7 @@
             // 
             // comboBoxMonth2
             // 
+            this.comboBoxMonth2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonth2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxMonth2.FormattingEnabled = true;
             this.comboBoxMonth2.Location = new System.Drawing.Point(221, 48);
@@ -272,6 +280,7 @@
             // 
             // comboBoxPeriodType2
             // 
+            this.comboBoxPeriodType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPeriodType2.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxPeriodType2.FormattingEnabled = true;
             this.comboBoxPeriodType2.Location = new System.Drawing.Point(7, 48);
