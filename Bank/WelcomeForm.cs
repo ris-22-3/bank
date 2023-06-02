@@ -15,16 +15,18 @@ namespace Bank
             statisticsForm.Show();
         }
 
-        private void MortgageButton_Click_1(object sender, EventArgs e)
-        {
-            Mortgage mortgageForm = new Mortgage();
-            mortgageForm.Show();
-        }
+        
 
         private void ATMButton_Click(object sender, EventArgs e)
         {
             ATMForm aTMForm = new ATMForm();
             aTMForm.Show();
+        }
+
+        private void MortgageButton_Click(object sender, EventArgs e)
+        {
+            Mortgage mortgageForm = new Mortgage();
+            mortgageForm.Show();
         }
     }
 }

@@ -228,17 +228,18 @@
             // 
             // MortgageButton
             // 
-            this.MortgageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.MortgageButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MortgageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MortgageButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MortgageButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.MortgageButton.Location = new System.Drawing.Point(0, 328);
-            this.MortgageButton.Name = "MortgageButton";
-            this.MortgageButton.Size = new System.Drawing.Size(413, 75);
-            this.MortgageButton.TabIndex = 3;
-            this.MortgageButton.Text = "Ипотека";
-            this.MortgageButton.UseVisualStyleBackColor = false;
+            MortgageButton.BackColor = Color.FromArgb(16, 45, 105);
+            MortgageButton.Dock = DockStyle.Bottom;
+            MortgageButton.FlatStyle = FlatStyle.Flat;
+            MortgageButton.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            MortgageButton.ForeColor = SystemColors.ButtonFace;
+            MortgageButton.Location = new Point(0, 328);
+            MortgageButton.Name = "MortgageButton";
+            MortgageButton.Size = new Size(413, 75);
+            MortgageButton.TabIndex = 3;
+            MortgageButton.Text = "Ипотека";
+            MortgageButton.UseVisualStyleBackColor = false;
+            MortgageButton.Click += MortgageButton_Click;
             // 
             // ATMButton
             // 
