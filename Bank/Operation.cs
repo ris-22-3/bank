@@ -21,7 +21,7 @@ namespace Bank
         {
             sum = 0;
             isIncome = false;
-            billeType = "руб";
+            billeType = "rub";
             category = categories[rnd.Next(categories.Length)];
             type = "Покупка";
             date = DateTime.Now;

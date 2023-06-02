@@ -13,6 +13,7 @@ namespace Bank
         
         public List<Operation> income;
         public List<Operation> costs;
+        public List<Operation> history = new List<Operation>();
 
         public CurencyAccounts()
         {
@@ -34,6 +35,7 @@ namespace Bank
                 costs.Add(op);
             if (isNew)
                 Database.AddOperation(op); //добавление в файл
+            history.Add(op);
         }
     }
 }

@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Text.RegularExpressions;
+using System.Windows.Forms.VisualStyles;
 
 namespace Bank
 {
     public class Database
     {
+        static string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "ноября", "декабря" };
         public static List<User> arr = new List<User>();
         public static List<string> logins = new List<string>();
         public static string address = "../../../Data/UserDataBase.csv";
@@ -41,7 +43,6 @@ namespace Bank
         }
         public static DateTime ToDateTime(string date)
         {
-            string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "ноября", "декабря" };
             string[] data = date.Split(' ');
             int month = 0 + 1;
             for (int i = 0; i < months.Length; i++)
@@ -76,7 +77,7 @@ namespace Bank
                         break;
                     DateTime date = ToDateTime(operations[8]);
                     Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
-                    if (op.billeType == "$")
+                    if (op.billeType == "USD")
                         usd.Add(op);
                     if (op.billeType == "руб")
                         rub.Add(op);
@@ -92,28 +93,50 @@ namespace Bank
         }
         public static void AddOperation(Operation op)
         {
-            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, op.date.ToString() }; 
-            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
+            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, op.date.Day.ToString() + " "+ months[op.date.Month-1] + " " + op.date.Year.ToString() + " г."}; 
+            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true, Encoding.GetEncoding(1251));
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
+            RewriteLine(op.billeType);
+
+            //rd = new StreamWriter("../../../Data/" + address + ".csv", true, Encoding.GetEncoding(1251));
+            //rd.Write(String.Join(";", operation));
+            //rd.WriteLine(String.Join(";", operation));
+            //rd.Close();
             // изменить в файле UserDataBase баланс при добавлении операции
             //обернуть в try catch?
+
+            
         }
-        public User this[int index]
+        private static void RewriteLine(string billeType)
         {
-            get
+            int i = 0;
+            string tempFile = "UserDataBase" + ".tmp";
+            using (StreamReader sr = new StreamReader(address, Encoding.GetEncoding(1251)))
+            using (StreamWriter sw = new StreamWriter(tempFile, true, Encoding.GetEncoding(1251)))
             {
-                if (index >= 0 && index < arr.Count)
-                    return arr[index];
-                else
-                    throw new IndexOutOfRangeException();
+                while (!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    if (Objects.user.clientNumber == i)
+                    {
+                        string[] ones = line.Split(new char[] { ';' });
+                        if (billeType == "rub")
+                            ones[6] = Objects.user.rub.Balance.ToString();
+                        if (billeType == "USD")
+                            ones[10] = Objects.user.usd.Balance.ToString();
+                        if (billeType == "тг")
+                            ones[11] = Objects.user.tenge.Balance.ToString();
+                        line = string.Join(";", ones);
+                        sw.WriteLine(line);
+                    }
+                    else
+                        sw.WriteLine(line);
+                    i++;
+                }
             }
-            set
-            {
-                if (index >= 0 && index < Length)
-                    arr[index] = value;
-            }
+            File.Delete(address);
+            File.Move(tempFile, address);
         }
-        
     }
 }
