@@ -28,7 +28,7 @@ namespace Bank
                 string dateStr = Objects.user.rub.history[i].date.Day.ToString() + "." + Objects.user.rub.history[i].date.Month + "." + Objects.user.rub.history[i].date.Year.ToString();
 
                 DataGridViewCell date = new DataGridViewTextBoxCell();
-                date.Value  = dateStr;
+                date.Value = dateStr;
                 DataGridViewCell sum = new DataGridViewTextBoxCell();
                 sum.Value = Objects.user.rub.history[i].sum.ToString();
                 DataGridViewCell type = new DataGridViewTextBoxCell();

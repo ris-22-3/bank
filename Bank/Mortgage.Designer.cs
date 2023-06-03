@@ -508,7 +508,7 @@
             label13.Name = "label13";
             label13.Size = new Size(263, 82);
             label13.TabIndex = 9;
-            label13.Text = "78000 РЭ";
+            label13.Text = "0 ₽";
             label13.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
@@ -543,7 +543,7 @@
             MonthlyPaymentLabel.Name = "MonthlyPaymentLabel";
             MonthlyPaymentLabel.Size = new Size(260, 82);
             MonthlyPaymentLabel.TabIndex = 9;
-            MonthlyPaymentLabel.Text = "45000 РЭ";
+            MonthlyPaymentLabel.Text = "0 ₽";
             MonthlyPaymentLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label10
@@ -578,7 +578,7 @@
             InterestRateLable.Name = "InterestRateLable";
             InterestRateLable.Size = new Size(250, 82);
             InterestRateLable.TabIndex = 8;
-            InterestRateLable.Text = "10,9%";
+            InterestRateLable.Text = "0%";
             InterestRateLable.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1

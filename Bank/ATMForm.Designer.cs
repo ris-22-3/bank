@@ -166,7 +166,7 @@
             panel4.Size = new Size(323, 236);
             panel4.TabIndex = 9;
             // 
-            // dataGridView2
+            // dataGridView
             // 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
@@ -177,7 +177,7 @@
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { Data, Sum, Type });
             dataGridView.Location = new Point(3, 3);
-            dataGridView.Name = "dataGridView2";
+            dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.RowTemplate.Height = 29;
