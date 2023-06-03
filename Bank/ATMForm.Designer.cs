@@ -37,7 +37,7 @@
             BackButton = new Button();
             panel1 = new Panel();
             panel4 = new Panel();
-            dataGridView2 = new DataGridView();
+            dataGridView = new DataGridView();
             Data = new DataGridViewTextBoxColumn();
             Sum = new DataGridViewTextBoxColumn();
             Type = new DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             panel10.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
@@ -160,7 +160,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(dataGridView2);
+            panel4.Controls.Add(dataGridView);
             panel4.Location = new Point(6, 221);
             panel4.Name = "panel4";
             panel4.Size = new Size(323, 236);
@@ -168,21 +168,21 @@
             // 
             // dataGridView2
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AllowUserToResizeColumns = false;
-            dataGridView2.AllowUserToResizeRows = false;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.BackgroundColor = SystemColors.MenuBar;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Data, Sum, Type });
-            dataGridView2.Location = new Point(3, 3);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(317, 230);
-            dataGridView2.TabIndex = 0;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToResizeColumns = false;
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = SystemColors.MenuBar;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Data, Sum, Type });
+            dataGridView.Location = new Point(3, 3);
+            dataGridView.Name = "dataGridView2";
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 29;
+            dataGridView.Size = new Size(317, 230);
+            dataGridView.TabIndex = 0;
             // 
             // Data
             // 
@@ -417,7 +417,7 @@
             panel10.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -451,7 +451,7 @@
         private Panel panel3;
         private Button addCash_Button;
         private Button takeCash_Button;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridView;
         private DataGridViewTextBoxColumn Data;
         private DataGridViewTextBoxColumn Sum;
         private DataGridViewTextBoxColumn Type;
