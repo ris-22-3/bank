@@ -7,6 +7,7 @@ namespace Bank
         public WelcomeForm()
         {
             InitializeComponent();
+            label3.Text = Objects.user.name + " " + Objects.user.surname;
         }
 
         private void ATMButton_Click(object sender, EventArgs e)
@@ -31,5 +32,13 @@ namespace Bank
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.Show();
         }
+
+        private void ATMButton_Click_1(object sender, EventArgs e)
+        {
+            ATMForm aTMForm = new ATMForm();
+            aTMForm.Show();
+        }
+
+        
     }
 }
