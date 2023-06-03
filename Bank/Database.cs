@@ -79,7 +79,7 @@ namespace Bank
                     Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
                     if (op.billeType == "USD")
                         usd.Add(op);
-                    if (op.billeType == "руб")
+                    if (op.billeType == "rub")
                         rub.Add(op);
                     else
                         tenge.Add(op);
@@ -125,7 +125,7 @@ namespace Bank
                             ones[6] = Objects.user.rub.Balance.ToString();
                         if (billeType == "USD")
                             ones[10] = Objects.user.usd.Balance.ToString();
-                        if (billeType == "тг")
+                        if (billeType == "tg")
                             ones[11] = Objects.user.tenge.Balance.ToString();
                         line = string.Join(";", ones);
                         sw.WriteLine(line);

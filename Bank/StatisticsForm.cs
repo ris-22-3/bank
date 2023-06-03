@@ -115,7 +115,7 @@ namespace Bank
                 // Суммирование данных по месяцам
                 foreach (ChartData data in chartData)
                 {
-                    if (!data.Income && data.Currency == "руб")
+                    if (!data.Income && data.Currency == "rub")
                     {
                         int month = data.Date.Month;
                         monthData[month] += data.Amount;
@@ -167,7 +167,7 @@ namespace Bank
                 foreach (ChartData data in chartData)
                 {
                     bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                    if (!data.Income && data.Currency == "руб" && isInSelectedMonth)
+                    if (!data.Income && data.Currency == "rub" && isInSelectedMonth)
                     {
                         DataPoint dataPoint = new DataPoint();
                         dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
@@ -354,7 +354,7 @@ namespace Bank
                 // Суммирование данных по месяцам
                 foreach (ChartData data in chartData)
                 {
-                    if (data.Income && data.Currency == "руб")
+                    if (data.Income && data.Currency == "rub")
                     {
                         int month = data.Date.Month;
                         monthData[month] += data.Amount;
@@ -392,7 +392,7 @@ namespace Bank
                 foreach (ChartData data in chartData)
                 {
                     bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                    if (data.Income && data.Currency == "руб" && isInSelectedMonth)
+                    if (data.Income && data.Currency == "rub" && isInSelectedMonth)
                     {
                         DataPoint dataPoint = new DataPoint();
                         dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
@@ -611,7 +611,7 @@ namespace Bank
                 // Инициализация данных по типам расходов
                 foreach (ChartData data in chartData)
                 {
-                    if (!data.Income && data.Currency == "руб")
+                    if (!data.Income && data.Currency == "rub")
                     {
                         if (!expenseData.ContainsKey(data.Category))
                             expenseData[data.Category] = 0;
@@ -655,7 +655,7 @@ namespace Bank
                 foreach (ChartData data in chartData)
                 {
                     bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                    if (!data.Income && data.Currency == "руб" && isInSelectedMonth)
+                    if (!data.Income && data.Currency == "rub" && isInSelectedMonth)
                     {
                         if (!expenseData.ContainsKey(data.Category))
                             expenseData[data.Category] = 0;
