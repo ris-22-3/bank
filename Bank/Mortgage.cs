@@ -47,6 +47,8 @@ namespace WinFormsTest
             customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
             customer.Term = tbTerm.Value;
             label8.Text = customer.ToString();
+            InterestRateLable.Text = customer.FindPercent().ToString() + "%";
+            MonthlyPaymentLabel.Text = customer.FindMonthlyPayment() + " ₽";
 
         }
 
