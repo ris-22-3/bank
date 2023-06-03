@@ -21,7 +21,6 @@ namespace Bank
         }
         public void FillTable()
         {
-            //string dateStr = Objects.user.rub.history[i].date.Day.ToString() + "." + Objects.user.rub.history[i].date.Month + "." + Objects.user.rub.history[i].date.Year.ToString();
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.user.rub.history.Count; i++)
             {
