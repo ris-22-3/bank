@@ -14,7 +14,7 @@ namespace Bank
 {
     public class Database
     {
-        static string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "ноября", "декабря" };
+        static string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря" };
         public static List<User> arr = new List<User>();
         public static List<string> logins = new List<string>();
         public static string address = "../../../Data/UserDataBase.csv";

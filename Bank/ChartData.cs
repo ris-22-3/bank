@@ -21,9 +21,8 @@ namespace Bank
         public static List<ChartData> LoadChartData()
         {
             List<ChartData> chartData = new List<ChartData>();
-
-            string csvFilePath = @"../../../Data/4.csv";
-            using (var reader = new StreamReader(csvFilePath))
+            string csvFilePath = "../../../Data/" + Objects.user.clientNumber.ToString() + ".csv";
+            using (var reader = new StreamReader(csvFilePath, Encoding.GetEncoding(1251)))
             {
                 // Пропускаем заголовок
                 reader.ReadLine();
