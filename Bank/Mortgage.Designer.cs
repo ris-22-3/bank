@@ -61,15 +61,15 @@
             panel9 = new Panel();
             label8 = new Label();
             panel1 = new Panel();
-            panel13 = new Panel();
-            panel14 = new Panel();
             panel15 = new Panel();
-            label1 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            InterestRateLable = new Label();
-            MonthlyPaymentLabel = new Label();
             label13 = new Label();
+            label11 = new Label();
+            panel14 = new Panel();
+            MonthlyPaymentLabel = new Label();
+            label10 = new Label();
+            panel13 = new Panel();
+            InterestRateLable = new Label();
+            label1 = new Label();
             MainTopPanel.SuspendLayout();
             panel12.SuspendLayout();
             panel11.SuspendLayout();
@@ -86,9 +86,9 @@
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             panel1.SuspendLayout();
-            panel13.SuspendLayout();
-            panel14.SuspendLayout();
             panel15.SuspendLayout();
+            panel14.SuspendLayout();
+            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // MainTopPanel
@@ -294,19 +294,21 @@
             lInitialFee.TabIndex = 6;
             lInitialFee.Text = "500 тыс. ₽";
             lInitialFee.TextAlign = ContentAlignment.MiddleLeft;
+            lInitialFee.Click += lInitialFee_Click;
             // 
             // tbInitialFee
             // 
             tbInitialFee.AutoSize = false;
             tbInitialFee.Dock = DockStyle.Bottom;
             tbInitialFee.Location = new Point(0, 76);
-            tbInitialFee.Maximum = 45;
-            tbInitialFee.Minimum = 5;
+            tbInitialFee.Maximum = 90;
+            tbInitialFee.Minimum = 10;
             tbInitialFee.Name = "tbInitialFee";
             tbInitialFee.Size = new Size(419, 44);
             tbInitialFee.TabIndex = 2;
+            tbInitialFee.TickFrequency = 2;
             tbInitialFee.TickStyle = TickStyle.TopLeft;
-            tbInitialFee.Value = 5;
+            tbInitialFee.Value = 10;
             tbInitialFee.Scroll += tbInitialFee_Scroll;
             // 
             // label5
@@ -348,7 +350,7 @@
             tbPrice.Dock = DockStyle.Bottom;
             tbPrice.LargeChange = 1;
             tbPrice.Location = new Point(0, 79);
-            tbPrice.Maximum = 450;
+            tbPrice.Maximum = 500;
             tbPrice.Minimum = 5;
             tbPrice.Name = "tbPrice";
             tbPrice.Size = new Size(419, 41);
@@ -468,11 +470,12 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(688, 472);
+            label8.Location = new Point(698, 252);
             label8.Name = "label8";
             label8.Size = new Size(188, 20);
             label8.TabIndex = 7;
             label8.Text = "Данные о недвижимсоти:";
+            label8.Click += label8_Click;
             // 
             // panel1
             // 
@@ -486,26 +489,6 @@
             panel1.Size = new Size(763, 120);
             panel1.TabIndex = 8;
             // 
-            // panel13
-            // 
-            panel13.Controls.Add(InterestRateLable);
-            panel13.Controls.Add(label1);
-            panel13.Dock = DockStyle.Left;
-            panel13.Location = new Point(0, 0);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(250, 120);
-            panel13.TabIndex = 0;
-            // 
-            // panel14
-            // 
-            panel14.Controls.Add(MonthlyPaymentLabel);
-            panel14.Controls.Add(label10);
-            panel14.Dock = DockStyle.Left;
-            panel14.Location = new Point(250, 0);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(260, 120);
-            panel14.TabIndex = 1;
-            // 
             // panel15
             // 
             panel15.Controls.Add(label13);
@@ -516,30 +499,17 @@
             panel15.Size = new Size(263, 120);
             panel15.TabIndex = 2;
             // 
-            // label1
+            // label13
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(250, 38);
-            label1.TabIndex = 7;
-            label1.Text = "Процентная ставка";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            label10.Dock = DockStyle.Top;
-            label10.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.ButtonFace;
-            label10.Location = new Point(0, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(260, 38);
-            label10.TabIndex = 8;
-            label10.Text = "Ежемесячный платёж";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            label10.Click += label10_Click;
+            label13.Dock = DockStyle.Fill;
+            label13.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = SystemColors.ButtonFace;
+            label13.Location = new Point(0, 38);
+            label13.Name = "label13";
+            label13.Size = new Size(263, 82);
+            label13.TabIndex = 9;
+            label13.Text = "78000 РЭ";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -554,17 +524,15 @@
             label11.TextAlign = ContentAlignment.MiddleCenter;
             label11.Click += label11_Click;
             // 
-            // InterestRateLable
+            // panel14
             // 
-            InterestRateLable.Dock = DockStyle.Fill;
-            InterestRateLable.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            InterestRateLable.ForeColor = SystemColors.ButtonFace;
-            InterestRateLable.Location = new Point(0, 38);
-            InterestRateLable.Name = "InterestRateLable";
-            InterestRateLable.Size = new Size(250, 82);
-            InterestRateLable.TabIndex = 8;
-            InterestRateLable.Text = "10,9%";
-            InterestRateLable.TextAlign = ContentAlignment.MiddleCenter;
+            panel14.Controls.Add(MonthlyPaymentLabel);
+            panel14.Controls.Add(label10);
+            panel14.Dock = DockStyle.Left;
+            panel14.Location = new Point(250, 0);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(260, 120);
+            panel14.TabIndex = 1;
             // 
             // MonthlyPaymentLabel
             // 
@@ -578,17 +546,52 @@
             MonthlyPaymentLabel.Text = "45000 РЭ";
             MonthlyPaymentLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // label10
             // 
-            label13.Dock = DockStyle.Fill;
-            label13.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.ButtonFace;
-            label13.Location = new Point(0, 38);
-            label13.Name = "label13";
-            label13.Size = new Size(263, 82);
-            label13.TabIndex = 9;
-            label13.Text = "78000 РЭ";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
+            label10.Dock = DockStyle.Top;
+            label10.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.ButtonFace;
+            label10.Location = new Point(0, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(260, 38);
+            label10.TabIndex = 8;
+            label10.Text = "Ежемесячный платёж";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            label10.Click += label10_Click;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(InterestRateLable);
+            panel13.Controls.Add(label1);
+            panel13.Dock = DockStyle.Left;
+            panel13.Location = new Point(0, 0);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(250, 120);
+            panel13.TabIndex = 0;
+            // 
+            // InterestRateLable
+            // 
+            InterestRateLable.Dock = DockStyle.Fill;
+            InterestRateLable.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+            InterestRateLable.ForeColor = SystemColors.ButtonFace;
+            InterestRateLable.Location = new Point(0, 38);
+            InterestRateLable.Name = "InterestRateLable";
+            InterestRateLable.Size = new Size(250, 82);
+            InterestRateLable.TabIndex = 8;
+            InterestRateLable.Text = "10,9%";
+            InterestRateLable.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(250, 38);
+            label1.TabIndex = 7;
+            label1.Text = "Процентная ставка";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Mortgage
             // 
@@ -621,9 +624,9 @@
             panel8.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel13.ResumeLayout(false);
-            panel14.ResumeLayout(false);
             panel15.ResumeLayout(false);
+            panel14.ResumeLayout(false);
+            panel13.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

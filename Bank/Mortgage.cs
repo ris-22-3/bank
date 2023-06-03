@@ -43,8 +43,8 @@ namespace WinFormsTest
             bPaymentShedule.Enabled = true;
             MortgageCalculation customer = new MortgageCalculation();
             customer.RealEstateType = cbApartmentType.Text;
-            customer.RealEstatePrice = tbPrice.Value;
-            customer.InitialFee = tbInitialFee.Value;
+            customer.RealEstatePrice = tbPrice.Value * 100000;
+            customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
             customer.Term = tbTerm.Value;
             label8.Text = customer.ToString();
 
@@ -53,6 +53,7 @@ namespace WinFormsTest
         private void tbPrice_Scroll(object sender, EventArgs e)
         {
             double price = (double)tbPrice.Value * 100000;
+            double initialFee = price * tbInitialFee.Value / 100;
 
             if (price / 1000 < 1000)
             {
@@ -63,14 +64,32 @@ namespace WinFormsTest
                 lPrice.Text = (price / 1000000) + " млн. ₽";
             }
 
+            if (initialFee / 1000 < 1000)
+            {
+                lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
+            }
+            else
+            {
+                lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
+            }
+
+
 
 
         }
 
         private void tbInitialFee_Scroll(object sender, EventArgs e)
         {
-            double price = (double)tbInitialFee.Value * 10000;
-            if (price / 1000 < 1000) lInitialFee.Text = (price / 1000) + " тыс. ₽";
+            double price = (double)tbPrice.Value * 100000;
+            double initialFee = price * tbInitialFee.Value / 100;
+            if (initialFee / 1000 < 1000)
+            {
+                lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
+            }
+            else
+            {
+                lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
+            }
 
         }
 
@@ -88,6 +107,16 @@ namespace WinFormsTest
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lInitialFee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
