@@ -18,25 +18,30 @@ namespace Bank
             InitializeComponent();
             Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
             FillTable();
+            dataGridView.Refresh();
         }
         public void FillTable()
         {
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.user.rub.history.Count; i++)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                string dateStr = Objects.user.rub.history[i].date.Day.ToString() + "." + Objects.user.rub.history[i].date.Month + "." + Objects.user.rub.history[i].date.Year.ToString();
-
-                DataGridViewCell date = new DataGridViewTextBoxCell();
-                date.Value = dateStr;
-                DataGridViewCell sum = new DataGridViewTextBoxCell();
-                sum.Value = Objects.user.rub.history[i].sum.ToString();
-                DataGridViewCell type = new DataGridViewTextBoxCell();
-                type.Value = Objects.user.rub.history[i].type;
-                row.Cells.AddRange(date, sum, type);
+                DataGridViewRow row = AddRow(Objects.user.rub.history[i]);
                 rows.Add(row);
             }
             dataGridView.Rows.AddRange(rows.ToArray());
+        }
+        public DataGridViewRow AddRow(Operation op)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            string dateStr = op.date.Day.ToString() + "." + op.date.Month + "." + op.date.Year.ToString();
+            DataGridViewCell date = new DataGridViewTextBoxCell();
+            date.Value = dateStr;
+            DataGridViewCell sum = new DataGridViewTextBoxCell();
+            sum.Value = op.sum.ToString();
+            DataGridViewCell type = new DataGridViewTextBoxCell();
+            type.Value = op.type;
+            row.Cells.AddRange(date, sum, type);
+            return row;
         }
         private void button_500rub_Click(object sender, EventArgs e)
         {
@@ -61,12 +66,13 @@ namespace Bank
         private void BackButton_Click(object sender, EventArgs e)
         {
             Close();
-            new WelcomeForm().ShowDialog();
+            new WelcomeForm().Show();
         }
 
         private void takeCash_Button_Click(object sender, EventArgs e)
         {
             TakeCash();
+            dataGridView.Refresh();
         }
         public static int ToInt(string toint, int defaultValue = 0)
         {
@@ -78,6 +84,7 @@ namespace Bank
         private void addCash_Button_Click(object sender, EventArgs e)
         {
             AddCash();
+            dataGridView.Refresh();
         }
 
         private void sumBox_Click(object sender, EventArgs e)
@@ -96,23 +103,32 @@ namespace Bank
                 Operation add = new Operation(sum, true, "rub", "Другое", "Внесение наличных", DateTime.Now);
                 Objects.user.rub.Balance += sum;
                 Objects.user.rub.Add(add, true);
+                Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                dataGridView.Rows.Add(AddRow(add));
             }
             sumBox.Text = default;
         }
         private void TakeCash()
         {
             int sum = ToInt(sumBox.Text);
-            if (sum <= 0)
-                MessageBox.Show("Вводите значения только больше нуля");
-            //if (sumBox.Text == "" || sumBox.Text == " ")
-            //    
+            if (sum <= 0 || Objects.user.rub.Balance - sum < 0 || sumBox.Text == "" || sumBox.Text == " ")
+            {
+                if (sum <= 0)
+                    MessageBox.Show("Вводите значения только больше нуля");
+                if (Objects.user.rub.Balance - sum < 0)
+                    MessageBox.Show("Недостаточно средств для выполнения операции");
+                if (sumBox.Text == "" || sumBox.Text == " ")
+                    MessageBox.Show("Введите сумму или выберите одну из предложенных");
+            }
             else
             {
                 Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
                 Objects.user.rub.Balance -= sum;
                 Objects.user.rub.Add(add, true);
+                Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                dataGridView.Rows.Add(AddRow(add));
             }
             sumBox.Text = default;
         }
