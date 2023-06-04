@@ -67,12 +67,10 @@ namespace Bank
                 {
                     if (Database.arr[i].cardNumber == loginUser && Database.arr[i].password == passUser)
                     {
-                        Hide();
-                        Show();
+                        this.Hide();
                         isRight = true;
                         Objects.user = Database.arr[i];
                         new WelcomeForm().ShowDialog();
-                        Close();
                     }
                 }
                 if (!isRight)

@@ -11,51 +11,65 @@ namespace Bank
             label3.Text = Objects.user.name + " " + Objects.user.surname;
             label5.Text = Objects.user.rub.Balance.ToString();
             FillTable();
+            dataGridView_all.Refresh();
         }
         public void FillTable()
         {
+            dataGridView_all.Rows.Clear();
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.user.history.Count; i++)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                string dateStr = Objects.user.history[i].date.Day.ToString() + "." + Objects.user.history[i].date.Month + "." + Objects.user.history[i].date.Year.ToString();
-                DataGridViewCell date = new DataGridViewTextBoxCell();
-                date.Value = dateStr;
-                DataGridViewCell sum = new DataGridViewTextBoxCell();
-                sum.Value = Objects.user.history[i].sum.ToString();
-                DataGridViewCell type = new DataGridViewTextBoxCell();
-                type.Value = Objects.user.history[i].type;
-                row.Cells.AddRange(date, sum, type);
+                DataGridViewRow row = AddRow(Objects.user.history[i]);
                 rows.Add(row);
             }
+            rows.Reverse();
             dataGridView_all.Rows.AddRange(rows.ToArray());
-            dataGridView_all.Sort(new SortByData());
         }
-        private void ATMButton_Click(object sender, EventArgs e)
+        public DataGridViewRow AddRow(Operation op)
         {
-            ATMForm aTMForm = new ATMForm();
-            aTMForm.Show();
+            DataGridViewRow row = new DataGridViewRow();
+            string day = "";
+            if (op.date.Day < 10)
+                day = "0";
+            day += op.date.Day.ToString();
+            string month = "";
+            if (op.date.Month < 10)
+                month = "0";
+            month += op.date.Month.ToString();
+            string dateStr = day + "." + month + "." + op.date.Year.ToString();
+            DataGridViewCell date = new DataGridViewTextBoxCell();
+            date.Value = dateStr;
+            DataGridViewCell sum = new DataGridViewTextBoxCell();
+            sum.Value = op.sum.ToString();
+            DataGridViewCell type = new DataGridViewTextBoxCell();
+            type.Value = op.type;
+            row.Cells.AddRange(date, sum, type);
+            return row;
         }
         private void MyAccountsButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CurrencyAccount curencyAccounts = new CurrencyAccount();
             curencyAccounts.Show();
         }
 
         private void MortgageButton_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             Mortgage mortgageForm = new Mortgage();
             mortgageForm.Show();
         }
 
         private void StatisticButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.Show();
         }
 
         private void ATMButton_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             ATMForm aTMForm = new ATMForm();
             aTMForm.Show();
         }

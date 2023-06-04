@@ -14,7 +14,6 @@ namespace Bank
     {
         public ATMForm()
         {
-
             InitializeComponent();
             Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
             FillTable();
@@ -22,18 +21,28 @@ namespace Bank
         }
         public void FillTable()
         {
+            dataGridView.Rows.Clear();
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.user.rub.history.Count; i++)
             {
                 DataGridViewRow row = AddRow(Objects.user.rub.history[i]);
                 rows.Add(row);
             }
+            rows.Reverse();
             dataGridView.Rows.AddRange(rows.ToArray());
         }
         public DataGridViewRow AddRow(Operation op)
         {
             DataGridViewRow row = new DataGridViewRow();
-            string dateStr = op.date.Day.ToString() + "." + op.date.Month + "." + op.date.Year.ToString();
+            string day = "";
+            if (op.date.Day < 10)
+                day = "0";
+            day += op.date.Day.ToString();
+            string month = "";
+            if (op.date.Month < 10)
+                month = "0";
+            month += op.date.Month.ToString();
+            string dateStr = day + "." + month + "." + op.date.Year.ToString();
             DataGridViewCell date = new DataGridViewTextBoxCell();
             date.Value = dateStr;
             DataGridViewCell sum = new DataGridViewTextBoxCell();
@@ -72,19 +81,21 @@ namespace Bank
         private void takeCash_Button_Click(object sender, EventArgs e)
         {
             TakeCash();
-            dataGridView.Refresh();
+            FillTable();
         }
         public static int ToInt(string toint, int defaultValue = 0)
         {
             int n = defaultValue;
             bool isInt = int.TryParse(toint, out n);
+            if (n >= int.MaxValue)
+                n = int.MaxValue - 1;
             return n;
         }
 
         private void addCash_Button_Click(object sender, EventArgs e)
         {
             AddCash();
-            dataGridView.Refresh();
+            FillTable();
         }
 
         private void sumBox_Click(object sender, EventArgs e)
@@ -105,7 +116,6 @@ namespace Bank
                 Objects.user.rub.Add(add, true);
                 Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
-                dataGridView.Rows.Add(AddRow(add));
             }
             sumBox.Text = default;
         }
@@ -116,6 +126,8 @@ namespace Bank
             {
                 if (sum <= 0)
                     MessageBox.Show("Вводите значения только больше нуля");
+                if (sum == int.MaxValue)
+                    MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
                 if (Objects.user.rub.Balance - sum < 0)
                     MessageBox.Show("Недостаточно средств для выполнения операции");
                 if (sumBox.Text == "" || sumBox.Text == " ")
@@ -128,7 +140,6 @@ namespace Bank
                 Objects.user.rub.Add(add, true);
                 Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
-                dataGridView.Rows.Add(AddRow(add));
             }
             sumBox.Text = default;
         }
