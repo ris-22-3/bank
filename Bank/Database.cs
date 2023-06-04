@@ -27,6 +27,7 @@ namespace Bank
             List<string> strs = new List<string>();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             StreamReader rd = new StreamReader(address, Encoding.GetEncoding(1251));
+            //StreamReader rd = new StreamReader(address);
             while (!rd.EndOfStream)
             {
                 string str = rd.ReadLine();
@@ -99,8 +100,9 @@ namespace Bank
                 day = "0";
             day += op.date.Day.ToString();
             string date = day + " " + months[op.date.Month - 1] + " " + op.date.Year.ToString() + " г.";
-            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, date}; 
+            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, date};
             StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true, Encoding.GetEncoding(1251));
+            //StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
             RewriteLine(op.billeType);
@@ -110,7 +112,9 @@ namespace Bank
             int i = 0;
             string tempFile = "UserDataBase" + ".tmp";
             using (StreamReader sr = new StreamReader(address, Encoding.GetEncoding(1251)))
+            //using (StreamReader sr = new StreamReader(address))
             using (StreamWriter sw = new StreamWriter(tempFile, true, Encoding.GetEncoding(1251)))
+            //using (StreamWriter sw = new StreamWriter(tempFile, true))
             {
                 while (!sr.EndOfStream)
                 {
