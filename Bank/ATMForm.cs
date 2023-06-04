@@ -74,8 +74,9 @@ namespace Bank
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Close();
-            new WelcomeForm().Show();
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
 
         private void takeCash_Button_Click(object sender, EventArgs e)

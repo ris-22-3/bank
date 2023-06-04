@@ -39,53 +39,50 @@ namespace Bank
             string dateStr = day + "." + month + "." + op.date.Year.ToString();
             DataGridViewCell date = new DataGridViewTextBoxCell();
             date.Value = dateStr;
+            DataGridViewCell billeType = new DataGridViewTextBoxCell();
+            billeType.Value = op.billeType;
             DataGridViewCell sum = new DataGridViewTextBoxCell();
             sum.Value = op.sum.ToString();
             DataGridViewCell type = new DataGridViewTextBoxCell();
             type.Value = op.type;
-            row.Cells.AddRange(date, sum, type);
+            row.Cells.AddRange(date, billeType, sum, type);
             return row;
         }
-        private void MyAccountsButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CurrencyAccount curencyAccounts = new CurrencyAccount();
-            curencyAccounts.Show();
-        }
-
-
-
         private void StatisticButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             StatisticsForm statisticsForm = new StatisticsForm();
-            statisticsForm.Show();
+            statisticsForm.ShowDialog();
+            this.Close();
         }
 
         private void ATMButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ATMForm aTMForm = new ATMForm();
-            aTMForm.Show();
+            aTMForm.ShowDialog();
+            this.Close();
         }
 
         private void MortgageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Mortgage mortgageForm = new Mortgage();
-            mortgageForm.Show();
+            mortgageForm.ShowDialog();
+            this.Close();
         }
 
         private void DepositButton_Click(object sender, EventArgs e)
         {
-
+            //
         }
 
         private void MyAccountsButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             CurrencyAccount curencyAccounts = new CurrencyAccount();
-            curencyAccounts.Show();
+            curencyAccounts.ShowDialog();
+            this.Close();
         }
     }
 }

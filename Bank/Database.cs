@@ -82,7 +82,7 @@ namespace Bank
                         usd.Add(op);
                     if (op.billeType == "rub")
                         rub.Add(op);
-                    else
+                    if (op.billeType == "tg")
                         tenge.Add(op);
                 }
                 rub.Balance = decimal.Parse(ones[6]);

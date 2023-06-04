@@ -71,6 +71,7 @@ namespace Bank
                         isRight = true;
                         Objects.user = Database.arr[i];
                         new WelcomeForm().ShowDialog();
+                        this.Close();
                     }
                 }
                 if (!isRight)
