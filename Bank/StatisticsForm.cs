@@ -53,10 +53,6 @@ namespace Bank
                 e.Graphics.DrawString(tabPage.Text, e.Font, brush, e.Bounds.X + 4, e.Bounds.Y + 4);
             }
         }
-
-
-
-
         private void ShowExpenseChart()
         {
 
@@ -275,7 +271,6 @@ namespace Bank
             }
         }
 
-
         private void Chart_MouseMove(object sender, MouseEventArgs e)
         {
             var chart = (Chart)sender;
@@ -377,6 +372,17 @@ namespace Bank
                     }
 
                     chart1.Series[0].Points.Add(dataPoint);
+                }
+                // Добавление легенды с названиями месяцев
+                Legend legend = new Legend();
+                legend.Docking = Docking.Right;
+                chart1.Legends.Add(legend);
+                foreach (var point in chart1.Series[0].Points)
+                {
+                    int pointIndex = chart1.Series[0].Points.IndexOf(point);
+                    int month = pointIndex + 1;
+                    string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+                    chart1.Series[0].Points[pointIndex].LegendText = $" {monthName}";
                 }
             }
             else
@@ -560,6 +566,7 @@ namespace Bank
         {
             Close();
         }
+
         private void ShowExpenseByCategoryChart()
         {
             // Очистка существующих элементов диаграммы
