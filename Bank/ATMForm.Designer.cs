@@ -178,7 +178,6 @@
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { Data, Sum, Type });
             dataGridView.Location = new Point(3, 3);
             dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowHeadersWidth = 51;
             dataGridView.RowTemplate.Height = 29;

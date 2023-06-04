@@ -36,7 +36,6 @@ namespace Bank
             if (isNew)
                 Database.AddOperation(op); //добавление в файл
             history.Add(op);
-            Objects.user.history.Add(op);
         }
     }
 }

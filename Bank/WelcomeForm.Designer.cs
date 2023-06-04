@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace Bank
+﻿namespace Bank
 {
     partial class WelcomeForm
     {
@@ -52,10 +50,6 @@ namespace Bank
             label7 = new Label();
             panel7 = new Panel();
             label8 = new Label();
-            dataGridView_all = new DataGridView();
-            Date = new DataGridViewTextBoxColumn();
-            Sum = new DataGridViewTextBoxColumn();
-            Type = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -64,7 +58,6 @@ namespace Bank
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_all).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -305,7 +298,6 @@ namespace Bank
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(16, 45, 105);
-            panel7.Controls.Add(dataGridView_all);
             panel7.Controls.Add(label8);
             panel7.Location = new Point(596, 406);
             panel7.Name = "panel7";
@@ -325,47 +317,6 @@ namespace Bank
             label8.TabIndex = 7;
             label8.Text = "Последние операции:";
             label8.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView_all
-            // 
-            dataGridView_all.AllowUserToAddRows = false;
-            dataGridView_all.AllowUserToDeleteRows = false;
-            dataGridView_all.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView_all.BackgroundColor = SystemColors.MenuBar;
-            dataGridView_all.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_all.Columns.AddRange(new DataGridViewColumn[] { Date, Sum, Type });
-            dataGridView_all.Location = new Point(0, 41);
-            dataGridView_all.Name = "dataGridView_all";
-            dataGridView_all.RowHeadersVisible = false;
-            dataGridView_all.ReadOnly = true;
-            dataGridView_all.RowHeadersWidth = 51;
-            dataGridView_all.RowTemplate.Height = 29;
-            dataGridView_all.Size = new Size(427, 179);
-            dataGridView_all.TabIndex = 8;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Дата";
-            Date.MinimumWidth = 6;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 125;
-            // 
-            // Sum
-            // 
-            Sum.HeaderText = "Сумма";
-            Sum.MinimumWidth = 6;
-            Sum.Name = "Sum";
-            Sum.ReadOnly = true;
-            Sum.Width = 125;
-            // 
-            // Type
-            // 
-            Type.HeaderText = "Тип операции";
-            Type.MinimumWidth = 6;
-            Type.Name = "Type";
-            Type.ReadOnly = true;
-            Type.Width = 125;
             // 
             // WelcomeForm
             // 
@@ -389,7 +340,6 @@ namespace Bank
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView_all).EndInit();
             ResumeLayout(false);
         }
 
@@ -416,9 +366,5 @@ namespace Bank
         private Label label7;
         private Panel panel7;
         private Label label8;
-        private DataGridView dataGridView_all;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Sum;
-        private DataGridViewTextBoxColumn Type;
     }
 }

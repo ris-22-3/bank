@@ -44,7 +44,6 @@ namespace Bank
         public static DateTime ToDateTime(string date)
         {
             string[] data = date.Split(' ');
-            // 
             int month = 0 + 1;
             for (int i = 0; i < months.Length; i++)
             {
@@ -95,10 +94,19 @@ namespace Bank
         public static void AddOperation(Operation op)
         {
             string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), op.isIncome.ToString(), op.billeType.ToString(), op.category, op.type, op.date.Day.ToString() + " "+ months[op.date.Month-1] + " " + op.date.Year.ToString() + " г."}; 
-            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", false, Encoding.GetEncoding(1251));
+            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true, Encoding.GetEncoding(1251));
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
             RewriteLine(op.billeType);
+
+            //rd = new StreamWriter("../../../Data/" + address + ".csv", true, Encoding.GetEncoding(1251));
+            //rd.Write(String.Join(";", operation));
+            //rd.WriteLine(String.Join(";", operation));
+            //rd.Close();
+            // изменить в файле UserDataBase баланс при добавлении операции
+            //обернуть в try catch?
+
+            
         }
         private static void RewriteLine(string billeType)
         {
