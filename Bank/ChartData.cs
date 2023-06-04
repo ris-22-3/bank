@@ -8,10 +8,10 @@ namespace Bank
 {
     public class ChartData
     {
-        public double BalanceUSD { get; set; }
-        public double BalanceRUB { get; set; }
-        public double BalanceKZT { get; set; }
-        public double Amount { get; set; }
+        public decimal BalanceUSD { get; set; }
+        public decimal BalanceRUB { get; set; }
+        public decimal BalanceKZT { get; set; }
+        public decimal Amount { get; set; }
         public bool Income { get; set; }
         public string Currency { get; set; }
         public string AccountType { get; set; }
@@ -35,7 +35,7 @@ namespace Bank
                     ChartData data = new ChartData
                     {
                         Date = DateTime.Parse(values[8]),
-                        Amount = double.Parse(values[3]),
+                        Amount = decimal.Parse(values[3]),
                         Income = bool.Parse(values[4]),
                         Currency = values[5],
                         Category = values[6]

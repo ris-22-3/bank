@@ -104,7 +104,7 @@ namespace Bank
             {
                 comboBoxChartType.Location = new Point(221, 48);
                 // Получение данных по месяцам за год
-                Dictionary<int, double> monthData = new Dictionary<int, double>();
+                Dictionary<int, decimal> monthData = new Dictionary<int, decimal>();
 
                 // Инициализация данных по месяцам
                 for (int i = 1; i <= 12; i++)
@@ -123,14 +123,14 @@ namespace Bank
                 }
 
                 // Добавление данных в диаграмму
-                foreach (KeyValuePair<int, double> entry in monthData)
+                foreach (KeyValuePair<int, decimal> entry in monthData)
                 {
                     int month = entry.Key;
-                    double amount = entry.Value;
+                    decimal amount = entry.Value;
 
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
-                    dataPoint.YValues = new double[] { amount };
+                    dataPoint.YValues = new double[] {(double) amount };
 
                     // Задание цвета столбца
                     int colorIndex = month - 1; // Индекс цвета соответствует номеру месяца (1 - январь, 2 - февраль и т.д.)
@@ -171,7 +171,7 @@ namespace Bank
                     {
                         DataPoint dataPoint = new DataPoint();
                         dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
-                        dataPoint.YValues = new double[] { data.Amount };
+                        dataPoint.YValues = new double[] {(double) data.Amount };
 
                         // Задание цвета столбца
                         int colorIndex = data.Date.Day - 1; // Индекс цвета соответствует номеру дня в месяце (1 - первый день, 2 - второй день и т.д.)
@@ -343,7 +343,7 @@ namespace Bank
             {
                 comboBoxChartType1.Location = new Point(221, 48);
                 // Получение данных по месяцам за год
-                Dictionary<int, double> monthData = new Dictionary<int, double>();
+                Dictionary<int, decimal> monthData = new Dictionary<int, decimal>();
 
                 // Инициализация данных по месяцам
                 for (int i = 1; i <= 12; i++)
@@ -362,12 +362,12 @@ namespace Bank
                 }
 
                 // Добавление данных в диаграмму
-                foreach (KeyValuePair<int, double> entry in monthData)
+                foreach (KeyValuePair<int, decimal> entry in monthData)
                 {
                     string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(entry.Key);
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = monthName;
-                    dataPoint.YValues = new double[] { entry.Value };
+                    dataPoint.YValues = new double[] {(double) entry.Value };
 
                     // Задание цвета столбца
                     int colorIndex = entry.Key - 1;
@@ -396,7 +396,7 @@ namespace Bank
                     {
                         DataPoint dataPoint = new DataPoint();
                         dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
-                        dataPoint.YValues = new double[] { data.Amount };
+                        dataPoint.YValues = new double[] {(double) data.Amount };
 
                         // Задание цвета столбца
                         int colorIndex = data.Date.Day - 1; // Индекс цвета соответствует номеру дня в месяце (1 - первый день, 2 - второй день и т.д.)
@@ -606,7 +606,7 @@ namespace Bank
             {
                 comboBoxChartType2.Location = new Point(221, 48);
                 // Получение данных по типам расходов за год
-                Dictionary<string, double> expenseData = new Dictionary<string, double>();
+                Dictionary<string, decimal> expenseData = new Dictionary<string, decimal>();
 
                 // Инициализация данных по типам расходов
                 foreach (ChartData data in chartData)
@@ -622,11 +622,11 @@ namespace Bank
 
                 // Добавление данных в диаграмму
                 int colorIndex = 0;
-                foreach (KeyValuePair<string, double> entry in expenseData)
+                foreach (KeyValuePair<string, decimal> entry in expenseData)
                 {
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = entry.Key;
-                    dataPoint.YValues = new double[] { entry.Value };
+                    dataPoint.YValues = new double[] {(double) entry.Value };
 
                     // Задание цвета столбца
                     dataPoint.Color = columnColors[colorIndex];
@@ -651,7 +651,7 @@ namespace Bank
                 bool hasDataForSelectedMonth = false;
                 int colorIndex = 0;
                 // Добавление данных в диаграмму
-                Dictionary<string, double> expenseData = new Dictionary<string, double>();
+                Dictionary<string, decimal> expenseData = new Dictionary<string, decimal>();
                 foreach (ChartData data in chartData)
                 {
                     bool isInSelectedMonth = data.Date.Month == selectedMonth;
@@ -667,11 +667,11 @@ namespace Bank
                 }
 
                 // Добавление данных в диаграмму
-                foreach (KeyValuePair<string, double> entry in expenseData)
+                foreach (KeyValuePair<string, decimal> entry in expenseData)
                 {
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = entry.Key;
-                    dataPoint.YValues = new double[] { entry.Value };
+                    dataPoint.YValues = new double[] {(double) entry.Value };
 
                     // Задание цвета столбца
                     dataPoint.Color = columnColors[colorIndex];
