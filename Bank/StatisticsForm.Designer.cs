@@ -335,6 +335,7 @@
             this.label2.Size = new System.Drawing.Size(226, 58);
             this.label2.TabIndex = 2;
             this.label2.Text = "HSE Bank";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
