@@ -12,43 +12,74 @@ namespace Bank
 {
     public partial class CurrencyAccount : Form
     {
+        public static bool _isCurAccUsd;
+        public static bool _isCurAccTng;
+        public static string _c;
         public CurrencyAccount()
         {
             InitializeComponent();
             BalanceRub.Text = Objects.user.rub.Balance.ToString() + " ₽";
+
+            if (CurencyAccounts.currencyAccountTng == true)
+            {
+                transferTngButton.Visible = true;
+                historyTngButton.Visible = true;
+                openTngButton.Visible = false;
+                openTngButton.Enabled = true;
+                label10.Visible = true;
+            }
+            if (CurencyAccounts.currencyAccountUsd == true)
+            {
+                transferUsdButton.Visible = true;
+                historyUsdButton.Visible = true;
+                openUsdButton.Visible = false;
+                openUsdButton.Enabled = true;
+                label8.Visible = true;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//Кнопка назад
         {
-            WelcomeForm welcomeForm = new WelcomeForm();
-            welcomeForm.Show();
-            Close();
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)//Кнопка назад HSE
         {
-            WelcomeForm welcomeForm = new WelcomeForm();
-            welcomeForm.Show();
-            Close();
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
         private void openTngButton_Click(object sender, EventArgs e)
         {
+
+            if(CurencyAccounts.currencyAccountTng == false)
+            {
             transferTngButton.Visible = true;
             historyTngButton.Visible = true;
             openTngButton.Visible = false;
             openTngButton.Enabled = true;
             label10.Visible = true;
-
+            CurencyAccounts.currencyAccountTng = true;
+                _isCurAccTng = true;
+                Database.RewriteLine("tg");
+            }
         }
 
         private void openUsdButton_Click(object sender, EventArgs e)
         {
-            transferUsdButton.Visible = true;
-            historyUsdButton.Visible = true;
-            openUsdButton.Visible = false;
-            openUsdButton.Enabled = true;
-            label8.Visible = true;
-
+            if (CurencyAccounts.currencyAccountUsd == false)
+            {
+                transferUsdButton.Visible = true;
+                historyUsdButton.Visible = true;
+                openUsdButton.Visible = false;
+                openUsdButton.Enabled = true;
+                label8.Visible = true;
+                CurencyAccounts.currencyAccountUsd = true;
+                _isCurAccUsd = true;
+                Database.RewriteLine("USD");
+            }
         }
     }
 }

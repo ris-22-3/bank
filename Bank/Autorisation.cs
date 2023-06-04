@@ -14,6 +14,7 @@ namespace Bank
 {
     public partial class Autorisation : Form
     {
+        public static int clientNumber;
         public Autorisation()
         {
             InitializeComponent();
@@ -55,6 +56,7 @@ namespace Bank
             string loginUser = LoginField.Text;
             string passUser = PasswordField.Text;
             Database d = new Database();
+            clientNumber = Objects.user.clientNumber;
             if (!Database.logins.Contains(loginUser))
             {
                 MessageBox.Show("Пользователя с такими данными не существует");
@@ -70,6 +72,8 @@ namespace Bank
                         this.Hide();
                         isRight = true;
                         Objects.user = Database.arr[i];
+                        clientNumber = Objects.user.clientNumber;
+                        d.Read();
                         new WelcomeForm().ShowDialog();
                         this.Close();
                     }

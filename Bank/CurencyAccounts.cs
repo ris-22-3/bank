@@ -10,7 +10,8 @@ namespace Bank
     public class CurencyAccounts
     {
         public decimal Balance;
-        
+        public static bool currencyAccountUsd;
+        public static bool currencyAccountTng;
         public List<Operation> income;
         public List<Operation> costs;
         public List<Operation> history = new List<Operation>();

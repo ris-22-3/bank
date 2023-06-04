@@ -70,7 +70,7 @@ namespace Bank
                 CurencyAccounts rub = new CurencyAccounts();
                 CurencyAccounts usd = new CurencyAccounts();
                 CurencyAccounts tenge = new CurencyAccounts();
-                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
+                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), bool.Parse(ones[12]), bool.Parse(ones[13]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
@@ -92,6 +92,21 @@ namespace Bank
                 logins.Add(Objects.user.cardNumber);
             }
         }
+        public void Read()
+        {
+            List<string> data = ReadFile(address);
+            for (int i = 1; i < data.Count; i++)
+            {
+                string[] ones = data[i].Split(new char[] { ';' });
+                if (ones[0] == "")
+                    break;
+                if (Autorisation.clientNumber == int.Parse(ones[0]))
+                {
+                    CurencyAccounts.currencyAccountUsd = bool.Parse(ones[12]);
+                    CurencyAccounts.currencyAccountTng = bool.Parse(ones[13]);
+                }
+            }
+        }
         public static void AddOperation(Operation op)
         {
             string day = "";
@@ -105,7 +120,7 @@ namespace Bank
             rd.Close();
             RewriteLine(op.billeType);
         }
-        private static void RewriteLine(string billeType)
+        public static void RewriteLine(string billeType)
         {
             int i = 0;
             string tempFile = "UserDataBase" + ".tmp";
@@ -118,12 +133,21 @@ namespace Bank
                     if (Objects.user.clientNumber == i)
                     {
                         string[] ones = line.Split(new char[] { ';' });
+                        if (CurrencyAccount._isCurAccTng == true)
+                        {
+                            ones[13] = CurrencyAccount._isCurAccTng.ToString();
+                        }
+                        if (CurrencyAccount._isCurAccUsd == true)
+                        {
+                            ones[12] = CurrencyAccount._isCurAccUsd.ToString();
+                        }
                         if (billeType == "rub")
                             ones[6] = Objects.user.rub.Balance.ToString();
                         if (billeType == "USD")
                             ones[10] = Objects.user.usd.Balance.ToString();
                         if (billeType == "tg")
                             ones[11] = Objects.user.tenge.Balance.ToString();
+    
                         line = string.Join(";", ones);
                         sw.WriteLine(line);
                     }
