@@ -551,6 +551,8 @@ namespace Bank
 
         private void button1_Click(object sender, EventArgs e)
         {
+            WelcomeForm welcomeForm = new WelcomeForm();
+            welcomeForm.Show();
             Close();
         }
 

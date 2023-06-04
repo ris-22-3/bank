@@ -53,27 +53,39 @@ namespace Bank
             curencyAccounts.Show();
         }
 
-        private void MortgageButton_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Mortgage mortgageForm = new Mortgage();
-            mortgageForm.Show();
-        }
 
-        private void StatisticButton_Click(object sender, EventArgs e)
+
+        private void StatisticButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.Show();
         }
 
-        private void ATMButton_Click_1(object sender, EventArgs e)
+        private void ATMButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ATMForm aTMForm = new ATMForm();
             aTMForm.Show();
         }
 
+        private void MortgageButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mortgage mortgageForm = new Mortgage();
+            mortgageForm.Show();
+        }
 
+        private void DepositButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyAccountsButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            CurrencyAccount curencyAccounts = new CurrencyAccount();
+            curencyAccounts.Show();
+        }
     }
 }
