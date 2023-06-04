@@ -31,9 +31,23 @@ namespace Bank
             welcomeForm.Show();
             Close();
         }
-
-        private void OpenUSD_Click(object sender, EventArgs e)
+        private void openTngButton_Click(object sender, EventArgs e)
         {
+            transferTngButton.Visible = true;
+            historyTngButton.Visible = true;
+            openTngButton.Visible = false;
+            openTngButton.Enabled = true;
+            label10.Visible = true;
+
+        }
+
+        private void openUsdButton_Click(object sender, EventArgs e)
+        {
+            transferUsdButton.Visible = true;
+            historyUsdButton.Visible = true;
+            openUsdButton.Visible = false;
+            openUsdButton.Enabled = true;
+            label8.Visible = true;
 
         }
     }

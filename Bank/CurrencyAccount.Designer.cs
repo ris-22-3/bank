@@ -36,9 +36,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.historyUsdButton = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.transferUsdButton = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.openUsd = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.openUsdButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -55,14 +58,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.transferUsdButton = new System.Windows.Forms.Button();
-            this.historyUsdButton = new System.Windows.Forms.Button();
             this.historyTngButton = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.transferTngButton = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.openTngButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -172,6 +174,23 @@
             this.panel13.Size = new System.Drawing.Size(319, 53);
             this.panel13.TabIndex = 8;
             // 
+            // historyUsdButton
+            // 
+            this.historyUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.historyUsdButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.historyUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.historyUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historyUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.historyUsdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.historyUsdButton.Location = new System.Drawing.Point(0, 0);
+            this.historyUsdButton.Name = "historyUsdButton";
+            this.historyUsdButton.Size = new System.Drawing.Size(317, 51);
+            this.historyUsdButton.TabIndex = 6;
+            this.historyUsdButton.Text = "Просмотреть историю счёта";
+            this.historyUsdButton.UseVisualStyleBackColor = false;
+            this.historyUsdButton.Visible = false;
+            // 
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -181,33 +200,63 @@
             this.panel12.Size = new System.Drawing.Size(319, 53);
             this.panel12.TabIndex = 7;
             // 
+            // transferUsdButton
+            // 
+            this.transferUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.transferUsdButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transferUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transferUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.transferUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transferUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transferUsdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.transferUsdButton.Location = new System.Drawing.Point(0, 0);
+            this.transferUsdButton.Name = "transferUsdButton";
+            this.transferUsdButton.Size = new System.Drawing.Size(317, 51);
+            this.transferUsdButton.TabIndex = 5;
+            this.transferUsdButton.Text = "Перевести деньги на другой счет";
+            this.transferUsdButton.UseVisualStyleBackColor = false;
+            this.transferUsdButton.Visible = false;
+            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.openUsd);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Controls.Add(this.openUsdButton);
             this.panel7.Location = new System.Drawing.Point(3, 44);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(319, 125);
             this.panel7.TabIndex = 6;
             // 
-            // openUsd
+            // label8
             // 
-            this.openUsd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.openUsd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.openUsd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.openUsd.FlatAppearance.BorderSize = 0;
-            this.openUsd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.openUsd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.openUsd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openUsd.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.openUsd.ForeColor = System.Drawing.SystemColors.Control;
-            this.openUsd.Location = new System.Drawing.Point(45, 24);
-            this.openUsd.Name = "openUsd";
-            this.openUsd.Size = new System.Drawing.Size(212, 61);
-            this.openUsd.TabIndex = 4;
-            this.openUsd.Text = "Открыть счёт";
-            this.openUsd.UseVisualStyleBackColor = false;
-            this.openUsd.Click += new System.EventHandler(this.OpenUSD_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(16, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(172, 37);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Ваш баланс:";
+            this.label8.Visible = false;
+            // 
+            // openUsdButton
+            // 
+            this.openUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openUsdButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openUsdButton.FlatAppearance.BorderSize = 0;
+            this.openUsdButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openUsdButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.openUsdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.openUsdButton.Location = new System.Drawing.Point(45, 24);
+            this.openUsdButton.Name = "openUsdButton";
+            this.openUsdButton.Size = new System.Drawing.Size(212, 61);
+            this.openUsdButton.TabIndex = 4;
+            this.openUsdButton.Text = "Открыть счёт";
+            this.openUsdButton.UseVisualStyleBackColor = false;
+            this.openUsdButton.Click += new System.EventHandler(this.openUsdButton_Click);
             // 
             // label4
             // 
@@ -264,6 +313,7 @@
             // historyRubButton
             // 
             this.historyRubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.historyRubButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.historyRubButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historyRubButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.historyRubButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -299,6 +349,7 @@
             // transferRubButton
             // 
             this.transferRubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.transferRubButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transferRubButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transferRubButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.transferRubButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -383,87 +434,10 @@
             this.panel16.Size = new System.Drawing.Size(319, 53);
             this.panel16.TabIndex = 6;
             // 
-            // panel15
-            // 
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Controls.Add(this.transferTngButton);
-            this.panel15.Location = new System.Drawing.Point(3, 175);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(319, 53);
-            this.panel15.TabIndex = 8;
-            // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Location = new System.Drawing.Point(3, 44);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(319, 125);
-            this.panel8.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(52, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 61);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Открыть счёт";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(133, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 29);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "TNG";
-            // 
-            // transferUsdButton
-            // 
-            this.transferUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.transferUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.transferUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.transferUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transferUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transferUsdButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.transferUsdButton.Location = new System.Drawing.Point(0, 0);
-            this.transferUsdButton.Name = "transferUsdButton";
-            this.transferUsdButton.Size = new System.Drawing.Size(317, 51);
-            this.transferUsdButton.TabIndex = 5;
-            this.transferUsdButton.Text = "Перевести деньги на другой счет";
-            this.transferUsdButton.UseVisualStyleBackColor = false;
-            this.transferUsdButton.Visible = false;
-            // 
-            // historyUsdButton
-            // 
-            this.historyUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.historyUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historyUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.historyUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historyUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.historyUsdButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.historyUsdButton.Location = new System.Drawing.Point(0, 0);
-            this.historyUsdButton.Name = "historyUsdButton";
-            this.historyUsdButton.Size = new System.Drawing.Size(317, 51);
-            this.historyUsdButton.TabIndex = 6;
-            this.historyUsdButton.Text = "Просмотреть историю счёта";
-            this.historyUsdButton.UseVisualStyleBackColor = false;
-            // 
             // historyTngButton
             // 
             this.historyTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.historyTngButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.historyTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historyTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.historyTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -475,10 +449,21 @@
             this.historyTngButton.TabIndex = 6;
             this.historyTngButton.Text = "Просмотреть историю счёта";
             this.historyTngButton.UseVisualStyleBackColor = false;
+            this.historyTngButton.Visible = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.transferTngButton);
+            this.panel15.Location = new System.Drawing.Point(3, 175);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(319, 53);
+            this.panel15.TabIndex = 8;
             // 
             // transferTngButton
             // 
             this.transferTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.transferTngButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transferTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transferTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.transferTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -490,6 +475,59 @@
             this.transferTngButton.TabIndex = 6;
             this.transferTngButton.Text = "Перевести деньги на другой счет";
             this.transferTngButton.UseVisualStyleBackColor = false;
+            this.transferTngButton.Visible = false;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Controls.Add(this.openTngButton);
+            this.panel8.Location = new System.Drawing.Point(3, 44);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(319, 125);
+            this.panel8.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(19, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(172, 37);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Ваш баланс:";
+            this.label10.Visible = false;
+            // 
+            // openTngButton
+            // 
+            this.openTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openTngButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openTngButton.FlatAppearance.BorderSize = 0;
+            this.openTngButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openTngButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.openTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openTngButton.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.openTngButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.openTngButton.Location = new System.Drawing.Point(52, 31);
+            this.openTngButton.Name = "openTngButton";
+            this.openTngButton.Size = new System.Drawing.Size(212, 61);
+            this.openTngButton.TabIndex = 5;
+            this.openTngButton.Text = "Открыть счёт";
+            this.openTngButton.UseVisualStyleBackColor = false;
+            this.openTngButton.Click += new System.EventHandler(this.openTngButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(133, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "TNG";
             // 
             // CurrencyAccount
             // 
@@ -512,6 +550,7 @@
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -525,6 +564,7 @@
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -560,11 +600,13 @@
         private Panel panel8;
         private Label label9;
         private Label BalanceRub;
-        private Button openUsd;
-        private Button button1;
+        private Button openUsdButton;
+        private Button openTngButton;
         private Button historyUsdButton;
         private Button transferUsdButton;
         private Button historyTngButton;
         private Button transferTngButton;
+        private Label label8;
+        private Label label10;
     }
 }
