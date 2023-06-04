@@ -115,7 +115,6 @@ namespace Bank
                 Operation add = new Operation(sum, true, "rub", "Другое", "Внесение наличных", DateTime.Now);
                 Objects.user.rub.Balance += sum;
                 Objects.user.rub.Add(add, true);
-                Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
             }
             sumBox.Text = default;
@@ -139,7 +138,6 @@ namespace Bank
                 Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
                 Objects.user.rub.Balance -= sum;
                 Objects.user.rub.Add(add, true);
-                Objects.user.history.Add(add);
                 Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
             }
             sumBox.Text = default;
