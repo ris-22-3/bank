@@ -557,9 +557,9 @@ namespace Bank
 
         private void button1_Click(object sender, EventArgs e)
         {
-            WelcomeForm welcomeForm = new WelcomeForm();
-            welcomeForm.Show();
-            Close();
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -649,6 +649,17 @@ namespace Bank
                         colorIndex = 0;
                     }
                 }
+                // Добавление легенды с названиями месяцев
+                Legend legend = new Legend();
+                legend.Docking = Docking.Right;
+                chart2.Legends.Add(legend);
+                foreach (var point in chart2.Series[0].Points)
+                {
+                    int pointIndex = chart2.Series[0].Points.IndexOf(point);
+                    int month = pointIndex + 1;
+                    string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+                    chart2.Series[0].Points[pointIndex].LegendText = $" {monthName}";
+                }
             }
             else
             {
@@ -706,6 +717,17 @@ namespace Bank
                     label.BringToFront();
                     panelCharts2.AutoScroll = true;
                 }
+                // Добавление легенды с датами в формате "дд месяц"
+                Legend legend = new Legend();
+                legend.Docking = Docking.Right;
+                chart2.Legends.Add(legend);
+                foreach (var point in chart2.Series[0].Points)
+                {
+                    int pointIndex = chart2.Series[0].Points.IndexOf(point);
+                    string type = point.AxisLabel;
+
+                    chart2.Series[0].Points[pointIndex].LegendText = type;
+                }
             }
 
             // Настройка типа диаграммы
@@ -752,7 +774,9 @@ namespace Bank
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
     }
 }

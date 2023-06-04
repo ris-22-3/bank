@@ -145,6 +145,7 @@
             // 
             // comboBoxPeriodType
             // 
+            this.comboBoxPeriodType.BackColor = System.Drawing.SystemColors.Window;
             this.comboBoxPeriodType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBoxPeriodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPeriodType.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
