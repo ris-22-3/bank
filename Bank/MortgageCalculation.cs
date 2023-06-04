@@ -29,23 +29,26 @@ namespace WinFormsTest
         public  double FindPercent() 
         {
             double percent;
-            if (RealEstateType == "Дом")
-            {
-                percent = 9.4;
-            }
-            else percent = 10.2;
-            if (RealEstatePrice * 0.2 < InitialFee) 
-            {
-                percent += 1;
-            }
+
+            // Минимальная процентная ставка в зависимости от типа недвижимости
+            if (RealEstateType == "Коммерческая недвижимость") percent = 12.4;
+            if (RealEstateType == "Гараж") percent = 11.4;
+            else percent = 5.7;
+
+            // Расчёт добавочных процентов
             return percent;
         }
 
         public double FindMonthlyPayment() 
         {
-            double monthlyPayment = (RealEstatePrice - InitialFee) / (Term * 12);
+            double monthlyPayment = Math.Round(((RealEstatePrice += RealEstatePrice * (this.FindPercent() / 100)) - InitialFee) / (Term * 12));
             return monthlyPayment;
 
+        }
+
+        public double FindNecessaryIncome()
+        {
+            return Math.Round(this.FindMonthlyPayment() * 1.3);
         }
     }
 }

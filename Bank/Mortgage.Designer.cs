@@ -59,10 +59,9 @@
             panel7 = new Panel();
             panel8 = new Panel();
             panel9 = new Panel();
-            label8 = new Label();
             panel1 = new Panel();
             panel15 = new Panel();
-            label13 = new Label();
+            NecessaryIncomeLabel = new Label();
             label11 = new Label();
             panel14 = new Panel();
             MonthlyPaymentLabel = new Label();
@@ -70,6 +69,7 @@
             panel13 = new Panel();
             InterestRateLable = new Label();
             label1 = new Label();
+            dataGridView1 = new DataGridView();
             MainTopPanel.SuspendLayout();
             panel12.SuspendLayout();
             panel11.SuspendLayout();
@@ -89,6 +89,7 @@
             panel15.SuspendLayout();
             panel14.SuspendLayout();
             panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // MainTopPanel
@@ -467,16 +468,6 @@
             panel9.Size = new Size(763, 42);
             panel9.TabIndex = 6;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(698, 252);
-            label8.Name = "label8";
-            label8.Size = new Size(188, 20);
-            label8.TabIndex = 7;
-            label8.Text = "Данные о недвижимсоти:";
-            label8.Click += label8_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(36, 74, 154);
@@ -491,7 +482,7 @@
             // 
             // panel15
             // 
-            panel15.Controls.Add(label13);
+            panel15.Controls.Add(NecessaryIncomeLabel);
             panel15.Controls.Add(label11);
             panel15.Dock = DockStyle.Left;
             panel15.Location = new Point(510, 0);
@@ -499,17 +490,17 @@
             panel15.Size = new Size(263, 120);
             panel15.TabIndex = 2;
             // 
-            // label13
+            // NecessaryIncomeLabel
             // 
-            label13.Dock = DockStyle.Fill;
-            label13.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.ButtonFace;
-            label13.Location = new Point(0, 38);
-            label13.Name = "label13";
-            label13.Size = new Size(263, 82);
-            label13.TabIndex = 9;
-            label13.Text = "0 ₽";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
+            NecessaryIncomeLabel.Dock = DockStyle.Fill;
+            NecessaryIncomeLabel.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
+            NecessaryIncomeLabel.ForeColor = SystemColors.ButtonFace;
+            NecessaryIncomeLabel.Location = new Point(0, 38);
+            NecessaryIncomeLabel.Name = "NecessaryIncomeLabel";
+            NecessaryIncomeLabel.Size = new Size(263, 82);
+            NecessaryIncomeLabel.TabIndex = 9;
+            NecessaryIncomeLabel.Text = "0 ₽";
+            NecessaryIncomeLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -593,12 +584,23 @@
             label1.Text = "Процентная ставка";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(419, 204);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(763, 365);
+            dataGridView1.TabIndex = 9;
+            // 
             // Mortgage
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1182, 653);
+            Controls.Add(dataGridView1);
             Controls.Add(panel1);
-            Controls.Add(label8);
             Controls.Add(panel9);
             Controls.Add(panel7);
             Controls.Add(panel2);
@@ -627,8 +629,8 @@
             panel15.ResumeLayout(false);
             panel14.ResumeLayout(false);
             panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -660,7 +662,6 @@
         private TrackBar tbTerm;
         private TrackBar tbPrice;
         private Button bAccept;
-        private Label label8;
         private Label lTerm;
         private Label label9;
         private Label lPrice;
@@ -672,8 +673,9 @@
         private Label label11;
         private Label label10;
         private Label label1;
-        private Label label13;
+        private Label NecessaryIncomeLabel;
         private Label MonthlyPaymentLabel;
         private Label InterestRateLable;
+        private DataGridView dataGridView1;
     }
 }
