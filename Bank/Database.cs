@@ -94,6 +94,7 @@ namespace Bank
         }
         public static void AddOperation(Operation op)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             string day = "";
             if (op.date.Day < 10)
                 day = "0";
@@ -107,6 +108,7 @@ namespace Bank
         }
         private static void RewriteLine(string billeType)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             int i = 0;
             string tempFile = "UserDataBase" + ".tmp";
             using (StreamReader sr = new StreamReader(address, Encoding.GetEncoding(1251)))
