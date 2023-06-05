@@ -169,7 +169,7 @@
             // lblWatermark1
             // 
             this.lblWatermark1.AutoSize = true;
-            this.lblWatermark1.BackColor = System.Drawing.Color.White;
+            this.lblWatermark1.BackColor = System.Drawing.SystemColors.Control;
             this.lblWatermark1.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblWatermark1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblWatermark1.Location = new System.Drawing.Point(15, 12);
