@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Bank
 {
@@ -16,19 +17,22 @@ namespace Bank
         public Transfers()
         {
             InitializeComponent();
-            //Условия первого комбобокса
-            if (iWillHaveComboBox.SelectedItem == null)
+            iHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
+            iWillHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
+            if (CurrencyAccount.boxValue == "RUB")
             {
-                iHaveComboBox.Items.Clear();
-                iHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
+                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
             }
+            if (CurrencyAccount.boxValue == "USD")
+            {
+                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
+            }
+            if (CurrencyAccount.boxValue == "TNG")
+            {
+                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
+            }
+            
 
-            //Условия второго комбобокса
-            if (iHaveComboBox.SelectedItem == null)
-            {
-                iWillHaveComboBox.Items.Clear();
-                iWillHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
-            }
         }
 
         private void Transfers_Load(object sender, EventArgs e)
@@ -57,18 +61,6 @@ namespace Bank
         {
             if (textBox1.Text == "")
                 lblWatermark.Visible = true;
-        }
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "")
-                lblWatermark1.Visible = false;
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (textBox2.Text == "")
-                lblWatermark1.Visible = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -139,6 +131,178 @@ namespace Bank
                 }
             }
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string text1 = textBox1.Text;
+            textBox2.Text = text1;
+        }
+        string? text;
+        decimal value = 0;
+        decimal conver = 0;
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string? text = textBox1.Text;
+            lblWatermark1.Visible = false;
+            if (text == null)
+            {
+                text = "0";
+                value = 0;
+            }
+            else
+            {
+                if (iHaveComboBox.SelectedItem == "RUB")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "TNG")
+                    {
+                        conver = 5.55M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+
+                    }
+                    if (iWillHaveComboBox.SelectedItem == "USD")
+                    {
+                        conver = 0.012M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+                    }
+                }
+                if (iHaveComboBox.SelectedItem == "USD")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "RUB")
+                    {
+                        conver = 80.80M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+                    }
+                    if (iWillHaveComboBox.SelectedItem == "TNG")
+                    {
+                        conver = 450.49M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+                    }
+                }
+                if (iHaveComboBox.SelectedItem == "TNG")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "RUB")
+                    {
+                        conver = 0.18M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+                    }
+                    if (iWillHaveComboBox.SelectedItem == "USD")
+                    {
+                        conver = 0.0022M;
+                        if (text != null)
+                        { value = decimal.Parse(text) * conver; }
+                    }
+                }
+            }
+            text = Convert.ToString(value);
+            textBox2.Text = text;
+        }
+
+        private void lblWatermark_Click(object sender, EventArgs e)
+        {
+            lblWatermark.Visible = false;
+        }
+
+        private void transferButton_Click(object sender, EventArgs e)
+        {
+
+                if (iHaveComboBox.SelectedItem == "RUB")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "TNG")
+                    {
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "rub", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.rub.Add(add, true);
+
+
+
+                    add = new Operation(value, true, "tenge", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.tenge.Balance += value;
+                    Objects.user.tenge.Add(add, true);
+                }
+                    if (iWillHaveComboBox.SelectedItem == "USD")
+                    {
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "rub", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.rub.Add(add, true);
+
+
+
+                    add = new Operation(value, true, "USD", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.usd.Balance += value;
+                    Objects.user.usd.Add(add, true);
+                }
+                }
+                if (iHaveComboBox.SelectedItem == "USD")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "RUB")
+                    {
+
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.usd.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.usd.Add(add, true);
+
+
+
+
+
+                    add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.rub.Balance += value;
+                    Objects.user.rub.Add(add, true);
+                }
+                    if (iWillHaveComboBox.SelectedItem == "TNG")
+                    {
+
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.usd.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.usd.Add(add, true);
+
+
+
+
+                    add = new Operation(value, true, "tenge", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.tenge.Balance += value;
+                    Objects.user.tenge.Add(add, true);
+                }
+                }
+                if (iHaveComboBox.SelectedItem == "TNG")
+                {
+                    if (iWillHaveComboBox.SelectedItem == "RUB")
+                    {
+
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "tenge", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.tenge.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.tenge.Add(add, true);
+
+
+
+
+                    add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.rub.Balance += value;
+                    Objects.user.rub.Add(add, true);
+
+                }
+                    if (iWillHaveComboBox.SelectedItem == "USD")
+                    {
+
+                    Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "tenge", "Другое", "Выдача наличных", DateTime.Now);
+                    Objects.user.tenge.Balance -= Convert.ToDecimal(textBox1.Text);
+                    Objects.user.tenge.Add(add, true);
+
+
+
+
+                    add = new Operation(value, true, "USD", "Другое", "Пополнение", DateTime.Now);
+                    Objects.user.usd.Balance += value;
+                    Objects.user.usd.Add(add, true);
+                }
+                    
+                }
         }
     }
 }

@@ -142,6 +142,7 @@
             this.lblWatermark.Size = new System.Drawing.Size(33, 37);
             this.lblWatermark.TabIndex = 9;
             this.lblWatermark.Text = "g";
+            this.lblWatermark.Click += new System.EventHandler(this.lblWatermark_Click);
             // 
             // textBox1
             // 
@@ -152,6 +153,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(596, 85);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
@@ -183,10 +185,10 @@
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(596, 83);
             this.textBox2.TabIndex = 8;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // panel3
             // 
@@ -232,6 +234,7 @@
             this.transferButton.TabIndex = 2;
             this.transferButton.Text = "Перевести";
             this.transferButton.UseVisualStyleBackColor = false;
+            this.transferButton.Click += new System.EventHandler(this.transferButton_Click);
             // 
             // Transfers
             // 

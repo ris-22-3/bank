@@ -14,6 +14,7 @@ namespace Bank
     {
         public static bool _isCurAccUsd;
         public static bool _isCurAccTng;
+        public static string boxValue;
         public CurrencyAccount()
         {
             InitializeComponent();
@@ -92,13 +93,15 @@ namespace Bank
 
         private void transferRubButton_Click(object sender, EventArgs e)
         {
+            boxValue = "RUB";
             this.Hide();
             new Transfers().ShowDialog();
-            this.Close();
+            this.Close();   
         }
 
         private void transferUsdButton_Click(object sender, EventArgs e)
         {
+            boxValue = "USD";
             this.Hide();
             new Transfers().ShowDialog();
             this.Close();
@@ -106,6 +109,7 @@ namespace Bank
 
         private void transferTngButton_Click(object sender, EventArgs e)
         {
+            boxValue = "TNG";
             this.Hide();
             new Transfers().ShowDialog();
             this.Close();
