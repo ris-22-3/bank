@@ -14,7 +14,6 @@ namespace Bank
     {
         public static bool _isCurAccUsd;
         public static bool _isCurAccTng;
-        public static string _c;
         public CurrencyAccount()
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace Bank
                 openTngButton.Visible = false;
                 openTngButton.Enabled = true;
                 label10.Visible = true;
+                balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             }
             if (CurencyAccounts.currencyAccountUsd == true)
             {
@@ -35,6 +35,7 @@ namespace Bank
                 openUsdButton.Visible = false;
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
+                balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
             }
         }
 
@@ -61,9 +62,10 @@ namespace Bank
             openTngButton.Visible = false;
             openTngButton.Enabled = true;
             label10.Visible = true;
+            balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             CurencyAccounts.currencyAccountTng = true;
-                _isCurAccTng = true;
-                Database.RewriteLine("tg");
+            _isCurAccTng = true;
+            Database.RewriteLine("tg");
             }
         }
 
@@ -76,10 +78,37 @@ namespace Bank
                 openUsdButton.Visible = false;
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
+                balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
                 CurencyAccounts.currencyAccountUsd = true;
                 _isCurAccUsd = true;
                 Database.RewriteLine("USD");
             }
+        }
+
+        private void historyUsdButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transferRubButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Transfers().ShowDialog();
+            this.Close();
+        }
+
+        private void transferUsdButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Transfers().ShowDialog();
+            this.Close();
+        }
+
+        private void transferTngButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Transfers().ShowDialog();
+            this.Close();
         }
     }
 }

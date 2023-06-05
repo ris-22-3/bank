@@ -40,6 +40,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.transferUsdButton = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.balanseUsdLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.openUsdButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.transferTngButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.balanseTngLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.openTngButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -190,6 +192,7 @@
             this.historyUsdButton.Text = "Просмотреть историю счёта";
             this.historyUsdButton.UseVisualStyleBackColor = false;
             this.historyUsdButton.Visible = false;
+            this.historyUsdButton.Click += new System.EventHandler(this.historyUsdButton_Click);
             // 
             // panel12
             // 
@@ -216,16 +219,28 @@
             this.transferUsdButton.Text = "Перевести деньги на другой счет";
             this.transferUsdButton.UseVisualStyleBackColor = false;
             this.transferUsdButton.Visible = false;
+            this.transferUsdButton.Click += new System.EventHandler(this.transferUsdButton_Click);
             // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.balanseUsdLabel);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.openUsdButton);
             this.panel7.Location = new System.Drawing.Point(3, 44);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(319, 125);
             this.panel7.TabIndex = 6;
+            // 
+            // balanseUsdLabel
+            // 
+            this.balanseUsdLabel.AutoSize = true;
+            this.balanseUsdLabel.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.balanseUsdLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.balanseUsdLabel.Location = new System.Drawing.Point(16, 65);
+            this.balanseUsdLabel.Name = "balanseUsdLabel";
+            this.balanseUsdLabel.Size = new System.Drawing.Size(0, 37);
+            this.balanseUsdLabel.TabIndex = 7;
             // 
             // label8
             // 
@@ -361,6 +376,7 @@
             this.transferRubButton.TabIndex = 4;
             this.transferRubButton.Text = "Перевести деньги на другой счет";
             this.transferRubButton.UseVisualStyleBackColor = false;
+            this.transferRubButton.Click += new System.EventHandler(this.transferRubButton_Click);
             // 
             // panel6
             // 
@@ -476,16 +492,28 @@
             this.transferTngButton.Text = "Перевести деньги на другой счет";
             this.transferTngButton.UseVisualStyleBackColor = false;
             this.transferTngButton.Visible = false;
+            this.transferTngButton.Click += new System.EventHandler(this.transferTngButton_Click);
             // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.balanseTngLabel);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.openTngButton);
             this.panel8.Location = new System.Drawing.Point(3, 44);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(319, 125);
             this.panel8.TabIndex = 7;
+            // 
+            // balanseTngLabel
+            // 
+            this.balanseTngLabel.AutoSize = true;
+            this.balanseTngLabel.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.balanseTngLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.balanseTngLabel.Location = new System.Drawing.Point(19, 65);
+            this.balanseTngLabel.Name = "balanseTngLabel";
+            this.balanseTngLabel.Size = new System.Drawing.Size(0, 37);
+            this.balanseTngLabel.TabIndex = 7;
             // 
             // label10
             // 
@@ -608,5 +636,7 @@
         private Button transferTngButton;
         private Label label8;
         private Label label10;
+        private Label balanseUsdLabel;
+        private Label balanseTngLabel;
     }
 }
