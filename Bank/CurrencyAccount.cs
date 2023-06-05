@@ -114,5 +114,20 @@ namespace Bank
             new Transfers().ShowDialog();
             this.Close();
         }
+
+        private void closeTngButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeUsdButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void historyRubButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

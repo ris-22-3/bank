@@ -67,9 +67,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.openTngButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.closeUsdButton = new System.Windows.Forms.Button();
+            this.closeTngButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -78,6 +81,7 @@
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -125,7 +129,7 @@
             this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backButton.Font = new System.Drawing.Font("Palatino Linotype", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.backButton.ForeColor = System.Drawing.SystemColors.Control;
             this.backButton.Location = new System.Drawing.Point(0, 0);
             this.backButton.Name = "backButton";
@@ -162,6 +166,8 @@
             // 
             // panel14
             // 
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.closeUsdButton);
             this.panel14.Location = new System.Drawing.Point(3, 293);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(319, 53);
@@ -340,6 +346,7 @@
             this.historyRubButton.TabIndex = 5;
             this.historyRubButton.Text = "Просмотреть историю счёта";
             this.historyRubButton.UseVisualStyleBackColor = false;
+            this.historyRubButton.Click += new System.EventHandler(this.historyRubButton_Click);
             // 
             // panel9
             // 
@@ -436,6 +443,8 @@
             // 
             // panel17
             // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.closeTngButton);
             this.panel17.Location = new System.Drawing.Point(3, 293);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(319, 53);
@@ -557,6 +566,38 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "TNG";
             // 
+            // closeUsdButton
+            // 
+            this.closeUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeUsdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeUsdButton.Location = new System.Drawing.Point(0, 0);
+            this.closeUsdButton.Name = "closeUsdButton";
+            this.closeUsdButton.Size = new System.Drawing.Size(317, 51);
+            this.closeUsdButton.TabIndex = 5;
+            this.closeUsdButton.Text = "Закрыть счёт";
+            this.closeUsdButton.UseVisualStyleBackColor = false;
+            this.closeUsdButton.Click += new System.EventHandler(this.closeUsdButton_Click);
+            // 
+            // closeTngButton
+            // 
+            this.closeTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeTngButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeTngButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeTngButton.Location = new System.Drawing.Point(0, 0);
+            this.closeTngButton.Name = "closeTngButton";
+            this.closeTngButton.Size = new System.Drawing.Size(317, 51);
+            this.closeTngButton.TabIndex = 6;
+            this.closeTngButton.Text = "Закрыть счёт";
+            this.closeTngButton.UseVisualStyleBackColor = false;
+            this.closeTngButton.Click += new System.EventHandler(this.closeTngButton_Click);
+            // 
             // CurrencyAccount
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -575,6 +616,7 @@
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -589,6 +631,7 @@
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -638,5 +681,7 @@
         private Label label10;
         private Label balanseUsdLabel;
         private Label balanseTngLabel;
+        private Button closeUsdButton;
+        private Button closeTngButton;
     }
 }
