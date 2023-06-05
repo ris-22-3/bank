@@ -36,17 +36,20 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.currencyTypeComboBox = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType = new System.Windows.Forms.ComboBox();
             this.panelCharts = new System.Windows.Forms.Panel();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.currencyTypeComboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType1 = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth1 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType1 = new System.Windows.Forms.ComboBox();
             this.panelCharts1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.currencyTypeComboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType2 = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth2 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType2 = new System.Windows.Forms.ComboBox();
@@ -107,6 +110,7 @@
             // 
             this.tabPage3.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.currencyTypeComboBox);
             this.tabPage3.Controls.Add(this.comboBoxChartType);
             this.tabPage3.Controls.Add(this.comboBoxMonth);
             this.tabPage3.Controls.Add(this.comboBoxPeriodType);
@@ -118,6 +122,23 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // currencyTypeComboBox
+            // 
+            this.currencyTypeComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.currencyTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyTypeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.currencyTypeComboBox.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.currencyTypeComboBox.FormattingEnabled = true;
+            this.currencyTypeComboBox.Items.AddRange(new object[] {
+            "РУБ",
+            "USD",
+            "ТГ"});
+            this.currencyTypeComboBox.Location = new System.Drawing.Point(1083, 0);
+            this.currencyTypeComboBox.Name = "currencyTypeComboBox";
+            this.currencyTypeComboBox.Size = new System.Drawing.Size(78, 35);
+            this.currencyTypeComboBox.TabIndex = 4;
+            this.currencyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyTypeComboBox_SelectedIndexChanged);
             // 
             // comboBoxChartType
             // 
@@ -185,6 +206,7 @@
             // 
             this.tabPage4.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage4.Controls.Add(this.currencyTypeComboBox1);
             this.tabPage4.Controls.Add(this.comboBoxChartType1);
             this.tabPage4.Controls.Add(this.comboBoxMonth1);
             this.tabPage4.Controls.Add(this.comboBoxPeriodType1);
@@ -196,6 +218,23 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // currencyTypeComboBox1
+            // 
+            this.currencyTypeComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.currencyTypeComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyTypeComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.currencyTypeComboBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.currencyTypeComboBox1.FormattingEnabled = true;
+            this.currencyTypeComboBox1.Items.AddRange(new object[] {
+            "РУБ",
+            "USD",
+            "ТГ"});
+            this.currencyTypeComboBox1.Location = new System.Drawing.Point(1083, 0);
+            this.currencyTypeComboBox1.Name = "currencyTypeComboBox1";
+            this.currencyTypeComboBox1.Size = new System.Drawing.Size(78, 35);
+            this.currencyTypeComboBox1.TabIndex = 5;
+            this.currencyTypeComboBox1.SelectedIndexChanged += new System.EventHandler(this.currencyTypeComboBox1_SelectedIndexChanged);
             // 
             // comboBoxChartType1
             // 
@@ -245,6 +284,7 @@
             // 
             this.tabPage2.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.currencyTypeComboBox2);
             this.tabPage2.Controls.Add(this.comboBoxChartType2);
             this.tabPage2.Controls.Add(this.comboBoxMonth2);
             this.tabPage2.Controls.Add(this.comboBoxPeriodType2);
@@ -256,6 +296,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // currencyTypeComboBox2
+            // 
+            this.currencyTypeComboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.currencyTypeComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyTypeComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.currencyTypeComboBox2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.currencyTypeComboBox2.FormattingEnabled = true;
+            this.currencyTypeComboBox2.Items.AddRange(new object[] {
+            "РУБ",
+            "USD",
+            "ТГ"});
+            this.currencyTypeComboBox2.Location = new System.Drawing.Point(1096, 0);
+            this.currencyTypeComboBox2.Name = "currencyTypeComboBox2";
+            this.currencyTypeComboBox2.Size = new System.Drawing.Size(78, 35);
+            this.currencyTypeComboBox2.TabIndex = 6;
+            this.currencyTypeComboBox2.SelectedIndexChanged += new System.EventHandler(this.currencyTypeComboBox2_SelectedIndexChanged);
             // 
             // comboBoxChartType2
             // 
@@ -400,5 +457,8 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
+        private ComboBox currencyTypeComboBox;
+        private ComboBox currencyTypeComboBox1;
+        private ComboBox currencyTypeComboBox2;
     }
 }
