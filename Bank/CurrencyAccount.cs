@@ -88,7 +88,9 @@ namespace Bank
 
         private void historyUsdButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new HistoryTransfers().ShowDialog();
+            this.Close();
         }
 
         private void transferRubButton_Click(object sender, EventArgs e)
@@ -127,7 +129,16 @@ namespace Bank
 
         private void historyRubButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new HistoryTransfers().ShowDialog();
+            this.Close();
+        }
 
+        private void historyTngButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new HistoryTransfers().ShowDialog();
+            this.Close();
         }
     }
 }

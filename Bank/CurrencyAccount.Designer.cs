@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.closeUsdButton = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.historyUsdButton = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.closeTngButton = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.historyTngButton = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -67,8 +69,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.openTngButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.closeUsdButton = new System.Windows.Forms.Button();
-            this.closeTngButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -172,6 +172,22 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(319, 53);
             this.panel14.TabIndex = 6;
+            // 
+            // closeUsdButton
+            // 
+            this.closeUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeUsdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeUsdButton.Location = new System.Drawing.Point(0, 0);
+            this.closeUsdButton.Name = "closeUsdButton";
+            this.closeUsdButton.Size = new System.Drawing.Size(317, 51);
+            this.closeUsdButton.TabIndex = 5;
+            this.closeUsdButton.Text = "Закрыть счёт";
+            this.closeUsdButton.UseVisualStyleBackColor = false;
+            this.closeUsdButton.Click += new System.EventHandler(this.closeUsdButton_Click);
             // 
             // panel13
             // 
@@ -450,6 +466,22 @@
             this.panel17.Size = new System.Drawing.Size(319, 53);
             this.panel17.TabIndex = 6;
             // 
+            // closeTngButton
+            // 
+            this.closeTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.closeTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeTngButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeTngButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.closeTngButton.Location = new System.Drawing.Point(0, 0);
+            this.closeTngButton.Name = "closeTngButton";
+            this.closeTngButton.Size = new System.Drawing.Size(317, 51);
+            this.closeTngButton.TabIndex = 6;
+            this.closeTngButton.Text = "Закрыть счёт";
+            this.closeTngButton.UseVisualStyleBackColor = false;
+            this.closeTngButton.Click += new System.EventHandler(this.closeTngButton_Click);
+            // 
             // panel16
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -475,6 +507,7 @@
             this.historyTngButton.Text = "Просмотреть историю счёта";
             this.historyTngButton.UseVisualStyleBackColor = false;
             this.historyTngButton.Visible = false;
+            this.historyTngButton.Click += new System.EventHandler(this.historyTngButton_Click);
             // 
             // panel15
             // 
@@ -565,38 +598,6 @@
             this.label5.Size = new System.Drawing.Size(62, 29);
             this.label5.TabIndex = 6;
             this.label5.Text = "TNG";
-            // 
-            // closeUsdButton
-            // 
-            this.closeUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeUsdButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.closeUsdButton.Location = new System.Drawing.Point(0, 0);
-            this.closeUsdButton.Name = "closeUsdButton";
-            this.closeUsdButton.Size = new System.Drawing.Size(317, 51);
-            this.closeUsdButton.TabIndex = 5;
-            this.closeUsdButton.Text = "Закрыть счёт";
-            this.closeUsdButton.UseVisualStyleBackColor = false;
-            this.closeUsdButton.Click += new System.EventHandler(this.closeUsdButton_Click);
-            // 
-            // closeTngButton
-            // 
-            this.closeTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeTngButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeTngButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.closeTngButton.Location = new System.Drawing.Point(0, 0);
-            this.closeTngButton.Name = "closeTngButton";
-            this.closeTngButton.Size = new System.Drawing.Size(317, 51);
-            this.closeTngButton.TabIndex = 6;
-            this.closeTngButton.Text = "Закрыть счёт";
-            this.closeTngButton.UseVisualStyleBackColor = false;
-            this.closeTngButton.Click += new System.EventHandler(this.closeTngButton_Click);
             // 
             // CurrencyAccount
             // 

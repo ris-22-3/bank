@@ -29,28 +29,35 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tngButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.usdButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rubButton = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView_all = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BillType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_all)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.backButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -59,66 +66,21 @@
             this.panel1.Size = new System.Drawing.Size(489, 70);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // backButton
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(0, 76);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(489, 70);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(12, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(150, 64);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(168, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(154, 64);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(328, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(149, 64);
-            this.panel5.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 152);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(489, 384);
-            this.panel6.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(372, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hse Bank";
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(94, 46);
+            this.backButton.TabIndex = 2;
+            this.backButton.Text = "Назад";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -131,65 +93,162 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "История";
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 46);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(372, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hse Bank";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button2
+            // panel2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(27, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 46);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "RUB";
-            this.button2.UseVisualStyleBackColor = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(0, 76);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(489, 70);
+            this.panel2.TabIndex = 1;
             // 
-            // button3
+            // panel5
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(29, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "USD";
-            this.button3.UseVisualStyleBackColor = false;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.tngButton);
+            this.panel5.Location = new System.Drawing.Point(328, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(149, 64);
+            this.panel5.TabIndex = 2;
             // 
-            // button4
+            // tngButton
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(26, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "TNG";
-            this.button4.UseVisualStyleBackColor = false;
+            this.tngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.tngButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.tngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tngButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tngButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.tngButton.Location = new System.Drawing.Point(26, 8);
+            this.tngButton.Name = "tngButton";
+            this.tngButton.Size = new System.Drawing.Size(94, 46);
+            this.tngButton.TabIndex = 3;
+            this.tngButton.Text = "TNG";
+            this.tngButton.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.usdButton);
+            this.panel4.Location = new System.Drawing.Point(168, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(154, 64);
+            this.panel4.TabIndex = 1;
+            // 
+            // usdButton
+            // 
+            this.usdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.usdButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.usdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.usdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usdButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usdButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.usdButton.Location = new System.Drawing.Point(29, 8);
+            this.usdButton.Name = "usdButton";
+            this.usdButton.Size = new System.Drawing.Size(94, 46);
+            this.usdButton.TabIndex = 3;
+            this.usdButton.Text = "USD";
+            this.usdButton.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.rubButton);
+            this.panel3.Location = new System.Drawing.Point(12, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(150, 64);
+            this.panel3.TabIndex = 0;
+            // 
+            // rubButton
+            // 
+            this.rubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.rubButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rubButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.rubButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rubButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rubButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.rubButton.Location = new System.Drawing.Point(27, 8);
+            this.rubButton.Name = "rubButton";
+            this.rubButton.Size = new System.Drawing.Size(94, 46);
+            this.rubButton.TabIndex = 3;
+            this.rubButton.Text = "RUB";
+            this.rubButton.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel6.Controls.Add(this.dataGridView_all);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 152);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(489, 384);
+            this.panel6.TabIndex = 2;
+            // 
+            // dataGridView_all
+            // 
+            this.dataGridView_all.AllowUserToAddRows = false;
+            this.dataGridView_all.AllowUserToDeleteRows = false;
+            this.dataGridView_all.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_all.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dataGridView_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_all.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.BillType,
+            this.Sum,
+            this.Type});
+            this.dataGridView_all.Location = new System.Drawing.Point(31, 3);
+            this.dataGridView_all.Name = "dataGridView_all";
+            this.dataGridView_all.ReadOnly = true;
+            this.dataGridView_all.RowHeadersVisible = false;
+            this.dataGridView_all.RowHeadersWidth = 51;
+            this.dataGridView_all.RowTemplate.Height = 29;
+            this.dataGridView_all.Size = new System.Drawing.Size(427, 369);
+            this.dataGridView_all.TabIndex = 9;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Дата";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // BillType
+            // 
+            this.BillType.HeaderText = "Тип счета";
+            this.BillType.MinimumWidth = 6;
+            this.BillType.Name = "BillType";
+            this.BillType.ReadOnly = true;
+            // 
+            // Sum
+            // 
+            this.Sum.HeaderText = "Сумма";
+            this.Sum.MinimumWidth = 6;
+            this.Sum.Name = "Sum";
+            this.Sum.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Тип операции";
+            this.Type.MinimumWidth = 6;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
             // 
             // HistoryTransfers
             // 
@@ -204,9 +263,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_all)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,9 +282,14 @@
         private Panel panel6;
         private Label label2;
         private Label label1;
-        private Button button1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button backButton;
+        private Button tngButton;
+        private Button usdButton;
+        private Button rubButton;
+        private DataGridView dataGridView_all;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn BillType;
+        private DataGridViewTextBoxColumn Sum;
+        private DataGridViewTextBoxColumn Type;
     }
 }
