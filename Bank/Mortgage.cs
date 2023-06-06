@@ -144,7 +144,12 @@ namespace WinFormsTest
                 _month.Value = x.Month;
                 _payment.Value = x.Payment;
                 _remainder.Value = x.Remainder;
+                row.Cells.Add( _month );
+                row.Cells.Add( _payment );
+                row.Cells.Add( _remainder );
+                dataGridViewRows.Add( row );
             }
+            dgv.Rows.AddRange( dataGridViewRows.ToArray() );
         }
     }
 }
