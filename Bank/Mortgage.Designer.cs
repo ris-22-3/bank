@@ -594,6 +594,7 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(763, 365);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Mortgage
             // 

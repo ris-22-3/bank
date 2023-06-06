@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -121,6 +123,28 @@ namespace WinFormsTest
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        public void PrintDataGrid(List<PaymentShedule> paymentShedules, DataGridView dgv) 
+        {
+            dgv.Rows.Clear();
+            dgv.Columns.Clear();
+            List<DataGridViewRow> dataGridViewRows = new List<DataGridViewRow>();
+            foreach (var x in paymentShedules) 
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                DataGridViewCell _month = new DataGridViewTextBoxCell();
+                DataGridViewCell _payment = new DataGridViewTextBoxCell();
+                DataGridViewCell _remainder = new DataGridViewTextBoxCell();
+                _month.Value = x.Month;
+                _payment.Value = x.Payment;
+                _remainder.Value = x.Remainder;
+            }
         }
     }
 }
