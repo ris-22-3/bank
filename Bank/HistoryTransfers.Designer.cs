@@ -130,16 +130,18 @@
             // 
             this.tngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.tngButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tngButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.tngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tngButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tngButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.tngButton.Location = new System.Drawing.Point(26, 8);
+            this.tngButton.Location = new System.Drawing.Point(0, 0);
             this.tngButton.Name = "tngButton";
-            this.tngButton.Size = new System.Drawing.Size(94, 46);
+            this.tngButton.Size = new System.Drawing.Size(147, 62);
             this.tngButton.TabIndex = 3;
             this.tngButton.Text = "TNG";
             this.tngButton.UseVisualStyleBackColor = false;
+            this.tngButton.Click += new System.EventHandler(this.tngButton_Click);
             // 
             // panel4
             // 
@@ -155,16 +157,19 @@
             // 
             this.usdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.usdButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.usdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.usdButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.usdButton.FlatAppearance.BorderSize = 0;
             this.usdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usdButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.usdButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.usdButton.Location = new System.Drawing.Point(29, 8);
+            this.usdButton.Location = new System.Drawing.Point(0, 0);
             this.usdButton.Name = "usdButton";
-            this.usdButton.Size = new System.Drawing.Size(94, 46);
+            this.usdButton.Size = new System.Drawing.Size(152, 62);
             this.usdButton.TabIndex = 3;
             this.usdButton.Text = "USD";
             this.usdButton.UseVisualStyleBackColor = false;
+            this.usdButton.Click += new System.EventHandler(this.usdButton_Click);
             // 
             // panel3
             // 
@@ -180,16 +185,18 @@
             // 
             this.rubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.rubButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rubButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rubButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
             this.rubButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rubButton.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rubButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.rubButton.Location = new System.Drawing.Point(27, 8);
+            this.rubButton.Location = new System.Drawing.Point(0, 0);
             this.rubButton.Name = "rubButton";
-            this.rubButton.Size = new System.Drawing.Size(94, 46);
+            this.rubButton.Size = new System.Drawing.Size(148, 62);
             this.rubButton.TabIndex = 3;
             this.rubButton.Text = "RUB";
             this.rubButton.UseVisualStyleBackColor = false;
+            this.rubButton.Click += new System.EventHandler(this.rubButton_Click);
             // 
             // panel6
             // 
@@ -260,6 +267,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HistoryTransfers";
             this.Text = "HistoryTransfers";
+            this.Load += new System.EventHandler(this.HistoryTransfers_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -15,6 +15,7 @@ namespace Bank
         public static bool _isCurAccUsd;
         public static bool _isCurAccTng;
         public static string boxValue;
+        public static byte historyRubUsdOrTng;
         public CurrencyAccount()
         {
             InitializeComponent();
@@ -88,6 +89,7 @@ namespace Bank
 
         private void historyUsdButton_Click(object sender, EventArgs e)
         {
+            historyRubUsdOrTng = 2;
             this.Hide();
             new HistoryTransfers().ShowDialog();
             this.Close();
@@ -129,6 +131,7 @@ namespace Bank
 
         private void historyRubButton_Click(object sender, EventArgs e)
         {
+            historyRubUsdOrTng = 1;
             this.Hide();
             new HistoryTransfers().ShowDialog();
             this.Close();
@@ -136,6 +139,7 @@ namespace Bank
 
         private void historyTngButton_Click(object sender, EventArgs e)
         {
+            historyRubUsdOrTng = 3;
             this.Hide();
             new HistoryTransfers().ShowDialog();
             this.Close();
