@@ -7,21 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bank.Classes;
 
 namespace Bank
 {
-    public partial class CurrencyAccount : Form
+    public partial class CurrencyAccountForm : Form
     {
         public static bool _isCurAccUsd;
         public static bool _isCurAccTng;
         public static string boxValue;
         public static byte historyRubUsdOrTng;
-        public CurrencyAccount()
+        public CurrencyAccountForm()
         {
             InitializeComponent();
             BalanceRub.Text = Objects.user.rub.Balance.ToString() + " ₽";
 
-            if (CurencyAccounts.currencyAccountTng == true)
+            if (CurrencyAccount.currencyAccountTng == true)
             {
                 transferTngButton.Visible = true;
                 historyTngButton.Visible = true;
@@ -30,7 +31,7 @@ namespace Bank
                 label10.Visible = true;
                 balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             }
-            if (CurencyAccounts.currencyAccountUsd == true)
+            if (CurrencyAccount.currencyAccountUsd == true)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -57,7 +58,7 @@ namespace Bank
         private void openTngButton_Click(object sender, EventArgs e)
         {
 
-            if(CurencyAccounts.currencyAccountTng == false)
+            if(CurrencyAccount.currencyAccountTng == false)
             {
             transferTngButton.Visible = true;
             historyTngButton.Visible = true;
@@ -65,7 +66,7 @@ namespace Bank
             openTngButton.Enabled = true;
             label10.Visible = true;
             balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
-            CurencyAccounts.currencyAccountTng = true;
+            CurrencyAccount.currencyAccountTng = true;
             _isCurAccTng = true;
             Database.RewriteLine("tg");
             }
@@ -73,7 +74,7 @@ namespace Bank
 
         private void openUsdButton_Click(object sender, EventArgs e)
         {
-            if (CurencyAccounts.currencyAccountUsd == false)
+            if (CurrencyAccount.currencyAccountUsd == false)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -81,7 +82,7 @@ namespace Bank
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
                 balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
-                CurencyAccounts.currencyAccountUsd = true;
+                CurrencyAccount.currencyAccountUsd = true;
                 _isCurAccUsd = true;
                 Database.RewriteLine("USD");
             }

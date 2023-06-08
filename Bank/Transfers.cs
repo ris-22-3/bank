@@ -66,14 +66,14 @@ namespace Bank
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new CurrencyAccount().ShowDialog();
+            new CurrencyAccountForm().ShowDialog();
             this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new CurrencyAccount().ShowDialog();
+            new CurrencyAccountForm().ShowDialog();
             this.Close();
         }
         private void iHaveComboBox_SelectedIndexChanged(object sender, EventArgs e)

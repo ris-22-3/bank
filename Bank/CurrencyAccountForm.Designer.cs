@@ -1,6 +1,6 @@
 ﻿namespace Bank
 {
-    partial class CurrencyAccount
+    partial class CurrencyAccountForm
     {
         /// <summary>
         /// Required designer variable.

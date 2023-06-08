@@ -80,7 +80,7 @@ namespace Bank
         private void MyAccountsButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            CurrencyAccount curencyAccounts = new CurrencyAccount();
+            CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
             curencyAccounts.ShowDialog();
             this.Close();
         }

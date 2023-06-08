@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class CurencyAccounts
+    public class CurrencyAccounts
     {
         public decimal Balance;
         public static bool currencyAccountUsd;
@@ -16,13 +16,13 @@ namespace Bank
         public List<Operation> costs;
         public List<Operation> history = new List<Operation>();
 
-        public CurencyAccounts()
+        public CurrencyAccounts()
         {
             Balance = 0;
             income = new List<Operation>();
             costs = new List<Operation>();
         }
-        public CurencyAccounts(decimal _balance, List<Operation> _incomes, List<Operation> _costs)
+        public CurrencyAccounts(decimal _balance, List<Operation> _incomes, List<Operation> _costs)
         {
             Balance = _balance;
             income = _incomes;

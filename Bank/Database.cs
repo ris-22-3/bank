@@ -67,9 +67,9 @@ namespace Bank
                 if (ones[0] == "")
                     break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-                CurencyAccounts rub = new CurencyAccounts();
-                CurencyAccounts usd = new CurencyAccounts();
-                CurencyAccounts tenge = new CurencyAccounts();
+                CurrencyAccounts rub = new CurrencyAccounts();
+                CurrencyAccounts usd = new CurrencyAccounts();
+                CurrencyAccounts tenge = new CurrencyAccounts();
                 Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), bool.Parse(ones[12]), bool.Parse(ones[13]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
@@ -102,8 +102,8 @@ namespace Bank
                     break;
                 if (Autorisation.clientNumber == int.Parse(ones[0]))
                 {
-                    CurencyAccounts.currencyAccountUsd = bool.Parse(ones[12]);
-                    CurencyAccounts.currencyAccountTng = bool.Parse(ones[13]);
+                    CurrencyAccounts.currencyAccountUsd = bool.Parse(ones[12]);
+                    CurrencyAccounts.currencyAccountTng = bool.Parse(ones[13]);
                 }
             }
         }
