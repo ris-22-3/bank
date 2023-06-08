@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bank.Operation\Bank.Operation.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Data\1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
