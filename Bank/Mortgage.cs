@@ -54,7 +54,7 @@ namespace WinFormsTest
             customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
             customer.Term = tbTerm.Value;
             InterestRateLable.Text = customer.FindPercent().ToString() + "%";
-            MonthlyPaymentLabel.Text = customer.FindMonthlyPayment() + " ₽";
+            MonthlyPaymentLabel.Text = Math.Round(customer.FindMonthlyPayment()) + " ₽";
             NecessaryIncomeLabel.Text = customer.FindNecessaryIncome() + " ₽";
 
         }
@@ -81,10 +81,6 @@ namespace WinFormsTest
             {
                 lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
             }
-
-
-
-
         }
 
         private void tbInitialFee_Scroll(object sender, EventArgs e)
@@ -121,7 +117,7 @@ namespace WinFormsTest
                 decimal remainingPayment = Math.Round(totalPayment - (monthlyPayment * (i + 1)));
                 string monthName = currentDate.AddMonths(i).ToString("MMMM");
                 // добавление строки в таблицу
-                dgv.Rows.Add(monthName, monthlyPayment, remainingPayment);
+                dgv.Rows.Add(monthName, Math.Round(monthlyPayment), Math.Round(remainingPayment));
             }
 
         }
@@ -129,6 +125,21 @@ namespace WinFormsTest
         private void bPaymentShedule_Click(object sender, EventArgs e)
         {
             PrintDataGrid(PaymentSheduleDGV, customer);
+        }
+
+        private void tbPrice_ValueChanged(object sender, EventArgs e)
+        {
+            PaymentSheduleDGV.Rows.Clear();
+        }
+
+        private void tbInitialFee_ValueChanged(object sender, EventArgs e)
+        {
+            PaymentSheduleDGV.Rows.Clear();
+        }
+
+        private void tbTerm_VakueChanged(object sender, EventArgs e) 
+        {
+            PaymentSheduleDGV.Rows.Clear();
         }
     }
 }

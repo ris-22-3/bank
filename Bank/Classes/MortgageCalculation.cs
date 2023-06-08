@@ -42,7 +42,7 @@ namespace WinFormsTest
 
         public decimal FindMonthlyPayment() 
         {
-            decimal monthlyPayment = Math.Round(((RealEstatePrice + RealEstatePrice * (this.FindPercent() / 100)) - InitialFee) / (Term * 12));
+            decimal monthlyPayment = ((RealEstatePrice + RealEstatePrice * (this.FindPercent() / 100)) - InitialFee) / (Term * 12);
             return monthlyPayment;
 
         }

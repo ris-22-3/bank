@@ -313,6 +313,7 @@
             tbInitialFee.TickStyle = TickStyle.TopLeft;
             tbInitialFee.Value = 10;
             tbInitialFee.Scroll += tbInitialFee_Scroll;
+            tbInitialFee.ValueChanged += tbInitialFee_ValueChanged;
             // 
             // label5
             // 
@@ -363,6 +364,7 @@
             tbPrice.TickStyle = TickStyle.TopLeft;
             tbPrice.Value = 5;
             tbPrice.Scroll += tbPrice_Scroll;
+            tbPrice.ValueChanged += tbPrice_ValueChanged;
             // 
             // label4
             // 
