@@ -54,56 +54,7 @@ namespace Bank
                 e.Graphics.DrawString(tabPage.Text, e.Font, brush, e.Bounds.X + 4, e.Bounds.Y + 4);
             }
         }
-        public Dictionary<int, decimal> AddData(List<ChartData> chartData, Dictionary<int, decimal> monthData, string currencyType, bool _isIncome, string selectedYear)
-        {
-            // Суммирование данных по месяцам
-            foreach (ChartData data in chartData)
-            {
-                bool isInSelectedYear = data.Date.Year.ToString() == selectedYear;
-                if (_isIncome)
-                {
-                    if (data.Income && data.Currency == currencyType && isInSelectedYear)
-                    {
-                        int month = data.Date.Month;
-                        monthData[month] += data.Amount;
-                    }
-                }
-                else
-                {
-                    if (!data.Income && data.Currency == currencyType && isInSelectedYear)
-                    {
-                        int month = data.Date.Month;
-                        monthData[month] += data.Amount;
-                    }
-                }
-            }
-            return monthData;
-        }
 
-        public void AddDataMonth(ref List<ChartData> chartData, string currencyType, int selectedMonth,ref Chart chart, ref bool hasDataForSelectedMonth, Color[] columnColors)
-        {
-            // Добавление данных в диаграмму
-            foreach (ChartData data in chartData)
-            {
-                bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                if (!data.Income && data.Currency == currencyType && isInSelectedMonth)
-                {
-                    DataPoint dataPoint = new DataPoint();
-                    dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
-                    dataPoint.YValues = new double[] { (double)data.Amount };
-
-                    // Задание цвета столбца
-                    int colorIndex = data.Date.Day - 1; // Индекс цвета соответствует номеру дня в месяце (1 - первый день, 2 - второй день и т.д.)
-                    if (colorIndex < columnColors.Length)
-                    {
-                        dataPoint.Color = columnColors[colorIndex];
-                    }
-
-                    chart.Series[0].Points.Add(dataPoint);
-                    hasDataForSelectedMonth = true;
-                }
-            }
-        }
         public string GetSelectedCurrencyType(ComboBox comboBox)
         {
             if (comboBox.SelectedIndex == 0)
@@ -180,7 +131,7 @@ namespace Bank
                     monthData[i] = 0;
                 }
 
-                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox), false, selectedYear);
+                monthData = ChartData.AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox), false, selectedYear);
 
                 // Добавление данных в диаграмму
                 foreach (KeyValuePair<int, decimal> entry in monthData)
@@ -412,7 +363,7 @@ namespace Bank
                 }
 
                 // Суммирование данных по месяцам
-                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox1),true, selectedYear);
+                monthData = ChartData.AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox1),true, selectedYear);
 
                 // Добавление данных в диаграмму
                 foreach (KeyValuePair<int, decimal> entry in monthData)
@@ -457,7 +408,7 @@ namespace Bank
                 if (selectedMonthData.Count > 0)
                 {
                     // Добавление данных в диаграмму
-                    AddDataMonth(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox1), selectedMonth, ref chart1, ref hasDataForSelectedMonth, columnColors);
+                    ChartData.AddDataMonth(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox1), selectedMonth, ref chart1, ref hasDataForSelectedMonth, columnColors);
                 }
                 // Проверка наличия данных для выбранного месяца
                 if (!hasDataForSelectedMonth)
@@ -641,23 +592,7 @@ namespace Bank
             }
             return expenseData;
         }
-        public void AddDataMonthByCategory(ref List<ChartData> chartData, string currencyType, int selectedMonth, ref Chart chart, ref bool hasDataForSelectedMonth,ref Dictionary<string, decimal> expenseData)
-        {
-            // Добавление данных в диаграмму
-            foreach (ChartData data in chartData)
-            {
-                bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                if (!data.Income && data.Currency == currencyType && isInSelectedMonth)
-                {
-                    if (!expenseData.ContainsKey(data.Category))
-                        expenseData[data.Category] = 0;
 
-                    expenseData[data.Category] += data.Amount;
-
-                    hasDataForSelectedMonth = true;
-                }
-            }
-        }
         private void ShowExpenseByCategoryChart()
         {
             // Очистка существующих элементов диаграммы
@@ -748,7 +683,7 @@ namespace Bank
                 comboBoxChartType2.Location = new Point(452, 48);
                 // Получение выбранного месяца
                 int selectedMonth = comboBoxMonth2.SelectedIndex + 1;
-                int selectedYear = int.Parse(comboBoxYear1.SelectedValue.ToString());
+                int selectedYear = int.Parse(comboBoxYear2.SelectedValue.ToString());
                 // Проверка наличия данных для выбранного месяца
                 bool hasDataForSelectedMonth = false;
                 int colorIndex = 0;
@@ -759,7 +694,7 @@ namespace Bank
                 // Проверка наличия данных для выбранного месяца
                 if (selectedMonthData.Count > 0)
                 {
-                    AddDataMonthByCategory(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox2), selectedMonth, ref chart2, ref hasDataForSelectedMonth, ref expenseData);
+                    ChartData.AddDataMonthByCategory(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox2), selectedMonth, ref chart2, ref hasDataForSelectedMonth, ref expenseData);
 
                     // Добавление данных в диаграмму
                     foreach (KeyValuePair<string, decimal> entry in expenseData)

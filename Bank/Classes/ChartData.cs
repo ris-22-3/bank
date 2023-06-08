@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Unicode;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Bank
 {
@@ -59,6 +60,72 @@ namespace Bank
             }
 
             return months;
+        }
+        public static void AddDataMonthByCategory(ref List<ChartData> chartData, string currencyType, int selectedMonth, ref Chart chart, ref bool hasDataForSelectedMonth, ref Dictionary<string, decimal> expenseData)
+        {
+            // Добавление данных в диаграмму
+            foreach (ChartData data in chartData)
+            {
+                bool isInSelectedMonth = data.Date.Month == selectedMonth;
+                if (!data.Income && data.Currency == currencyType && isInSelectedMonth)
+                {
+                    if (!expenseData.ContainsKey(data.Category))
+                        expenseData[data.Category] = 0;
+
+                    expenseData[data.Category] += data.Amount;
+
+                    hasDataForSelectedMonth = true;
+                }
+            }
+        }
+        public static void AddDataMonth(ref List<ChartData> chartData, string currencyType, int selectedMonth, ref Chart chart, ref bool hasDataForSelectedMonth, Color[] columnColors)
+        {
+            // Добавление данных в диаграмму
+            foreach (ChartData data in chartData)
+            {
+                bool isInSelectedMonth = data.Date.Month == selectedMonth;
+                if (!data.Income && data.Currency == currencyType && isInSelectedMonth)
+                {
+                    DataPoint dataPoint = new DataPoint();
+                    dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
+                    dataPoint.YValues = new double[] { (double)data.Amount };
+
+                    // Задание цвета столбца
+                    int colorIndex = data.Date.Day - 1; // Индекс цвета соответствует номеру дня в месяце (1 - первый день, 2 - второй день и т.д.)
+                    if (colorIndex < columnColors.Length)
+                    {
+                        dataPoint.Color = columnColors[colorIndex];
+                    }
+
+                    chart.Series[0].Points.Add(dataPoint);
+                    hasDataForSelectedMonth = true;
+                }
+            }
+        }
+        public static Dictionary<int, decimal> AddData(List<ChartData> chartData, Dictionary<int, decimal> monthData, string currencyType, bool _isIncome, string selectedYear)
+        {
+            // Суммирование данных по месяцам
+            foreach (ChartData data in chartData)
+            {
+                bool isInSelectedYear = data.Date.Year.ToString() == selectedYear;
+                if (_isIncome)
+                {
+                    if (data.Income && data.Currency == currencyType && isInSelectedYear)
+                    {
+                        int month = data.Date.Month;
+                        monthData[month] += data.Amount;
+                    }
+                }
+                else
+                {
+                    if (!data.Income && data.Currency == currencyType && isInSelectedYear)
+                    {
+                        int month = data.Date.Month;
+                        monthData[month] += data.Amount;
+                    }
+                }
+            }
+            return monthData;
         }
     }
 
