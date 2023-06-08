@@ -16,6 +16,8 @@ namespace WinFormsTest
 {
     public partial class Mortgage : Form
     {
+        private MortgageCalculation customer;
+
         public Mortgage()
         {
             this.Height = 1200;
@@ -30,8 +32,11 @@ namespace WinFormsTest
             panel4.Height = panel3.Height;
             panel5.Height = panel4.Height;
             panel6.Height = panel5.Height;
-
-
+            // Создание таблицы DataGridView
+            foreach (DataGridViewColumn column in PaymentSheduleDGV.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -39,11 +44,11 @@ namespace WinFormsTest
             Close(); // Изменить (Переход на пред. страницу)
         }
 
-        private void bAccept_Click_1(object sender, EventArgs e)
+        public void bAccept_Click_1(object sender, EventArgs e)
         {
             bApply.Enabled = true;
             bPaymentShedule.Enabled = true;
-            MortgageCalculation customer = new MortgageCalculation();
+            customer = new MortgageCalculation();
             customer.RealEstateType = cbApartmentType.Text;
             customer.RealEstatePrice = tbPrice.Value * 100000;
             customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
@@ -56,8 +61,8 @@ namespace WinFormsTest
 
         private void tbPrice_Scroll(object sender, EventArgs e)
         {
-            double price = (double)tbPrice.Value * 100000;
-            double initialFee = price * tbInitialFee.Value / 100;
+            decimal price = (decimal)tbPrice.Value * 100000;
+            decimal initialFee = price * tbInitialFee.Value / 100;
 
             if (price / 1000 < 1000)
             {
@@ -84,8 +89,8 @@ namespace WinFormsTest
 
         private void tbInitialFee_Scroll(object sender, EventArgs e)
         {
-            double price = (double)tbPrice.Value * 100000;
-            double initialFee = price * tbInitialFee.Value / 100;
+            decimal price = (decimal)tbPrice.Value * 100000;
+            decimal initialFee = price * tbInitialFee.Value / 100;
             if (initialFee / 1000 < 1000)
             {
                 lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
@@ -105,51 +110,25 @@ namespace WinFormsTest
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        public void PrintDataGrid(DataGridView dgv, MortgageCalculation customer)
         {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lInitialFee_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        public void PrintDataGrid(List<PaymentShedule> paymentShedules, DataGridView dgv) 
-        {
-            dgv.Rows.Clear();
-            dgv.Columns.Clear();
-            List<DataGridViewRow> dataGridViewRows = new List<DataGridViewRow>();
-            foreach (var x in paymentShedules) 
+            DateTime currentDate = DateTime.Now; // Получение текущей даты
+            int numberOfMonths = customer.Term * 12;
+            decimal totalPayment = customer.RealEstatePrice + customer.RealEstatePrice * (customer.FindPercent() / 100) - customer.InitialFee;
+            for (int i = 0; i < numberOfMonths; i++)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                DataGridViewCell _month = new DataGridViewTextBoxCell();
-                DataGridViewCell _payment = new DataGridViewTextBoxCell();
-                DataGridViewCell _remainder = new DataGridViewTextBoxCell();
-                _month.Value = x.Month;
-                _payment.Value = x.Payment;
-                _remainder.Value = x.Remainder;
-                row.Cells.Add( _month );
-                row.Cells.Add( _payment );
-                row.Cells.Add( _remainder );
-                dataGridViewRows.Add( row );
+                decimal monthlyPayment = customer.FindMonthlyPayment();
+                decimal remainingPayment = Math.Round(totalPayment - (monthlyPayment * (i + 1)));
+                string monthName = currentDate.AddMonths(i).ToString("MMMM");
+                // добавление строки в таблицу
+                dgv.Rows.Add(monthName, monthlyPayment, remainingPayment);
             }
-            dgv.Rows.AddRange( dataGridViewRows.ToArray() );
+
+        }
+
+        private void bPaymentShedule_Click(object sender, EventArgs e)
+        {
+            PrintDataGrid(PaymentSheduleDGV, customer);
         }
     }
 }

@@ -10,7 +10,17 @@ namespace Bank
     {
         public string Month { get; set; }
         public decimal Payment { get; set; }
-        public decimal Remainder { get; set; }
+        public decimal RemainingPayment{ get; set; }
+
+        public PaymentShedule() 
+        {
+            Month = string.Empty;
+            Payment = 0;
+            RemainingPayment = 0;
+
+
+
+        }
 
 
 

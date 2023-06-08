@@ -69,7 +69,10 @@
             panel13 = new Panel();
             InterestRateLable = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            PaymentSheduleDGV = new DataGridView();
+            Month = new DataGridViewTextBoxColumn();
+            Payment = new DataGridViewTextBoxColumn();
+            RemainingPayment = new DataGridViewTextBoxColumn();
             MainTopPanel.SuspendLayout();
             panel12.SuspendLayout();
             panel11.SuspendLayout();
@@ -89,7 +92,7 @@
             panel15.SuspendLayout();
             panel14.SuspendLayout();
             panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PaymentSheduleDGV).BeginInit();
             SuspendLayout();
             // 
             // MainTopPanel
@@ -295,7 +298,6 @@
             lInitialFee.TabIndex = 6;
             lInitialFee.Text = "500 тыс. ₽";
             lInitialFee.TextAlign = ContentAlignment.MiddleLeft;
-            lInitialFee.Click += lInitialFee_Click;
             // 
             // tbInitialFee
             // 
@@ -423,6 +425,7 @@
             bPaymentShedule.TabIndex = 3;
             bPaymentShedule.Text = "График платежей";
             bPaymentShedule.UseVisualStyleBackColor = false;
+            bPaymentShedule.Click += bPaymentShedule_Click;
             // 
             // bApply
             // 
@@ -513,7 +516,6 @@
             label11.TabIndex = 8;
             label11.Text = "Необходимый доход";
             label11.TextAlign = ContentAlignment.MiddleCenter;
-            label11.Click += label11_Click;
             // 
             // panel14
             // 
@@ -548,7 +550,6 @@
             label10.TabIndex = 8;
             label10.Text = "Ежемесячный платёж";
             label10.TextAlign = ContentAlignment.MiddleCenter;
-            label10.Click += label10_Click;
             // 
             // panel13
             // 
@@ -584,23 +585,43 @@
             label1.Text = "Процентная ставка";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // PaymentSheduleDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(419, 204);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(763, 365);
-            dataGridView1.TabIndex = 9;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            PaymentSheduleDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            PaymentSheduleDGV.BackgroundColor = Color.FromArgb(36, 74, 154);
+            PaymentSheduleDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PaymentSheduleDGV.Columns.AddRange(new DataGridViewColumn[] { Month, Payment, RemainingPayment });
+            PaymentSheduleDGV.Dock = DockStyle.Fill;
+            PaymentSheduleDGV.Location = new Point(419, 204);
+            PaymentSheduleDGV.Name = "PaymentSheduleDGV";
+            PaymentSheduleDGV.RowHeadersWidth = 51;
+            PaymentSheduleDGV.RowTemplate.Height = 29;
+            PaymentSheduleDGV.Size = new Size(763, 365);
+            PaymentSheduleDGV.TabIndex = 9;
+            // 
+            // Month
+            // 
+            Month.HeaderText = "Месяц";
+            Month.MinimumWidth = 6;
+            Month.Name = "Month";
+            // 
+            // Payment
+            // 
+            Payment.HeaderText = "Платёж";
+            Payment.MinimumWidth = 6;
+            Payment.Name = "Payment";
+            // 
+            // RemainingPayment
+            // 
+            RemainingPayment.HeaderText = "Остаток платежа";
+            RemainingPayment.MinimumWidth = 6;
+            RemainingPayment.Name = "RemainingPayment";
             // 
             // Mortgage
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1182, 653);
-            Controls.Add(dataGridView1);
+            Controls.Add(PaymentSheduleDGV);
             Controls.Add(panel1);
             Controls.Add(panel9);
             Controls.Add(panel7);
@@ -630,7 +651,7 @@
             panel15.ResumeLayout(false);
             panel14.ResumeLayout(false);
             panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PaymentSheduleDGV).EndInit();
             ResumeLayout(false);
         }
 
@@ -677,6 +698,9 @@
         private Label NecessaryIncomeLabel;
         private Label MonthlyPaymentLabel;
         private Label InterestRateLable;
-        private DataGridView dataGridView1;
+        private DataGridView PaymentSheduleDGV;
+        private DataGridViewTextBoxColumn Month;
+        private DataGridViewTextBoxColumn Payment;
+        private DataGridViewTextBoxColumn RemainingPayment;
     }
 }

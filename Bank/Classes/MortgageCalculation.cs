@@ -11,8 +11,8 @@ namespace WinFormsTest
     {
         
         public string RealEstateType { get; set; }
-        public double RealEstatePrice { get; set; }
-        public double InitialFee { get; set; }
+        public decimal RealEstatePrice { get; set; }
+        public decimal InitialFee { get; set; }
         public int Term { get; set; }
         public MortgageCalculation() 
         {
@@ -26,29 +26,30 @@ namespace WinFormsTest
         {
             return $"\t{RealEstateType}:\nЦена недвижимости: {RealEstatePrice} ₽\nПервоначальный взнос: {InitialFee} ₽\nСрок кредита: {Term}";
         }
-        public  double FindPercent() 
+        public  decimal FindPercent() 
         {
-            double percent;
+            decimal percent;
 
             // Минимальная процентная ставка в зависимости от типа недвижимости
-            if (RealEstateType == "Коммерческая недвижимость") percent = 12.4;
-            if (RealEstateType == "Гараж") percent = 11.4;
-            else percent = 5.7;
-
+            if (RealEstateType == "Коммерческая недвижимость") percent = 12.4m;
+            if (RealEstateType == "Гараж") percent = 11.4m;
+            else percent = 5.7m;
             // Расчёт добавочных процентов
+            if (InitialFee < RealEstatePrice * 0.4m) percent += 0.5m;
+            if (Term > 15) percent += 0.3m;
             return percent;
         }
 
-        public double FindMonthlyPayment() 
+        public decimal FindMonthlyPayment() 
         {
-            double monthlyPayment = Math.Round(((RealEstatePrice += RealEstatePrice * (this.FindPercent() / 100)) - InitialFee) / (Term * 12));
+            decimal monthlyPayment = Math.Round(((RealEstatePrice + RealEstatePrice * (this.FindPercent() / 100)) - InitialFee) / (Term * 12));
             return monthlyPayment;
 
         }
 
-        public double FindNecessaryIncome()
+        public decimal FindNecessaryIncome()
         {
-            return Math.Round(this.FindMonthlyPayment() * 1.3);
+            return Math.Round(this.FindMonthlyPayment() * 1.3m);
         }
     }
 }
