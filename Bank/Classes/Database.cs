@@ -67,7 +67,6 @@ namespace Bank
                 if (ones[0] == "")
                     break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-                //TODO: Отсутствие и наличие счёта через null
                 CurrencyAccount rub = new CurrencyAccount();
                 CurrencyAccount usd = new CurrencyAccount();
                 CurrencyAccount tenge = new CurrencyAccount();

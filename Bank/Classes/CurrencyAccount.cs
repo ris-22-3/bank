@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public enum Currency
-    {
-        RUB, USD, TNG
-    }
     public class CurrencyAccount
     {
         public decimal Balance;
         public bool isActive;
-        public Currency currency;
         public List<Operation> income;
         public List<Operation> costs;
         public List<Operation> history = new List<Operation>();
