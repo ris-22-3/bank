@@ -17,15 +17,15 @@ namespace Bank
         public HistoryTransfers()
         {
             InitializeComponent();
-            if (CurrencyAccount.historyRubUsdOrTng == 1)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 1)
             {
                 rubButton.Click += rubButton_Click;
             }
-            if (CurrencyAccount.historyRubUsdOrTng == 2)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 2)
             {
                 usdButton.Click += usdButton_Click;
             }
-            if (CurrencyAccount.historyRubUsdOrTng == 3)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 3)
             {
                 tngButton.Click += tngButton_Click;
             }
@@ -132,15 +132,15 @@ namespace Bank
 
         private void HistoryTransfers_Load(object sender, EventArgs e)
         {
-            if (CurrencyAccount.historyRubUsdOrTng == 1)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 1)
             {
                 rubButton.Click += rubButton_Click;
             }
-            if (CurrencyAccount.historyRubUsdOrTng == 2)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 2)
             {
                 usdButton.Click += usdButton_Click;
             }
-            if (CurrencyAccount.historyRubUsdOrTng == 3)
+            if (CurrencyAccountForm.historyRubUsdOrTng == 3)
             {
                 tngButton.Click += tngButton_Click;
             }

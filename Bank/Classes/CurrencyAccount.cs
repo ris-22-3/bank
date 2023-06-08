@@ -14,6 +14,7 @@ namespace Bank
     public class CurrencyAccount
     {
         public decimal Balance;
+        public bool isActive;
         public Currency currency;
         public List<Operation> income;
         public List<Operation> costs;

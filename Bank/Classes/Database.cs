@@ -67,10 +67,11 @@ namespace Bank
                 if (ones[0] == "")
                     break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
+                //TODO: Отсутствие и наличие счёта через null
                 CurrencyAccount rub = new CurrencyAccount();
                 CurrencyAccount usd = new CurrencyAccount();
                 CurrencyAccount tenge = new CurrencyAccount();
-                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), bool.Parse(ones[12]), bool.Parse(ones[13]));
+                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
@@ -102,11 +103,12 @@ namespace Bank
                     break;
                 if (Autorisation.clientNumber == int.Parse(ones[0]))
                 {
-                    CurrencyAccount.currencyAccountUsd = bool.Parse(ones[12]);
-                    CurrencyAccount.currencyAccountTng = bool.Parse(ones[13]);
+                    Objects.user.usd.isActive = bool.Parse(ones[12]);
+                    Objects.user.tenge.isActive = bool.Parse(ones[13]); //Артёму использовать эти свойства на форме
                 }
             }
         }
+
         public static void AddOperation(Operation op)
         {
             string day = "";
@@ -133,13 +135,13 @@ namespace Bank
                     if (Objects.user.clientNumber == i)
                     {
                         string[] ones = line.Split(new char[] { ';' });
-                        if (CurrencyAccount._isCurAccTng == true)
+                        if (CurrencyAccountForm._isCurAccTng == true)
                         {
-                            ones[13] = CurrencyAccount._isCurAccTng.ToString();
+                            ones[13] = CurrencyAccountForm._isCurAccTng.ToString();
                         }
-                        if (CurrencyAccount._isCurAccUsd == true)
+                        if (CurrencyAccountForm._isCurAccUsd == true)
                         {
-                            ones[12] = CurrencyAccount._isCurAccUsd.ToString();
+                            ones[12] = CurrencyAccountForm._isCurAccUsd.ToString();
                         }
                         if (billeType == "rub")
                             ones[6] = Objects.user.rub.Balance.ToString();
