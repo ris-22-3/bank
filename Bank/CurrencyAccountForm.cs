@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bank.Classes;
 
 namespace Bank
 {
@@ -22,7 +21,7 @@ namespace Bank
             InitializeComponent();
             BalanceRub.Text = Objects.user.rub.Balance.ToString() + " ₽";
 
-            if (CurrencyAccount.currencyAccountTng == true)
+            if (CurrencyAccounts.currencyAccountTng == true)
             {
                 transferTngButton.Visible = true;
                 historyTngButton.Visible = true;
@@ -31,7 +30,7 @@ namespace Bank
                 label10.Visible = true;
                 balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             }
-            if (CurrencyAccount.currencyAccountUsd == true)
+            if (CurrencyAccounts.currencyAccountUsd == true)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -58,7 +57,7 @@ namespace Bank
         private void openTngButton_Click(object sender, EventArgs e)
         {
 
-            if(CurrencyAccount.currencyAccountTng == false)
+            if(CurrencyAccounts.currencyAccountTng == false)
             {
             transferTngButton.Visible = true;
             historyTngButton.Visible = true;
@@ -66,7 +65,7 @@ namespace Bank
             openTngButton.Enabled = true;
             label10.Visible = true;
             balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
-            CurrencyAccount.currencyAccountTng = true;
+            CurrencyAccounts.currencyAccountTng = true;
             _isCurAccTng = true;
             Database.RewriteLine("tg");
             }
@@ -74,7 +73,7 @@ namespace Bank
 
         private void openUsdButton_Click(object sender, EventArgs e)
         {
-            if (CurrencyAccount.currencyAccountUsd == false)
+            if (CurrencyAccounts.currencyAccountUsd == false)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -82,7 +81,7 @@ namespace Bank
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
                 balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
-                CurrencyAccount.currencyAccountUsd = true;
+                CurrencyAccounts.currencyAccountUsd = true;
                 _isCurAccUsd = true;
                 Database.RewriteLine("USD");
             }

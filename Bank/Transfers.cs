@@ -20,17 +20,17 @@ namespace Bank
             InitializeComponent();
             iHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
             iWillHaveComboBox.Items.AddRange(new string[] { "RUB", "USD", "TNG" });
-            if (CurrencyAccount.boxValue == "RUB")
+            if (CurrencyAccounts.boxValue == "RUB")
             {
-                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
+                iHaveComboBox.SelectedItem = CurrencyAccounts.boxValue;
             }
-            if (CurrencyAccount.boxValue == "USD")
+            if (CurrencyAccounts.boxValue == "USD")
             {
-                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
+                iHaveComboBox.SelectedItem = CurrencyAccounts.boxValue;
             }
-            if (CurrencyAccount.boxValue == "TNG")
+            if (CurrencyAccounts.boxValue == "TNG")
             {
-                iHaveComboBox.SelectedItem = CurrencyAccount.boxValue;
+                iHaveComboBox.SelectedItem = CurrencyAccounts.boxValue;
             }
 
         }

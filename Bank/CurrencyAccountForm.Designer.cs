@@ -599,7 +599,7 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "TNG";
             // 
-            // CurrencyAccount
+            // CurrencyAccounts
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1132, 603);
@@ -609,7 +609,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CurrencyAccount";
+            this.Name = "CurrencyAccounts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мои счета";
             this.panel1.ResumeLayout(false);

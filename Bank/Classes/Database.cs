@@ -133,13 +133,13 @@ namespace Bank
                     if (Objects.user.clientNumber == i)
                     {
                         string[] ones = line.Split(new char[] { ';' });
-                        if (CurrencyAccount._isCurAccTng == true)
+                        if (CurrencyAccounts._isCurAccTng == true)
                         {
-                            ones[13] = CurrencyAccount._isCurAccTng.ToString();
+                            ones[13] = CurrencyAccounts._isCurAccTng.ToString();
                         }
-                        if (CurrencyAccount._isCurAccUsd == true)
+                        if (CurrencyAccounts._isCurAccUsd == true)
                         {
-                            ones[12] = CurrencyAccount._isCurAccUsd.ToString();
+                            ones[12] = CurrencyAccounts._isCurAccUsd.ToString();
                         }
                         if (billeType == "rub")
                             ones[6] = Objects.user.rub.Balance.ToString();
