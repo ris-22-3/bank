@@ -67,9 +67,9 @@ namespace Bank
                 if (ones[0] == "")
                     break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-                CurrencyAccounts rub = new CurrencyAccounts();
-                CurrencyAccounts usd = new CurrencyAccounts();
-                CurrencyAccounts tenge = new CurrencyAccounts();
+                CurrencyAccount rub = new CurrencyAccount();
+                CurrencyAccount usd = new CurrencyAccount();
+                CurrencyAccount tenge = new CurrencyAccount();
                 Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), bool.Parse(ones[12]), bool.Parse(ones[13]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
@@ -102,8 +102,8 @@ namespace Bank
                     break;
                 if (Autorisation.clientNumber == int.Parse(ones[0]))
                 {
-                    CurrencyAccounts.currencyAccountUsd = bool.Parse(ones[12]);
-                    CurrencyAccounts.currencyAccountTng = bool.Parse(ones[13]);
+                    CurrencyAccount.currencyAccountUsd = bool.Parse(ones[12]);
+                    CurrencyAccount.currencyAccountTng = bool.Parse(ones[13]);
                 }
             }
         }
@@ -133,13 +133,13 @@ namespace Bank
                     if (Objects.user.clientNumber == i)
                     {
                         string[] ones = line.Split(new char[] { ';' });
-                        if (CurrencyAccounts._isCurAccTng == true)
+                        if (CurrencyAccount._isCurAccTng == true)
                         {
-                            ones[13] = CurrencyAccounts._isCurAccTng.ToString();
+                            ones[13] = CurrencyAccount._isCurAccTng.ToString();
                         }
-                        if (CurrencyAccounts._isCurAccUsd == true)
+                        if (CurrencyAccount._isCurAccUsd == true)
                         {
-                            ones[12] = CurrencyAccounts._isCurAccUsd.ToString();
+                            ones[12] = CurrencyAccount._isCurAccUsd.ToString();
                         }
                         if (billeType == "rub")
                             ones[6] = Objects.user.rub.Balance.ToString();

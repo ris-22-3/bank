@@ -15,15 +15,13 @@ namespace Bank
         public string password;
         public bool isMortgage;
         public bool isDeposit;
-        public CurrencyAccounts rub;
-        public CurrencyAccounts usd;
-        public CurrencyAccounts tenge;
+        public CurrencyAccount rub;
+        public CurrencyAccount usd;
+        public CurrencyAccount tenge;
         public int clientNumber;
         public List<Operation> history = new List<Operation>();
-        public bool currencyAccountUsd;
-        public bool currencyAccountTng;
 
-        public User(int _clientNumber, string _cardnumber, string _password, string _name, string _surname, string _lastname, CurrencyAccounts _rub, CurrencyAccounts _usd, CurrencyAccounts _tenge, bool _isMortgage, bool _isDeposit,bool _isCurrencyAccountUsd, bool _isCurrencyAccountTng)
+        public User(int _clientNumber, string _cardnumber, string _password, string _name, string _surname, string _lastname, CurrencyAccount _rub, CurrencyAccount _usd, CurrencyAccount _tenge, bool _isMortgage, bool _isDeposit)
         {
             clientNumber = _clientNumber;
             name = _name;
@@ -36,8 +34,6 @@ namespace Bank
             tenge = _tenge;
             isMortgage = _isMortgage;
             isDeposit = _isDeposit;
-            currencyAccountUsd = _isCurrencyAccountUsd;
-            currencyAccountTng = _isCurrencyAccountTng;
         }
     }
 }

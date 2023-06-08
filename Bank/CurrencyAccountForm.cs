@@ -21,7 +21,7 @@ namespace Bank
             InitializeComponent();
             BalanceRub.Text = Objects.user.rub.Balance.ToString() + " ₽";
 
-            if (CurrencyAccounts.currencyAccountTng == true)
+            if (CurrencyAccount.currencyAccountTng == true)
             {
                 transferTngButton.Visible = true;
                 historyTngButton.Visible = true;
@@ -30,7 +30,7 @@ namespace Bank
                 label10.Visible = true;
                 balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             }
-            if (CurrencyAccounts.currencyAccountUsd == true)
+            if (CurrencyAccount.currencyAccountUsd == true)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -57,7 +57,7 @@ namespace Bank
         private void openTngButton_Click(object sender, EventArgs e)
         {
 
-            if(CurrencyAccounts.currencyAccountTng == false)
+            if(CurrencyAccount.currencyAccountTng == false)
             {
             transferTngButton.Visible = true;
             historyTngButton.Visible = true;
@@ -65,7 +65,7 @@ namespace Bank
             openTngButton.Enabled = true;
             label10.Visible = true;
             balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
-            CurrencyAccounts.currencyAccountTng = true;
+            CurrencyAccount.currencyAccountTng = true;
             _isCurAccTng = true;
             Database.RewriteLine("tg");
             }
@@ -73,7 +73,7 @@ namespace Bank
 
         private void openUsdButton_Click(object sender, EventArgs e)
         {
-            if (CurrencyAccounts.currencyAccountUsd == false)
+            if (CurrencyAccount.currencyAccountUsd == false)
             {
                 transferUsdButton.Visible = true;
                 historyUsdButton.Visible = true;
@@ -81,7 +81,7 @@ namespace Bank
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
                 balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
-                CurrencyAccounts.currencyAccountUsd = true;
+                CurrencyAccount.currencyAccountUsd = true;
                 _isCurAccUsd = true;
                 Database.RewriteLine("USD");
             }
