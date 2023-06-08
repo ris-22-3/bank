@@ -44,12 +44,14 @@
             this.panelCharts = new System.Windows.Forms.Panel();
             this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBoxYear1 = new System.Windows.Forms.ComboBox();
             this.currencyTypeComboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType1 = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth1 = new System.Windows.Forms.ComboBox();
             this.comboBoxPeriodType1 = new System.Windows.Forms.ComboBox();
             this.panelCharts1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBoxYear2 = new System.Windows.Forms.ComboBox();
             this.currencyTypeComboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType2 = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth2 = new System.Windows.Forms.ComboBox();
@@ -130,9 +132,9 @@
             this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxYear.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.Location = new System.Drawing.Point(970, 0);
+            this.comboBoxYear.Location = new System.Drawing.Point(994, 0);
             this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(107, 35);
+            this.comboBoxYear.Size = new System.Drawing.Size(83, 35);
             this.comboBoxYear.TabIndex = 5;
             this.comboBoxYear.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear_SelectedIndexChanged);
             // 
@@ -219,6 +221,7 @@
             // 
             this.tabPage4.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage4.Controls.Add(this.comboBoxYear1);
             this.tabPage4.Controls.Add(this.currencyTypeComboBox1);
             this.tabPage4.Controls.Add(this.comboBoxChartType1);
             this.tabPage4.Controls.Add(this.comboBoxMonth1);
@@ -231,6 +234,17 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxYear1
+            // 
+            this.comboBoxYear1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxYear1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxYear1.FormattingEnabled = true;
+            this.comboBoxYear1.Location = new System.Drawing.Point(995, 0);
+            this.comboBoxYear1.Name = "comboBoxYear1";
+            this.comboBoxYear1.Size = new System.Drawing.Size(82, 35);
+            this.comboBoxYear1.TabIndex = 6;
+            this.comboBoxYear1.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear1_SelectedIndexChanged);
             // 
             // currencyTypeComboBox1
             // 
@@ -297,6 +311,7 @@
             // 
             this.tabPage2.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.comboBoxYear2);
             this.tabPage2.Controls.Add(this.currencyTypeComboBox2);
             this.tabPage2.Controls.Add(this.comboBoxChartType2);
             this.tabPage2.Controls.Add(this.comboBoxMonth2);
@@ -309,6 +324,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxYear2
+            // 
+            this.comboBoxYear2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxYear2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxYear2.FormattingEnabled = true;
+            this.comboBoxYear2.Location = new System.Drawing.Point(1004, 0);
+            this.comboBoxYear2.Name = "comboBoxYear2";
+            this.comboBoxYear2.Size = new System.Drawing.Size(86, 35);
+            this.comboBoxYear2.TabIndex = 7;
+            this.comboBoxYear2.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear2_SelectedIndexChanged);
             // 
             // currencyTypeComboBox2
             // 
@@ -474,5 +500,7 @@
         private ComboBox currencyTypeComboBox1;
         private ComboBox currencyTypeComboBox2;
         private ComboBox comboBoxYear;
+        private ComboBox comboBoxYear1;
+        private ComboBox comboBoxYear2;
     }
 }
