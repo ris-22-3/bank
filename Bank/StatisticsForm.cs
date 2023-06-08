@@ -16,6 +16,7 @@ namespace Bank
     public partial class StatisticsForm : Form
     {
         private ToolTip chartToolTip = new ToolTip();
+        private string selectedYear;
         public StatisticsForm()
         {
             InitializeComponent();
@@ -53,19 +54,32 @@ namespace Bank
                 e.Graphics.DrawString(tabPage.Text, e.Font, brush, e.Bounds.X + 4, e.Bounds.Y + 4);
             }
         }
-        public Dictionary<int, decimal> AddData(List<ChartData> chartData, Dictionary<int, decimal> monthData, string currencyType)
+        public Dictionary<int, decimal> AddData(List<ChartData> chartData, Dictionary<int, decimal> monthData, string currencyType, bool _isIncome, string selectedYear)
         {
             // Суммирование данных по месяцам
             foreach (ChartData data in chartData)
             {
-                if (!data.Income && data.Currency == currencyType)
+                bool isInSelectedYear = data.Date.Year.ToString() == selectedYear;
+                if (_isIncome)
                 {
-                    int month = data.Date.Month;
-                    monthData[month] += data.Amount;
+                    if (data.Income && data.Currency == currencyType && isInSelectedYear)
+                    {
+                        int month = data.Date.Month;
+                        monthData[month] += data.Amount;
+                    }
+                }
+                else
+                {
+                    if (!data.Income && data.Currency == currencyType && isInSelectedYear)
+                    {
+                        int month = data.Date.Month;
+                        monthData[month] += data.Amount;
+                    }
                 }
             }
             return monthData;
         }
+
         public void AddDataMonth(ref List<ChartData> chartData, string currencyType, int selectedMonth,ref Chart chart, ref bool hasDataForSelectedMonth, Color[] columnColors)
         {
             // Добавление данных в диаграмму
@@ -112,7 +126,6 @@ namespace Bank
 
         private void ShowExpenseChart()
         {
-
             // Очистка существующих элементов диаграммы
             panelCharts.Controls.Clear();
 
@@ -130,6 +143,7 @@ namespace Bank
             chart.MouseMove += Chart_MouseMove;
             chartToolTip.SetToolTip(chart, " "); // Пустая подсказка по умолчанию
             chartToolTip.ShowAlways = true; // Показывать подсказку всегда
+
             // Настройка свойств диаграммы
             chart.Size = new Size(940, 460);
             chart.ChartAreas.Add(new ChartArea());
@@ -156,6 +170,7 @@ namespace Bank
             if (isYearSelected)
             {
                 comboBoxChartType.Location = new Point(221, 48);
+
                 // Получение данных по месяцам за год
                 Dictionary<int, decimal> monthData = new Dictionary<int, decimal>();
 
@@ -165,7 +180,7 @@ namespace Bank
                     monthData[i] = 0;
                 }
 
-                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox));
+                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox), false, selectedYear);
 
                 // Добавление данных в диаграмму
                 foreach (KeyValuePair<int, decimal> entry in monthData)
@@ -175,7 +190,7 @@ namespace Bank
 
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
-                    dataPoint.YValues = new double[] {(double) amount };
+                    dataPoint.YValues = new double[] { (double)amount };
 
                     // Задание цвета столбца
                     int colorIndex = month - 1; // Индекс цвета соответствует номеру месяца (1 - январь, 2 - февраль и т.д.)
@@ -191,6 +206,7 @@ namespace Bank
                 Legend legend = new Legend();
                 legend.Docking = Docking.Right;
                 chart.Legends.Add(legend);
+
                 foreach (var point in chart.Series[0].Points)
                 {
                     int pointIndex = chart.Series[0].Points.IndexOf(point);
@@ -202,30 +218,51 @@ namespace Bank
             else
             {
                 comboBoxChartType.Location = new Point(452, 48);
+
                 // Получение выбранного месяца
                 int selectedMonth = comboBoxMonth.SelectedIndex + 1;
+                int selectedYear = int.Parse(comboBoxYear.SelectedValue.ToString());
+                // Получение данных для выбранного месяца
+                List<ChartData> selectedMonthData = chartData.Where(data => data.Date.Month == selectedMonth && data.Date.Year == selectedYear).ToList();
 
                 // Проверка наличия данных для выбранного месяца
-                bool hasDataForSelectedMonth = false;
-                AddDataMonth(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox), selectedMonth, ref chart, ref hasDataForSelectedMonth, columnColors);
+                if (selectedMonthData.Count > 0)
+                {
+                    // Добавление данных в диаграмму
+                    foreach (ChartData data in selectedMonthData)
+                    {
+                        decimal amount = data.Amount;
 
+                        DataPoint dataPoint = new DataPoint();
+                        dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
+                        dataPoint.YValues = new double[] { (double)amount };
 
-                // Проверка наличия данных для выбранного месяца
-                if (!hasDataForSelectedMonth)
+                        // Задание цвета столбца
+                        int colorIndex = data.Date.Day - 1; // Индекс цвета соответствует номеру дня месяца
+                        if (colorIndex < columnColors.Length)
+                        {
+                            dataPoint.Color = columnColors[colorIndex];
+                        }
+
+                        chart.Series[0].Points.Add(dataPoint);
+                    }
+                }
+                else
                 {
                     Label label = new Label();
-                    label.Text = "В этом месяце не было расходов";
+                    label.Text = "В данном месяце расходов не было";
                     label.AutoSize = true;
                     label.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                     panelCharts.Controls.Add(label);
                     label.BringToFront();
                     panelCharts.AutoScroll = true;
+                    chart.Visible = false;
                 }
-
                 // Добавление легенды с датами в формате "дд месяц"
                 Legend legend = new Legend();
                 legend.Docking = Docking.Right;
                 chart.Legends.Add(legend);
+
                 foreach (var point in chart.Series[0].Points)
                 {
                     int pointIndex = chart.Series[0].Points.IndexOf(point);
@@ -240,7 +277,6 @@ namespace Bank
 
             // Добавление диаграммы в панель
             panelCharts.Controls.Add(chart);
-
         }
         private SeriesChartType GetSelectedChartType()
         {
@@ -376,7 +412,7 @@ namespace Bank
                 }
 
                 // Суммирование данных по месяцам
-                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox1));
+                monthData = AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox1),true, selectedYear);
 
                 // Добавление данных в диаграмму
                 foreach (KeyValuePair<int, decimal> entry in monthData)
@@ -518,6 +554,15 @@ namespace Bank
             currencyTypeComboBox.SelectedIndex = 0;
             currencyTypeComboBox1.SelectedIndex = 0;
             currencyTypeComboBox2.SelectedIndex = 0;
+            // Загрузка данных из файла
+            List<ChartData> chartData = ChartData.LoadChartData();
+
+            // Получение списка уникальных годов из csv-файла
+            List<string> uniqueYears = chartData.Select(data => data.Date.Year.ToString()).Distinct().ToList();
+
+            // Обновление элемента comboBoxYear с годами из списка uniqueYears
+            comboBoxYear.DataSource = uniqueYears;
+            comboBoxYear.SelectedIndex = 0;
             // Вызов метода ShowChart для отображения диаграммы
             ShowExpenseChart();
         }
@@ -808,6 +853,15 @@ namespace Bank
         private void currencyTypeComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             ShowExpenseByCategoryChart();
+        }
+
+        private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxYear.SelectedItem != null)
+            {
+                selectedYear = comboBoxYear.SelectedItem.ToString();
+                ShowExpenseChart();
+            }
         }
     }
 }

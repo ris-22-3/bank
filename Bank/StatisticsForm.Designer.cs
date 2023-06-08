@@ -36,6 +36,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.currencyTypeComboBox = new System.Windows.Forms.ComboBox();
             this.comboBoxChartType = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth = new System.Windows.Forms.ComboBox();
@@ -110,6 +111,7 @@
             // 
             this.tabPage3.BackgroundImage = global::Bank.Properties.Resources.лендинг_1_2;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.comboBoxYear);
             this.tabPage3.Controls.Add(this.currencyTypeComboBox);
             this.tabPage3.Controls.Add(this.comboBoxChartType);
             this.tabPage3.Controls.Add(this.comboBoxMonth);
@@ -122,6 +124,17 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxYear
+            // 
+            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxYear.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxYear.FormattingEnabled = true;
+            this.comboBoxYear.Location = new System.Drawing.Point(970, 0);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(107, 35);
+            this.comboBoxYear.TabIndex = 5;
+            this.comboBoxYear.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear_SelectedIndexChanged);
             // 
             // currencyTypeComboBox
             // 
@@ -460,5 +473,6 @@
         private ComboBox currencyTypeComboBox;
         private ComboBox currencyTypeComboBox1;
         private ComboBox currencyTypeComboBox2;
+        private ComboBox comboBoxYear;
     }
 }
