@@ -267,7 +267,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HistoryTransfers";
             this.Text = "HistoryTransfers";
-            this.Load += new System.EventHandler(this.HistoryTransfers_Load);
+            this.Shown += new System.EventHandler(this.HistoryTransfers_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

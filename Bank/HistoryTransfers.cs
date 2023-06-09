@@ -17,18 +17,6 @@ namespace Bank
         public HistoryTransfers()
         {
             InitializeComponent();
-            if (CurrencyAccountForm.historyRubUsdOrTng == 1)
-            {
-                rubButton.Click += rubButton_Click;
-            }
-            if (CurrencyAccountForm.historyRubUsdOrTng == 2)
-            {
-                usdButton.Click += usdButton_Click;
-            }
-            if (CurrencyAccountForm.historyRubUsdOrTng == 3)
-            {
-                tngButton.Click += tngButton_Click;
-            }
         }
         byte isRubUsdOrTng = 0;
 
@@ -38,6 +26,7 @@ namespace Bank
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             if (isRubUsdOrTng == 1)
             {
+                Objects.current = Objects.user.rub;
                 for (int i = 0; i < Objects.current.history.Count; i++)
                 {
                     DataGridViewRow row = AddRow(Objects.current.history[i]);
@@ -46,6 +35,7 @@ namespace Bank
             }
             if (isRubUsdOrTng == 2)
             {
+                Objects.current = Objects.user.usd;
                 for (int i = 0; i < Objects.current.history.Count; i++)
                 {
                     DataGridViewRow row = AddRow(Objects.current.history[i]);
@@ -54,6 +44,7 @@ namespace Bank
             }
             if (isRubUsdOrTng == 3)
             {
+                Objects.current = Objects.user.tenge;
                 for (int i = 0; i < Objects.current.history.Count; i++)
                 {
                     DataGridViewRow row = AddRow(Objects.current.history[i]);
@@ -80,8 +71,8 @@ namespace Bank
                 date.Value = dateStr;
 
                 DataGridViewCell billeType = new DataGridViewTextBoxCell();
-                //billeType.Value = op.billeType;
-            
+                billeType.Value = op.billetype;
+
                 DataGridViewCell sum = new DataGridViewTextBoxCell();
                 sum.Value = op.sum.ToString();
                 DataGridViewCell type = new DataGridViewTextBoxCell();
@@ -130,19 +121,19 @@ namespace Bank
             FillTable();
         }
 
-        private void HistoryTransfers_Load(object sender, EventArgs e)
+        private void HistoryTransfers_Shown(object sender, EventArgs e)
         {
             if (CurrencyAccountForm.historyRubUsdOrTng == 1)
             {
-                rubButton.Click += rubButton_Click;
+                rubButton.PerformClick();
             }
             if (CurrencyAccountForm.historyRubUsdOrTng == 2)
             {
-                usdButton.Click += usdButton_Click;
+                usdButton.PerformClick();
             }
             if (CurrencyAccountForm.historyRubUsdOrTng == 3)
             {
-                tngButton.Click += tngButton_Click;
+                tngButton.PerformClick();
             }
         }
     }
