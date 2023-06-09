@@ -147,11 +147,5 @@ namespace Bank
             }
             sumBox.Text = default;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Objects.current = Objects.user.usd;
-            Reboot();
-        }
     }
 }
