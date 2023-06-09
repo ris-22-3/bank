@@ -100,8 +100,8 @@ namespace Bank
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
                     if (operations[0] == "")
                         break;
-                    DateTime date = ToDateTime(operations[5]);
-                    Operation op = new Operation(decimal.Parse(operations[0]), bool.Parse(operations[1]), operations[2], operations[3], operations[4], date);
+                    DateTime date = ToDateTime(operations[8]);
+                    Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
                     if (op.billetype == "USD")
                         usd.Add(op);
                     if (op.billetype == "rub")
@@ -148,7 +148,7 @@ namespace Bank
             //rd.WriteLine(String.Join(";", operation));
             //rd.Close();
             //RewriteLine(cur);
-            string[] operation = { op.sum.ToString(), isIncome.ToString(), op.billetype.ToString(), op.category, op.type, date };
+            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), isIncome.ToString(), op.billetype.ToString(), op.category, op.type, date };
             StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
