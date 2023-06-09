@@ -148,7 +148,7 @@ namespace Bank
             //rd.WriteLine(String.Join(";", operation));
             //rd.Close();
             //RewriteLine(cur);
-            string[] operation = { Objects.user.usd.Balance.ToString(), Objects.user.rub.Balance.ToString(), Objects.user.tenge.Balance.ToString(), op.sum.ToString(), isIncome.ToString(), op.billetype.ToString(), op.category, op.type, date };
+            string[] operation = { op.sum.ToString(), isIncome.ToString(), op.billetype.ToString(), op.category, op.type, date };
             StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
