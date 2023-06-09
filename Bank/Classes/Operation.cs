@@ -25,6 +25,7 @@ namespace Bank
         public string category;
         public string type;
         public DateTime date;
+        public string billetype;
         public Operation()
         {
             sum = 0;
@@ -32,7 +33,7 @@ namespace Bank
             category = categories[rnd.Next(categories.Length)];
             date = DateTime.Now;
         }
-        public Operation(decimal _sum, bool _isIncome, string _category, string _type, DateTime _date)
+        public Operation(decimal _sum, bool _isIncome, string _billetype, string _category, string _type, DateTime _date)
         {
             sum = _sum;
             if (_isIncome)
@@ -40,6 +41,7 @@ namespace Bank
             category = _category;
             type = _type;
             date = _date;
+            billetype = _billetype;
             //expend
         }
         public override string ToString()

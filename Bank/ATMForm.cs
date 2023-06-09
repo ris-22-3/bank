@@ -113,7 +113,7 @@ namespace Bank
             else
             {
                 //Operation add = new Operation(sum, true, ExpendType.Other.ToString(), "Внесение наличных", DateTime.Now);
-                Operation add = new Operation(sum, true, "Другое", "Внесение наличных", DateTime.Now);
+                Operation add = new Operation(sum, true, "rub", "Другое", "Внесение наличных", DateTime.Now);
                 Objects.current.Balance += sum;
                 Objects.current.Add(add, true);
                 Balance.Text = Objects.current.Balance.ToString() + " ₽";
@@ -136,7 +136,7 @@ namespace Bank
             }
             else
             {
-                Operation add = new Operation(sum, false, "Другое", "Выдача наличных", DateTime.Now);
+                Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
                 Objects.current.Balance -= sum;
                 Objects.current.Add(add, true);
                 Balance.Text = Objects.current.Balance.ToString() + " ₽";

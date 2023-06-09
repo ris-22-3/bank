@@ -251,25 +251,25 @@ namespace Bank
                         {
                             if (iWillHaveComboBox.SelectedItem == "TNG")
                             {
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.rub.Add(add, true);
                                 isTransferSuccsec = true;
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.tenge.Balance += value;
                                 Objects.user.tenge.Add(add, true);
                             }
                             if (iWillHaveComboBox.SelectedItem == "USD")
                             {
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.rub.Add(add, true);
                                 isTransferSuccsec = true;
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.usd.Balance += value;
                                 Objects.user.usd.Add(add, true);
                             }
@@ -284,7 +284,7 @@ namespace Bank
                             if (iWillHaveComboBox.SelectedItem == "RUB")
                             {
 
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.usd.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.usd.Add(add, true);
                                 isTransferSuccsec = true;
@@ -292,21 +292,21 @@ namespace Bank
 
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.rub.Balance += value;
                                 Objects.user.rub.Add(add, true);
                             }
                             if (iWillHaveComboBox.SelectedItem == "TNG")
                             {
 
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.usd.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.usd.Add(add, true);
                                 isTransferSuccsec = true;
 
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.tenge.Balance += value;
                                 Objects.user.tenge.Add(add, true);
                             }
@@ -321,14 +321,14 @@ namespace Bank
                             if (iWillHaveComboBox.SelectedItem == "RUB")
                             {
 
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.tenge.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.tenge.Add(add, true);
                                 isTransferSuccsec = true;
 
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "RUB", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.rub.Balance += value;
                                 Objects.user.rub.Add(add, true);
 
@@ -336,14 +336,14 @@ namespace Bank
                             if (iWillHaveComboBox.SelectedItem == "USD")
                             {
 
-                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "Другое", "Переводы", DateTime.Now);
+                                Operation add = new Operation(Convert.ToDecimal(textBox1.Text), false, "USD", "Другое", "Переводы", DateTime.Now);
                                 Objects.user.tenge.Balance -= Convert.ToDecimal(textBox1.Text);
                                 Objects.user.tenge.Add(add, true);
                                 isTransferSuccsec = true;
 
 
 
-                                add = new Operation(value, true, "Другое", "Пополнение", DateTime.Now);
+                                add = new Operation(value, true, "USD", "Другое", "Пополнение", DateTime.Now);
                                 Objects.user.usd.Balance += value;
                                 Objects.user.usd.Add(add, true);
                             }

@@ -69,7 +69,8 @@ namespace Bank
             Objects.user.tenge.isActive = true;
             _isCurAccTng = true;
             //Database.RewriteLine(Objects.current.Account);
-            Database.RewriteLine(Currency.TNG);
+            //Database.RewriteLine(Currency.TNG);
+            Database.RewriteLine("tg");
             }
         }
 
@@ -86,7 +87,7 @@ namespace Bank
                 balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
                  Objects.user.usd.isActive = true;
                 _isCurAccUsd = true;
-                Database.RewriteLine(Currency.USD);
+                Database.RewriteLine("usd");
             }
         }
 

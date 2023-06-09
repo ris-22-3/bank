@@ -36,7 +36,7 @@ namespace Bank
         public void Add(Operation op, bool isNew = false)
         {
             if (isNew)
-                Database.AddOperation(op, Account); //добавление в файл
+                Database.AddOperation(op); //добавление в файл
             history.Add(op);
         }
     }
