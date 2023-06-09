@@ -64,23 +64,10 @@ namespace WinFormsTest
             decimal price = (decimal)tbPrice.Value * 100000;
             decimal initialFee = price * tbInitialFee.Value / 100;
 
-            if (price / 1000 < 1000)
-            {
-                lPrice.Text = (price / 1000) + " тыс. ₽";
-            }
-            else
-            {
-                lPrice.Text = (price / 1000000) + " млн. ₽";
-            }
-
-            if (initialFee / 1000 < 1000)
-            {
-                lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
-            }
-            else
-            {
-                lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
-            }
+            if (price / 1000 < 1000) lPrice.Text = (price / 1000) + " тыс. ₽";
+            else lPrice.Text = (price / 1000000) + " млн. ₽";
+            if (initialFee / 1000 < 1000) lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
+            else lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
         }
 
         private void tbInitialFee_Scroll(object sender, EventArgs e)
@@ -137,7 +124,7 @@ namespace WinFormsTest
             PaymentSheduleDGV.Rows.Clear();
         }
 
-        private void tbTerm_VakueChanged(object sender, EventArgs e) 
+        private void tbTerm_VakueChanged(object sender, EventArgs e)
         {
             PaymentSheduleDGV.Rows.Clear();
         }

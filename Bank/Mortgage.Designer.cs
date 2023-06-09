@@ -197,7 +197,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 84);
             panel2.Name = "panel2";
-            panel2.Size = new Size(419, 569);
+            panel2.Size = new Size(419, 621);
             panel2.TabIndex = 1;
             // 
             // bAccept
@@ -449,7 +449,7 @@
             // 
             panel7.Controls.Add(panel8);
             panel7.Dock = DockStyle.Bottom;
-            panel7.Location = new Point(419, 611);
+            panel7.Location = new Point(419, 663);
             panel7.Name = "panel7";
             panel7.Size = new Size(763, 42);
             panel7.TabIndex = 5;
@@ -468,7 +468,7 @@
             // 
             panel9.Controls.Add(bPaymentShedule);
             panel9.Dock = DockStyle.Bottom;
-            panel9.Location = new Point(419, 569);
+            panel9.Location = new Point(419, 621);
             panel9.Name = "panel9";
             panel9.Size = new Size(763, 42);
             panel9.TabIndex = 6;
@@ -598,7 +598,7 @@
             PaymentSheduleDGV.Name = "PaymentSheduleDGV";
             PaymentSheduleDGV.RowHeadersWidth = 51;
             PaymentSheduleDGV.RowTemplate.Height = 29;
-            PaymentSheduleDGV.Size = new Size(763, 365);
+            PaymentSheduleDGV.Size = new Size(763, 417);
             PaymentSheduleDGV.TabIndex = 9;
             // 
             // Month
@@ -622,7 +622,7 @@
             // Mortgage
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1182, 653);
+            ClientSize = new Size(1182, 705);
             Controls.Add(PaymentSheduleDGV);
             Controls.Add(panel1);
             Controls.Add(panel9);
