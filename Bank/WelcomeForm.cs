@@ -9,17 +9,17 @@ namespace Bank
         {
             InitializeComponent();
             label3.Text = Objects.user.name + " " + Objects.user.surname;
-            label5.Text = Objects.user.rub.Balance.ToString();
+            label5.Text = Objects.current.Balance.ToString();
             FillTable();
             dataGridView_all.Refresh();
         }
         public void FillTable()
         {
             dataGridView_all.Rows.Clear();
-            List<DataGridViewRow> rows = new List<DataGridViewRow>();
-            for (int i = 0; i < Objects.user.history.Count; i++)
+            List<DataGridViewRow> rows = new List<DataGridViewRow>(); 
+            for (int i = 0; i < Objects.current.history.Count; i++)
             {
-                DataGridViewRow row = AddRow(Objects.user.history[i]);
+                DataGridViewRow row = AddRow(Objects.current.history[i]);
                 rows.Add(row);
             }
             rows.Reverse();
@@ -40,7 +40,7 @@ namespace Bank
             DataGridViewCell date = new DataGridViewTextBoxCell();
             date.Value = dateStr;
             DataGridViewCell billeType = new DataGridViewTextBoxCell();
-            billeType.Value = op.billeType;
+            billeType.Value = Objects.current.Account.ToString();
             DataGridViewCell sum = new DataGridViewTextBoxCell();
             sum.Value = op.sum.ToString();
             DataGridViewCell type = new DataGridViewTextBoxCell();

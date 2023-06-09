@@ -64,10 +64,12 @@ namespace Bank
             openTngButton.Visible = false;
             openTngButton.Enabled = true;
             label10.Visible = true;
+            //Objects.current = Objects.user.tenge;
             balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
-             Objects.user.tenge.isActive = true;
+            Objects.user.tenge.isActive = true;
             _isCurAccTng = true;
-            Database.RewriteLine("tg");
+            //Database.RewriteLine(Objects.current.Account);
+            Database.RewriteLine(Currency.TNG);
             }
         }
 
@@ -80,10 +82,11 @@ namespace Bank
                 openUsdButton.Visible = false;
                 openUsdButton.Enabled = true;
                 label8.Visible = true;
+                //Objects.current = Objects.user.usd;
                 balanseUsdLabel.Text = Objects.user.usd.Balance.ToString() + " $";
                  Objects.user.usd.isActive = true;
                 _isCurAccUsd = true;
-                Database.RewriteLine("USD");
+                Database.RewriteLine(Currency.USD);
             }
         }
 

@@ -15,7 +15,7 @@ namespace Bank
         public ATMForm()
         {
             InitializeComponent();
-            Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
+            Balance.Text = Objects.current.Balance.ToString() + " ₽";
             FillTable();
             dataGridView.Refresh();
         }
@@ -23,7 +23,7 @@ namespace Bank
         {
             dataGridView.Rows.Clear();
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
-            for (int i = 0; i < Objects.user.rub.history.Count; i++)
+            for (int i = 0; i < Objects.current.history.Count; i++)
             {
                 DataGridViewRow row = AddRow(Objects.user.rub.history[i]);
                 rows.Add(row);
@@ -112,33 +112,34 @@ namespace Bank
             //    
             else
             {
-                Operation add = new Operation(sum, true, "rub", "Другое", "Внесение наличных", DateTime.Now);
-                Objects.user.rub.Balance += sum;
-                Objects.user.rub.Add(add, true);
-                Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                //Operation add = new Operation(sum, true, ExpendType.Other.ToString(), "Внесение наличных", DateTime.Now);
+                Operation add = new Operation(sum, true, "Другое", "Внесение наличных", DateTime.Now);
+                Objects.current.Balance += sum;
+                Objects.current.Add(add, true);
+                Balance.Text = Objects.current.Balance.ToString() + " ₽";
             }
             sumBox.Text = default;
         }
         private void TakeCash()
         {
             int sum = ToInt(sumBox.Text);
-            if (sum <= 0 || Objects.user.rub.Balance - sum < 0 || sumBox.Text == "" || sumBox.Text == " ")
+            if (sum <= 0 || Objects.current.Balance - sum < 0 || sumBox.Text == "" || sumBox.Text == " ")
             {
                 if (sum <= 0)
                     MessageBox.Show("Вводите значения только больше нуля");
                 if (sum == int.MaxValue)
                     MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
-                if (Objects.user.rub.Balance - sum < 0)
+                if (Objects.current.Balance - sum < 0)
                     MessageBox.Show("Недостаточно средств для выполнения операции");
                 if (sumBox.Text == "" || sumBox.Text == " ")
                     MessageBox.Show("Введите сумму или выберите одну из предложенных");
             }
             else
             {
-                Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
-                Objects.user.rub.Balance -= sum;
-                Objects.user.rub.Add(add, true);
-                Balance.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                Operation add = new Operation(sum, false, "Другое", "Выдача наличных", DateTime.Now);
+                Objects.current.Balance -= sum;
+                Objects.current.Add(add, true);
+                Balance.Text = Objects.current.Balance.ToString() + " ₽";
             }
             sumBox.Text = default;
         }

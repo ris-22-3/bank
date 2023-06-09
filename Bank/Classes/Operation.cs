@@ -6,35 +6,70 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
+    public enum OperationType
+    {
+        Income, Expenditure
+    }
+    public enum ExpendType
+    {
+        Transfer, Purchase, WithDraw, Other
+    }
     public class Operation
     {
         public static Random rnd = new Random();
         public static string[] categories = { "Переводы", "Рестораны", "Супермаркеты", "Транспорт", "Одежда", "Развлечения и хобби", "Другое" };
         public static string[] types = { "Переводы", "Покупка", "Выдача наличных", "Другое" };
         public decimal sum;
-        public bool isIncome;
-        public string billeType;
+        public OperationType operationType = OperationType.Expenditure;
+        public ExpendType expendType = ExpendType.Purchase;
         public string category;
         public string type;
         public DateTime date;
         public Operation()
         {
             sum = 0;
-            isIncome = false;
-            billeType = "rub";
+            type = types[1];
             category = categories[rnd.Next(categories.Length)];
-            type = "Покупка";
             date = DateTime.Now;
         }
-        public Operation(decimal _sum, bool _isIncome, string _billeType, string _category, string _type, DateTime _date)
+        public Operation(decimal _sum, bool _isIncome, string _category, string _type, DateTime _date)
         {
             sum = _sum;
-            isIncome = _isIncome;
-            billeType = _billeType;
+            if (_isIncome)
+                operationType = OperationType.Income;
             category = _category;
             type = _type;
             date = _date;
+            //expend
         }
-        
+        public override string ToString()
+        {
+            switch(expendType)
+            {
+                case ExpendType.Purchase:
+                    return "Покупка";
+                case ExpendType.WithDraw:
+                    return "Выдача наличных";
+                case ExpendType.Transfer:
+                    return "Переводы";
+                case ExpendType.Other:
+                    return "Другое";
+            }
+            return "Другое";
+        }
+        //public ExpendType ToExpendType(string type)
+        //{
+        //    switch (type)
+        //    {
+        //        case ExpendType.Purchase.ToString():
+        //            return ExpendType.Purchase;
+        //        case ExpendType.Transfer.ToString():
+        //            return ExpendType.Transfer;
+        //        case ExpendType.WithDraw.ToString():
+        //            return ExpendType.WithDraw;
+        //        default:
+        //            return ExpendType.Other.ToString();
+        //    }
+        //}
     }
 }

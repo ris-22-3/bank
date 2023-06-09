@@ -7,36 +7,37 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
+    public enum Currency
+    {
+        RUB, USD, TNG
+    }
     public class CurrencyAccount
     {
+        public Currency Account;
         public decimal Balance;
         public bool isActive;
-        public List<Operation> income;
-        public List<Operation> costs;
         public List<Operation> history = new List<Operation>();
+        //IEnumerable<Operation> incomes = history.Where(x => x.operationType == OperationType.Income);
+        //IEnumerable<Operation> costs = history.Where(x => x.operationType == OperationType.Expenditure);
 
         public CurrencyAccount()
         {
             Balance = 0;
-            income = new List<Operation>();
-            costs = new List<Operation>();
+            isActive = false;
+            Account = Currency.RUB;
         }
-        public CurrencyAccount(decimal _balance, List<Operation> _incomes, List<Operation> _costs)
+        public CurrencyAccount(decimal _balance, List<Operation> _history, Currency cur)
         {
             Balance = _balance;
-            income = _incomes;
-            costs = _costs;
+            history = _history;
+            isActive = true;
+            Account = cur;
         }
         public void Add(Operation op, bool isNew = false)
         {
-            if (op.isIncome == true)
-                income.Add(op);
-            else
-                costs.Add(op);
             if (isNew)
-                Database.AddOperation(op); //добавление в файл
+                Database.AddOperation(op, Account); //добавление в файл
             history.Add(op);
-            Objects.user.history.Add(op);
         }
     }
 }

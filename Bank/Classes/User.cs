@@ -19,7 +19,6 @@ namespace Bank
         public CurrencyAccount usd;
         public CurrencyAccount tenge;
         public int clientNumber;
-        public List<Operation> history = new List<Operation>();
 
         public User(int _clientNumber, string _cardnumber, string _password, string _name, string _surname, string _lastname, CurrencyAccount _rub, CurrencyAccount _usd, CurrencyAccount _tenge, bool _isMortgage, bool _isDeposit)
         {

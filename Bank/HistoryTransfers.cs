@@ -38,25 +38,25 @@ namespace Bank
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             if (isRubUsdOrTng == 1)
             {
-                for (int i = 0; i < Objects.user.rub.history.Count; i++)
+                for (int i = 0; i < Objects.current.history.Count; i++)
                 {
-                    DataGridViewRow row = AddRow(Objects.user.rub.history[i]);
+                    DataGridViewRow row = AddRow(Objects.current.history[i]);
                     rows.Add(row);
                 }
             }
             if (isRubUsdOrTng == 2)
             {
-                for (int i = 0; i < Objects.user.usd.history.Count; i++)
+                for (int i = 0; i < Objects.current.history.Count; i++)
                 {
-                    DataGridViewRow row = AddRow(Objects.user.usd.history[i]);
+                    DataGridViewRow row = AddRow(Objects.current.history[i]);
                     rows.Add(row);
                 }
             }
             if (isRubUsdOrTng == 3)
             {
-                for (int i = 0; i < Objects.user.tenge.history.Count; i++)
+                for (int i = 0; i < Objects.current.history.Count; i++)
                 {
-                    DataGridViewRow row = AddRow(Objects.user.tenge.history[i]);
+                    DataGridViewRow row = AddRow(Objects.current.history[i]);
                     rows.Add(row);
                 }
             }
@@ -80,7 +80,7 @@ namespace Bank
                 date.Value = dateStr;
 
                 DataGridViewCell billeType = new DataGridViewTextBoxCell();
-                billeType.Value = op.billeType;
+                //billeType.Value = op.billeType;
             
                 DataGridViewCell sum = new DataGridViewTextBoxCell();
                 sum.Value = op.sum.ToString();

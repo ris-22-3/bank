@@ -72,7 +72,8 @@ namespace Bank
                         this.Hide();
                         isRight = true;
                         Objects.user = Database.arr[i];
-                        clientNumber = Objects.user.clientNumber;
+                        Objects.current = Objects.user.rub;
+                        clientNumber = Objects.user.clientNumber; //зачем?
                         d.Read();
                         new WelcomeForm().ShowDialog();
                         this.Close();
