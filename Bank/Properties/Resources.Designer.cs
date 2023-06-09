@@ -73,9 +73,29 @@ namespace Bank.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coinicon_114542 {
+            get {
+                object obj = ResourceManager.GetObject("coinicon_114542", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_clipart_youtube_computer_icons_logo_left_arrow_text_logo {
             get {
                 object obj = ResourceManager.GetObject("png-clipart-youtube-computer-icons-logo-left-arrow-text-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tenge_sign_icon_198700 {
+            get {
+                object obj = ResourceManager.GetObject("tenge_sign_icon_198700", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
