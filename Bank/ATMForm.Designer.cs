@@ -55,6 +55,7 @@
             panel3 = new Panel();
             addCash_Button = new Button();
             takeCash_Button = new Button();
+            button1 = new Button();
             MainTopPanel.SuspendLayout();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
@@ -395,10 +396,21 @@
             takeCash_Button.UseVisualStyleBackColor = false;
             takeCash_Button.Click += takeCash_Button_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(354, 458);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 12;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // ATMForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(782, 553);
+            Controls.Add(button1);
             Controls.Add(takeCash_Button);
             Controls.Add(addCash_Button);
             Controls.Add(panel3);
@@ -456,5 +468,6 @@
         private DataGridViewTextBoxColumn Data;
         private DataGridViewTextBoxColumn Sum;
         private DataGridViewTextBoxColumn Type;
+        private Button button1;
     }
 }

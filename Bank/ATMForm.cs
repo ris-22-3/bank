@@ -15,7 +15,11 @@ namespace Bank
         public ATMForm()
         {
             InitializeComponent();
-            Balance.Text = Objects.current.Balance.ToString() + " ₽";
+            Reboot();
+        }
+        public void Reboot()
+        {
+            Balance.Text = Objects.current.Balance.ToString() + " " + Objects.current.Account.ToString();
             FillTable();
             dataGridView.Refresh();
         }
@@ -25,7 +29,7 @@ namespace Bank
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.current.history.Count; i++)
             {
-                DataGridViewRow row = AddRow(Objects.user.rub.history[i]);
+                DataGridViewRow row = AddRow(Objects.current.history[i]);
                 rows.Add(row);
             }
             rows.Reverse();
@@ -142,6 +146,12 @@ namespace Bank
                 Balance.Text = Objects.current.Balance.ToString() + " ₽";
             }
             sumBox.Text = default;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Objects.current = Objects.user.usd;
+            Reboot();
         }
     }
 }

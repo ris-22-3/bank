@@ -91,17 +91,17 @@ namespace Bank
                 if (ones[0] == "")
                     break;
                 List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-                CurrencyAccount rub = new CurrencyAccount();
-                CurrencyAccount usd = new CurrencyAccount();
-                CurrencyAccount tenge = new CurrencyAccount();
+                CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), Currency.RUB);
+                CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), Currency.USD);
+                CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), Currency.TNG);
                 Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
                     if (operations[0] == "")
                         break;
-                    DateTime date = ToDateTime(operations[8]);
-                    Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
+                    DateTime date = ToDateTime(operations[5]);
+                    Operation op = new Operation(decimal.Parse(operations[0]), bool.Parse(operations[1]), operations[2], operations[3], operations[4], date);
                     if (op.billetype == "USD")
                         usd.Add(op);
                     if (op.billetype == "rub")
@@ -109,9 +109,9 @@ namespace Bank
                     if (op.billetype == "tg")
                         tenge.Add(op);
                 }
-                rub.Balance = decimal.Parse(ones[6]);
-                usd.Balance = decimal.Parse(ones[10]);
-                tenge.Balance = decimal.Parse(ones[11]);
+                rub.isActive = rub.history.Count > 0;
+                usd.isActive = usd.history.Count > 0;
+                tenge.isActive = tenge.history.Count > 0;
                 //GetUser(ones);
                 arr.Add(Objects.user);
                 logins.Add(Objects.user.cardNumber);
