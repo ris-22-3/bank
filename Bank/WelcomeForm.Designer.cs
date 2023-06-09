@@ -234,6 +234,7 @@ namespace Bank
             this.MyAccountsButton.TabIndex = 5;
             this.MyAccountsButton.Text = "Мои счета";
             this.MyAccountsButton.UseVisualStyleBackColor = false;
+            this.MyAccountsButton.Click += new System.EventHandler(this.MyAccountsButton_Click);
             // 
             // DepositButton
             // 
@@ -248,6 +249,7 @@ namespace Bank
             this.DepositButton.TabIndex = 4;
             this.DepositButton.Text = "Депозит";
             this.DepositButton.UseVisualStyleBackColor = false;
+            this.DepositButton.Click += new System.EventHandler(this.DepositButton_Click_1);
             // 
             // MortgageButton
             // 
@@ -262,6 +264,7 @@ namespace Bank
             this.MortgageButton.TabIndex = 3;
             this.MortgageButton.Text = "Ипотека";
             this.MortgageButton.UseVisualStyleBackColor = false;
+            this.MortgageButton.Click += new System.EventHandler(this.MortgageButton_Click_1);
             // 
             // ATMButton
             // 
@@ -276,6 +279,7 @@ namespace Bank
             this.ATMButton.TabIndex = 2;
             this.ATMButton.Text = "Банкомат";
             this.ATMButton.UseVisualStyleBackColor = false;
+            this.ATMButton.Click += new System.EventHandler(this.ATMButton_Click_1);
             // 
             // StatisticButton
             // 
@@ -290,6 +294,7 @@ namespace Bank
             this.StatisticButton.TabIndex = 1;
             this.StatisticButton.Text = "Статистика";
             this.StatisticButton.UseVisualStyleBackColor = false;
+            this.StatisticButton.Click += new System.EventHandler(this.StatisticButton_Click);
             // 
             // panel6
             // 

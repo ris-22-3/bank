@@ -55,23 +55,22 @@ namespace Bank
             row.Cells.AddRange(date, billeType, sum, type);
             return row;
         }
-        private void StatisticButton_Click_1(object sender, EventArgs e)
+
+
+        private void MyAccountsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            StatisticsForm statisticsForm = new StatisticsForm();
-            statisticsForm.ShowDialog();
+            CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
+            curencyAccounts.ShowDialog();
             this.Close();
         }
 
-        private void ATMButton_Click(object sender, EventArgs e)
+        private void DepositButton_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            ATMForm aTMForm = new ATMForm();
-            aTMForm.ShowDialog();
-            this.Close();
+
         }
 
-        private void MortgageButton_Click(object sender, EventArgs e)
+        private void MortgageButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             Mortgage mortgageForm = new Mortgage();
@@ -79,16 +78,19 @@ namespace Bank
             this.Close();
         }
 
-        private void DepositButton_Click(object sender, EventArgs e)
-        {
-            //
-        }
-
-        private void MyAccountsButton_Click_1(object sender, EventArgs e)
+        private void ATMButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
-            curencyAccounts.ShowDialog();
+            ATMForm aTMForm = new ATMForm();
+            aTMForm.ShowDialog();
+            this.Close();
+        }
+
+        private void StatisticButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StatisticsForm statisticsForm = new StatisticsForm();
+            statisticsForm.ShowDialog();
             this.Close();
         }
     }
