@@ -298,9 +298,65 @@ namespace Bank
                 string monthName = dataPoint.AxisLabel;
                 TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
                 string capitalizedMonthName = textInfo.ToTitleCase(monthName);
-
-                string tooltipText = dataPoint.YValues[0].ToString() + " руб." + "\n" + capitalizedMonthName;
-                chartToolTip.SetToolTip(chart, tooltipText);
+                string currencyType = GetSelectedCurrencyType(currencyTypeComboBox);
+                string currencyType1 = GetSelectedCurrencyType(currencyTypeComboBox1);
+                string currencyType2 = GetSelectedCurrencyType(currencyTypeComboBox2);
+                string activeTab = tabControl1.SelectedTab.Name;
+                string activeTab1 = tabControl2.SelectedTab.Name;
+                if (activeTab1 == "tabPage3")
+                {
+                    if (currencyType == "rub")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " руб." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType == "USD")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " USD" + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType == "tg")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " тг." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                }
+                if (activeTab1 == "tabPage4")
+                {
+                    if (currencyType1 == "rub")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " руб." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType1 == "USD")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " USD" + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType1 == "tg")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " тг." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                }
+                if (activeTab == "tabPage2")
+                {
+                    if (currencyType2 == "rub")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " руб." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType2 == "USD")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " USD" + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                    else if (currencyType2 == "tg")
+                    {
+                        string tooltipText = dataPoint.YValues[0].ToString() + " тг." + "\n" + capitalizedMonthName;
+                        chartToolTip.SetToolTip(chart, tooltipText);
+                    }
+                }
             }
             else
             {
