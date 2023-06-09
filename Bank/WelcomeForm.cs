@@ -1,5 +1,7 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Windows.Forms;
 using WinFormsTest;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Bank
 {
@@ -12,6 +14,11 @@ namespace Bank
             label5.Text = Objects.current.Balance.ToString();
             FillTable();
             dataGridView_all.Refresh();
+            if (Objects.user.clientNumber == 4)
+            {
+                UserPictureBox.Image = Image.FromFile(@"../../../Images/-V1Q7WU1G70.jpg");
+                UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         public void FillTable()
         {

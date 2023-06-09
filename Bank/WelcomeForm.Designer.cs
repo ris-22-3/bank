@@ -368,7 +368,7 @@ namespace Bank
             this.label15.ForeColor = System.Drawing.SystemColors.Control;
             this.label15.Location = new System.Drawing.Point(50, 187);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(135, 18);
+            this.label15.Size = new System.Drawing.Size(124, 17);
             this.label15.TabIndex = 16;
             this.label15.Text = "Казахстанский тенге";
             // 
@@ -379,7 +379,7 @@ namespace Bank
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
             this.label14.Location = new System.Drawing.Point(49, 120);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(150, 18);
+            this.label14.Size = new System.Drawing.Size(136, 17);
             this.label14.TabIndex = 15;
             this.label14.Text = "Американский доллар";
             // 
@@ -558,7 +558,7 @@ namespace Bank
             this.MinimizeBox = false;
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Главная страница";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
