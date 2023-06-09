@@ -41,7 +41,9 @@ namespace WinFormsTest
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Close(); // Изменить (Переход на пред. страницу)
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
 
         public void bAccept_Click_1(object sender, EventArgs e)
