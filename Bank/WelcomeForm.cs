@@ -67,7 +67,10 @@ namespace Bank
 
         private void DepositButton_Click_1(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Deposit deposit = new Deposit();
+            deposit.ShowDialog();
+            this.Close();
         }
 
         private void MortgageButton_Click_1(object sender, EventArgs e)

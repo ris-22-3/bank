@@ -15,6 +15,21 @@ namespace Bank
         public Deposit()
         {
             InitializeComponent();
+            balanseRubLabel.Text = Objects.user.rub.Balance.ToString() + " ₽";
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
+        }
+
+        private void HSEBankLable_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
     }
 }
