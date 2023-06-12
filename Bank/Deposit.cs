@@ -49,6 +49,7 @@ namespace Bank
                 forMonthLabel.Visible = false;
                 balanseRubLabel.Visible = false;
             }
+            forMonthLabel.Text = "";
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -83,9 +84,84 @@ namespace Bank
                 forMonthLabel.Visible = true;
                 balanseRubLabel.Visible = true;
                 Objects.user.isDeposit = true;
-                Database.RewriteLine("rub");
+                Database.RewriteLine("deposit");
             }
 
+        }
+
+        private void topUpButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DepositTransfersForm depositTransfers = new DepositTransfersForm();
+            depositTransfers.ShowDialog();
+            this.Close();
+        }
+
+        private void withdrawButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DepositTransfersForm depositTransfers = new DepositTransfersForm();
+            depositTransfers.ShowDialog();
+            this.Close();
+        }
+
+        private void accountTermsButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Условия депозитного счета\r\n• Срок – не ограничен\r\n• Эффективная ставка – 1,25% от минимального баланса депозита, который был на нем в текущем месяце\r\n• Валюта - ₽\r\n• Номер договора – А94603847694\r\nСчет застрахован Фондом обязательного страхования вкладов на 10000000 ₽. В случае невыплаты банком нужной суммы клиенту, на банк заводится уголовное дело по статье 155 Уголовного Кодекса Российской Федерации. В случае неполной выплаты банком нужной суммы клиенту, на банк заводится уголовное дело по статье 155.1 Настоящего Кодекса. Но это не точно", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+        bool isDecimal = false;
+        decimal value;
+        private void month1Button_Click(object sender, EventArgs e)
+        {
+            isDecimal = decimal.TryParse(textBox1.Text, out value);
+            if (isDecimal)
+            {
+                if (value > 0)
+                {
+                 
+
+
+
+
+
+
+
+                }
+            }
+        }
+        private void month3Button_Click(object sender, EventArgs e)
+        {
+            isDecimal = decimal.TryParse(textBox1.Text, out value);
+            if (isDecimal)
+            {
+                if (value > 0)
+                {
+
+
+
+
+
+
+
+                }
+            }
+        }
+
+        private void month6Button_Click(object sender, EventArgs e)
+        {
+            isDecimal = decimal.TryParse(textBox1.Text, out value);
+            if (isDecimal)
+            {
+                if (value > 0)
+                {
+
+
+
+
+
+
+                }
+            }
         }
     }
 }

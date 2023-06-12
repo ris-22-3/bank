@@ -265,6 +265,8 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HistoryTransfers";
             this.Text = "HistoryTransfers";
             this.Shown += new System.EventHandler(this.HistoryTransfers_Shown);

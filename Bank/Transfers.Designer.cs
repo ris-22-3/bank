@@ -246,6 +246,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Transfers";
             this.Text = "Transfers";
             this.Load += new System.EventHandler(this.Transfers_Load);

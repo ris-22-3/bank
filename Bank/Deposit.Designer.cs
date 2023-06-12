@@ -51,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.forMonthLabel = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.month6Button = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -59,7 +60,6 @@
             this.month1Button = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -162,6 +162,7 @@
             this.accountTermsButton.TabIndex = 5;
             this.accountTermsButton.Text = "Посмотреть условия депозитного счёта";
             this.accountTermsButton.UseVisualStyleBackColor = false;
+            this.accountTermsButton.Click += new System.EventHandler(this.accountTermsButton_Click);
             // 
             // panel8
             // 
@@ -186,6 +187,7 @@
             this.withdrawButton.TabIndex = 5;
             this.withdrawButton.Text = "Вывести";
             this.withdrawButton.UseVisualStyleBackColor = false;
+            this.withdrawButton.Click += new System.EventHandler(this.withdrawButton_Click);
             // 
             // panel6
             // 
@@ -210,6 +212,7 @@
             this.topUpButton.TabIndex = 5;
             this.topUpButton.Text = "Пополнить";
             this.topUpButton.UseVisualStyleBackColor = false;
+            this.topUpButton.Click += new System.EventHandler(this.topUpButton_Click);
             // 
             // panel5
             // 
@@ -344,6 +347,17 @@
             this.panel12.Size = new System.Drawing.Size(722, 125);
             this.panel12.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(722, 125);
+            this.textBox1.TabIndex = 9;
+            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
@@ -367,6 +381,7 @@
             this.month6Button.TabIndex = 4;
             this.month6Button.Text = "6 месяцев";
             this.month6Button.UseVisualStyleBackColor = false;
+            this.month6Button.Click += new System.EventHandler(this.month6Button_Click);
             // 
             // panel10
             // 
@@ -391,6 +406,7 @@
             this.month3Button.TabIndex = 4;
             this.month3Button.Text = "3 месяца";
             this.month3Button.UseVisualStyleBackColor = false;
+            this.month3Button.Click += new System.EventHandler(this.month3Button_Click);
             // 
             // panel9
             // 
@@ -415,6 +431,7 @@
             this.month1Button.TabIndex = 4;
             this.month1Button.Text = "месяц";
             this.month1Button.UseVisualStyleBackColor = false;
+            this.month1Button.Click += new System.EventHandler(this.month1Button_Click);
             // 
             // panel4
             // 
@@ -437,17 +454,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Калькулятор пополнений по депозиту";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(722, 125);
-            this.textBox1.TabIndex = 9;
-            // 
             // Deposit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -457,6 +463,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Deposit";
             this.Text = "Deposit";
             this.panel1.ResumeLayout(false);
