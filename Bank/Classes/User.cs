@@ -19,8 +19,9 @@ namespace Bank
         public CurrencyAccount usd;
         public CurrencyAccount tenge;
         public int clientNumber;
+        public CurrencyAccount deposit;
 
-        public User(int _clientNumber, string _cardnumber, string _password, string _name, string _surname, string _lastname, CurrencyAccount _rub, CurrencyAccount _usd, CurrencyAccount _tenge, bool _isMortgage, bool _isDeposit)
+        public User(int _clientNumber, string _cardnumber, string _password, string _name, string _surname, string _lastname, CurrencyAccount _rub, CurrencyAccount _usd, CurrencyAccount _tenge, bool _isMortgage, bool _isDeposit, CurrencyAccount _deposit)
         {
             clientNumber = _clientNumber;
             name = _name;
@@ -33,6 +34,7 @@ namespace Bank
             tenge = _tenge;
             isMortgage = _isMortgage;
             isDeposit = _isDeposit;
+            deposit = _deposit;
         }
     }
 }

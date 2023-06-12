@@ -17,7 +17,7 @@ namespace Bank
             InitializeComponent();
             if (Objects.user.isDeposit == true)
             {
-                balanseRubLabel.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                balanseRubLabel.Text = Objects.user.deposit.Balance.ToString() + " ₽";
                 openDepositButton.Visible = false;
                 openDepositButton.Enabled = false;
                 label2.Visible = true;
@@ -34,7 +34,7 @@ namespace Bank
             }
             if (Objects.user.isDeposit == false)
             {
-                balanseRubLabel.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                balanseRubLabel.Text = Objects.user.deposit.Balance.ToString() + " ₽";
                 openDepositButton.Visible = true;
                 openDepositButton.Enabled = true;
                 label2.Visible = false;

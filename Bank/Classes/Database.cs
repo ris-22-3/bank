@@ -94,7 +94,8 @@ namespace Bank
                 CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), Currency.RUB);
                 CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), Currency.USD);
                 CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), Currency.TNG);
-                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]));
+                CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
+                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
                 for (int j = 1; j < operationsUser.Count; j++)
                 {
                     List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
@@ -108,10 +109,13 @@ namespace Bank
                         rub.Add(op);
                     if (op.billetype == "tg")
                         tenge.Add(op);
+                    if (op.billetype == "deposit")
+                        deposit.Add(op);
                 }
                 rub.isActive = rub.history.Count > 0;
                 usd.isActive = usd.history.Count > 0;
                 tenge.isActive = tenge.history.Count > 0;
+                deposit.isActive = deposit.history.Count > 0;
                 //GetUser(ones);
                 arr.Add(Objects.user);
                 logins.Add(Objects.user.cardNumber);
@@ -185,7 +189,8 @@ namespace Bank
                             ones[10] = Objects.user.usd.Balance.ToString();
                         if (billetype == "tg")
                             ones[11] = Objects.user.tenge.Balance.ToString();
-
+                        if (billetype == "deposit")
+                            ones[14] = Objects.user.deposit.Balance.ToString();
                         line = string.Join(";", ones);
                         sw.WriteLine(line);
                     }

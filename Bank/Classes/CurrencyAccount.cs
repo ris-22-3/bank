@@ -9,7 +9,7 @@ namespace Bank
 {
     public enum Currency
     {
-        RUB, USD, TNG
+        RUB, USD, TNG, DEPOSIT
     }
     public class CurrencyAccount
     {
