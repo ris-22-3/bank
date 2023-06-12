@@ -175,6 +175,10 @@ namespace Bank
                         {
                             ones[12] = CurrencyAccountForm._isCurAccUsd.ToString();
                         }
+                        if (Objects.user.isDeposit == true)
+                        {
+                            ones[8] = Objects.user.isDeposit.ToString();
+                        }
                         if (billetype == "rub")
                             ones[6] = Objects.user.rub.Balance.ToString();
                         if (billetype == "USD")

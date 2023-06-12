@@ -68,9 +68,9 @@ namespace Bank
             balanseTngLabel.Text = Objects.user.tenge.Balance.ToString() + " ₸";
             Objects.user.tenge.isActive = true;
             _isCurAccTng = true;
-            //Database.RewriteLine(Objects.current.Account);
-            //Database.RewriteLine(Currency.TNG);
-            Database.RewriteLine("tg");
+                //Database.RewriteLine(Objects.current.Account);
+                //Database.RewriteLine(Currency.TNG);
+                Database.RewriteLine("tg");
             }
         }
 
