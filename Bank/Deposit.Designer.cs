@@ -45,9 +45,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.forMonthSumLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.prosentSumLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.ownerSumLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.forMonthLabel = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -278,6 +281,8 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.forMonthSumLabel);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Controls.Add(this.forMonthLabel);
             this.panel13.Location = new System.Drawing.Point(6, 240);
@@ -285,15 +290,39 @@
             this.panel13.Size = new System.Drawing.Size(722, 162);
             this.panel13.TabIndex = 5;
             // 
+            // forMonthSumLabel
+            // 
+            this.forMonthSumLabel.AutoSize = true;
+            this.forMonthSumLabel.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.forMonthSumLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.forMonthSumLabel.Location = new System.Drawing.Point(3, 31);
+            this.forMonthSumLabel.Name = "forMonthSumLabel";
+            this.forMonthSumLabel.Size = new System.Drawing.Size(46, 24);
+            this.forMonthSumLabel.TabIndex = 9;
+            this.forMonthSumLabel.Text = "1000";
+            // 
             // panel14
             // 
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.prosentSumLabel);
             this.panel14.Controls.Add(this.label5);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel14.Location = new System.Drawing.Point(248, 0);
+            this.panel14.Location = new System.Drawing.Point(246, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(474, 162);
+            this.panel14.Size = new System.Drawing.Size(474, 160);
             this.panel14.TabIndex = 8;
+            // 
+            // prosentSumLabel
+            // 
+            this.prosentSumLabel.AutoSize = true;
+            this.prosentSumLabel.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prosentSumLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.prosentSumLabel.Location = new System.Drawing.Point(276, 85);
+            this.prosentSumLabel.Name = "prosentSumLabel";
+            this.prosentSumLabel.Size = new System.Drawing.Size(46, 24);
+            this.prosentSumLabel.TabIndex = 11;
+            this.prosentSumLabel.Text = "1000";
             // 
             // label5
             // 
@@ -309,12 +338,24 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.panel15.Controls.Add(this.ownerSumLabel);
             this.panel15.Controls.Add(this.label4);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(474, 82);
+            this.panel15.Size = new System.Drawing.Size(472, 82);
             this.panel15.TabIndex = 7;
+            // 
+            // ownerSumLabel
+            // 
+            this.ownerSumLabel.AutoSize = true;
+            this.ownerSumLabel.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ownerSumLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.ownerSumLabel.Location = new System.Drawing.Point(202, 7);
+            this.ownerSumLabel.Name = "ownerSumLabel";
+            this.ownerSumLabel.Size = new System.Drawing.Size(46, 24);
+            this.ownerSumLabel.TabIndex = 10;
+            this.ownerSumLabel.Text = "1000";
             // 
             // label4
             // 
@@ -334,9 +375,9 @@
             this.forMonthLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.forMonthLabel.Location = new System.Drawing.Point(3, 7);
             this.forMonthLabel.Name = "forMonthLabel";
-            this.forMonthLabel.Size = new System.Drawing.Size(216, 24);
+            this.forMonthLabel.Size = new System.Drawing.Size(183, 24);
             this.forMonthLabel.TabIndex = 7;
-            this.forMonthLabel.Text = "За n месяцев я накоплю:";
+            this.forMonthLabel.Text = "За месяц я накоплю:";
             // 
             // panel12
             // 
@@ -527,5 +568,8 @@
         private Label balanseRubLabel;
         private Button openDepositButton;
         private TextBox textBox1;
+        private Label forMonthSumLabel;
+        private Label prosentSumLabel;
+        private Label ownerSumLabel;
     }
 }

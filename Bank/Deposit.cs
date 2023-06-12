@@ -49,7 +49,9 @@ namespace Bank
                 forMonthLabel.Visible = false;
                 balanseRubLabel.Visible = false;
             }
-            forMonthLabel.Text = "";
+            forMonthSumLabel.Text = "";
+            ownerSumLabel.Text = "";
+            prosentSumLabel.Text = "";
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -118,15 +120,24 @@ namespace Bank
             {
                 if (value > 0)
                 {
-                 
-
-
-
-
-
-
-
+                    forMonthLabel.Text = "За месяц я накоплю";
+                    decimal prosent = 0;
+                    decimal monthSum = 0;
+                    decimal percent = 1.25m; // 1.25%
+                    monthSum = value + (value * percent / 100);
+                    prosent = monthSum - value;
+                    forMonthSumLabel.Text = (Convert.ToString(monthSum) + " рублей");
+                    ownerSumLabel.Text = (Convert.ToString(value) + " рублей" );
+                    prosentSumLabel.Text = (Convert.ToString(prosent) + " рублей");
                 }
+                else
+                {
+                    MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void month3Button_Click(object sender, EventArgs e)
@@ -136,14 +147,27 @@ namespace Bank
             {
                 if (value > 0)
                 {
-
-
-
-
-
-
-
+                    forMonthLabel.Text = "За 3 месяца я накоплю";
+                    decimal prosent = 0;
+                    decimal monthSum = 0;
+                    decimal percent = 1.25m; // 1.25%
+                    monthSum = value + (value * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = decimal.Round(monthSum, 2);
+                    prosent = monthSum - value;
+                    forMonthSumLabel.Text = (Convert.ToString(monthSum) + " рублей");
+                    ownerSumLabel.Text = (Convert.ToString(value) + " рублей");
+                    prosentSumLabel.Text = (Convert.ToString(prosent) + " рублей");
                 }
+                else
+                {
+                    MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,13 +178,30 @@ namespace Bank
             {
                 if (value > 0)
                 {
-
-
-
-
-
-
+                    forMonthLabel.Text = "За 6 месяцев я накоплю";
+                    decimal prosent = 0;
+                    decimal monthSum = 0;
+                    decimal percent = 1.25m; // 1.25%
+                    monthSum = value + (value * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = monthSum + (monthSum * percent / 100);
+                    monthSum = decimal.Round(monthSum, 2);
+                    prosent = monthSum - value;
+                    forMonthSumLabel.Text = (Convert.ToString(monthSum) + " рублей");
+                    ownerSumLabel.Text = (Convert.ToString(value) + " рублей");
+                    prosentSumLabel.Text = (Convert.ToString(prosent) + " рублей");
                 }
+                else
+                {
+                    MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Данные введены некорректно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
