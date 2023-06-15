@@ -26,23 +26,16 @@ namespace Bank
         public string type;
         public DateTime date;
         public string billetype;
-        public Operation()
-        {
-            sum = 0;
-            type = types[1];
-            category = categories[rnd.Next(categories.Length)];
-            date = DateTime.Now;
-        }
         public Operation(decimal _sum, bool _isIncome, string _billetype, string _category, string _type, DateTime _date)
         {
             sum = _sum;
             if (_isIncome)
                 operationType = OperationType.Income;
             category = _category;
-            type = _type;
+            //type = _type;
             date = _date;
             billetype = _billetype;
-            //expend
+            expendType = ToExpendType(type);
         }
         public override string ToString()
         {
@@ -59,19 +52,19 @@ namespace Bank
             }
             return "Другое";
         }
-        //public ExpendType ToExpendType(string type)
-        //{
-        //    switch (type)
-        //    {
-        //        case ExpendType.Purchase.ToString():
-        //            return ExpendType.Purchase;
-        //        case ExpendType.Transfer.ToString():
-        //            return ExpendType.Transfer;
-        //        case ExpendType.WithDraw.ToString():
-        //            return ExpendType.WithDraw;
-        //        default:
-        //            return ExpendType.Other.ToString();
-        //    }
-        //}
+        public ExpendType ToExpendType(string type)
+        {
+            switch (type)
+            {
+                case "Покупка":
+                    return ExpendType.Purchase;
+                case "Переводы":
+                    return ExpendType.Transfer;
+                case "Выдача наличных":
+                    return ExpendType.WithDraw;
+                default:
+                    return ExpendType.Other;
+            }
+        }
     }
 }

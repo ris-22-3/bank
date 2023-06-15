@@ -1,16 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-
-namespace Bank
+﻿namespace Bank
 {
     public partial class Autorisation : Form
     {
@@ -51,7 +39,6 @@ namespace Bank
         }
         private void AutorisationButton_Click(object sender, EventArgs e)
         {
-            //добавить проверку на пустое поле, чтобы сразу просило ввести хоть что-то
             bool isRight = false;
             string loginUser = LoginField.Text;
             string passUser = PasswordField.Text;
@@ -73,7 +60,7 @@ namespace Bank
                         isRight = true;
                         Objects.user = Database.arr[i];
                         Objects.current = Objects.user.rub;
-                        clientNumber = Objects.user.clientNumber; //зачем?
+                        clientNumber = Objects.user.clientNumber;
                         d.Read();
                         new WelcomeForm().ShowDialog();
                         this.Close();
@@ -86,7 +73,5 @@ namespace Bank
                 }
             }
         }
-
-
     }
 }

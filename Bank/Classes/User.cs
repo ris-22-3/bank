@@ -11,7 +11,7 @@ namespace Bank
         public string name;
         public string surname;
         public string lastname;
-        public string cardNumber;         //пройтись реджексом и преобразовать в нужный формат
+        public string cardNumber;
         public string password;
         public bool isMortgage;
         public bool isDeposit;

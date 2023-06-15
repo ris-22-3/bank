@@ -17,8 +17,6 @@ namespace Bank
         public decimal Balance;
         public bool isActive = false;
         public List<Operation> history = new List<Operation>();
-        //IEnumerable<Operation> incomes = history.Where(x => x.operationType == OperationType.Income);
-        //IEnumerable<Operation> costs = history.Where(x => x.operationType == OperationType.Expenditure);
 
         public CurrencyAccount()
         {
@@ -38,13 +36,6 @@ namespace Bank
             isActive = true;
             Account = cur;
         }
-        //public static CurrencyAccount MakeCurrent(CurrencyAccount account)
-        //{
-        //    Objects.current = account;
-        //    Objects.current.Account = account.Account;
-        //    Objects.current.Balance = account.Balance;
-        //    return Objects.current;
-        //}
         public void Add(Operation op, bool isNew = false)
         {
             if (isNew)

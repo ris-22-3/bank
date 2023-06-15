@@ -112,12 +112,9 @@ namespace Bank
             int sum = ToInt(sumBox.Text);
             if (sum <= 0)
                 MessageBox.Show("Вводите значения только больше нуля");
-            //if (sumBox.Text == "" || sumBox.Text == " ")
-            //    
             else
             {
-                //Operation add = new Operation(sum, true, ExpendType.Other.ToString(), "Внесение наличных", DateTime.Now);
-                Operation add = new Operation(sum, true, "rub", "Другое", "Внесение наличных", DateTime.Now);
+                Operation add = new Operation(sum, true, "rub", ExpendType.Other.ToString(), "Внесение наличных", DateTime.Now);
                 Objects.current.Balance += sum;
                 Objects.current.Add(add, true);
                 Balance.Text = Objects.current.Balance.ToString() + " ₽";
