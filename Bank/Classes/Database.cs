@@ -57,11 +57,11 @@ namespace Bank
             DateTime time = new DateTime(ToInt(data[2]), month, ToInt(data[0]));
             return time;
         }
-        //public static List<Operation> GetOperations(int clientNumber, Currency cur)
+        //public static List<Operation> GetOperations(int clientNumber)
         //{
-        //    List<string> operationsUser = ReadFile("../../../Data/" + clientNumber.ToString() + "/" + cur + ".csv");
+        //    List<string> operationsUser = ReadFile("../../../Data/" + clientNumber.ToString() + ".csv");
         //    List<Operation> result = new List<Operation>();
-        //    for (int i = 0; i < operationsUser.Count; i++)
+        //    for (int i = 1; i < operationsUser.Count; i++)
         //    {
         //        List<String> values = operationsUser[i].Split(new char[] { ';' }).ToList();
         //        if (values[0] == "")
@@ -75,9 +75,10 @@ namespace Bank
         //public static void GetUser(string[] ones)
         //{
         //    List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-        //    CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), GetOperations(ToInt(ones[0]), Currency.RUB), Currency.RUB);
-        //    CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), GetOperations(ToInt(ones[0]), Currency.USD), Currency.USD);
-        //    CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), GetOperations(ToInt(ones[0]), Currency.TNG), Currency.TNG);
+        //    List<Operation> operations = GetOperations(ToInt(ones[0]));
+        //    CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "rub").ToList(), Currency.RUB);
+        //    CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "USD").ToList(), Currency.USD);
+        //    CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "tg").ToList(), Currency.TNG);
         //    CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
         //    rub.isActive = rub.history.Count > 0;
         //    usd.isActive = usd.history.Count > 0;
