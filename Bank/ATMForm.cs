@@ -114,10 +114,10 @@ namespace Bank
                 MessageBox.Show("Вводите значения только больше нуля");
             else
             {
-                Operation add = new Operation(sum, true, "rub", ExpendType.Other.ToString(), "Внесение наличных", DateTime.Now);
+                Operation add = new Operation(sum, true, Objects.current.history[0].billetype, "Другое", "Внесение наличных", DateTime.Now);
                 Objects.current.Balance += sum;
                 Objects.current.Add(add, true);
-                Balance.Text = Objects.current.Balance.ToString() + " ₽";
+                Balance.Text = Objects.current.Balance.ToString();
             }
             sumBox.Text = default;
         }
@@ -140,9 +140,30 @@ namespace Bank
                 Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
                 Objects.current.Balance -= sum;
                 Objects.current.Add(add, true);
-                Balance.Text = Objects.current.Balance.ToString() + " ₽";
+                Balance.Text = Objects.current.Balance.ToString();
             }
             sumBox.Text = default;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                Objects.current = Objects.user.rub;
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                Objects.current = Objects.user.usd;
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                Objects.current = Objects.user.tenge;
+            }
+            else
+            {
+                Objects.current = Objects.user.rub; // По умолчанию рубли
+            }
+            Reboot();
         }
     }
 }

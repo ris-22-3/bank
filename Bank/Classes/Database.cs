@@ -57,35 +57,35 @@ namespace Bank
             DateTime time = new DateTime(ToInt(data[2]), month, ToInt(data[0]));
             return time;
         }
-        //public static List<Operation> GetOperations(int clientNumber)
-        //{
-        //    List<string> operationsUser = ReadFile("../../../Data/" + clientNumber.ToString() + ".csv");
-        //    List<Operation> result = new List<Operation>();
-        //    for (int i = 1; i < operationsUser.Count; i++)
-        //    {
-        //        List<String> values = operationsUser[i].Split(new char[] { ';' }).ToList();
-        //        if (values[0] == "")
-        //            break;
-        //        DateTime date = ToDateTime(values[8]);
-        //        Operation op = new Operation(decimal.Parse(values[3]), bool.Parse(values[4]), values[5], values[6], values[7], date);
-        //        result.Add(op);
-        //    }
-        //    return result;
-        //}
-        //public static void GetUser(string[] ones)
-        //{
-        //    List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-        //    List<Operation> operations = GetOperations(ToInt(ones[0]));
-        //    CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "rub").ToList(), Currency.RUB);
-        //    CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "USD").ToList(), Currency.USD);
-        //    CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "tg").ToList(), Currency.TNG);
-        //    CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
-        //    rub.isActive = rub.history.Count > 0;
-        //    usd.isActive = usd.history.Count > 0;
-        //    tenge.isActive = tenge.history.Count > 0;
-        //    deposit.isActive = deposit.history.Count > 0;
-        //    Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
-        //}
+        public static List<Operation> GetOperations(int clientNumber)
+        {
+            List<string> operationsUser = ReadFile("../../../Data/" + clientNumber.ToString() + ".csv");
+            List<Operation> result = new List<Operation>();
+            for (int i = 1; i < operationsUser.Count; i++)
+            {
+                List<String> values = operationsUser[i].Split(new char[] { ';' }).ToList();
+                if (values[0] == "")
+                    break;
+                DateTime date = ToDateTime(values[8]);
+                Operation op = new Operation(decimal.Parse(values[3]), bool.Parse(values[4]), values[5], values[6], values[7], date);
+                result.Add(op);
+            }
+            return result;
+        }
+        public static void GetUser(string[] ones)
+        {
+            List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
+            List<Operation> operations = GetOperations(ToInt(ones[0]));
+            CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "rub").ToList(), Currency.RUB);
+            CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "USD").ToList(), Currency.USD);
+            CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), GetOperations(ToInt(ones[0])).Where(x => x.billetype == "tg").ToList(), Currency.TNG);
+            CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
+            rub.isActive = rub.history.Count > 0;
+            usd.isActive = usd.history.Count > 0;
+            tenge.isActive = tenge.history.Count > 0;
+            deposit.isActive = deposit.history.Count > 0;
+            Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
+        }
         public Database()
         {
             List<string> data = ReadFile(address);
@@ -94,33 +94,7 @@ namespace Bank
                 string[] ones = data[i].Split(new char[] { ';' });
                 if (ones[0] == "")
                     break;
-                List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
-                CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), Currency.RUB);
-                CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), Currency.USD);
-                CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), Currency.TNG);
-                CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
-                Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
-                for (int j = 1; j < operationsUser.Count; j++)
-                {
-                    List<string> operations = operationsUser[j].Split(new char[] { ';' }).ToList();
-                    if (operations[0] == "")
-                        break;
-                    DateTime date = ToDateTime(operations[8]);
-                    Operation op = new Operation(decimal.Parse(operations[3]), bool.Parse(operations[4]), operations[5], operations[6], operations[7], date);
-                    if (op.billetype == "USD")
-                        usd.Add(op);
-                    if (op.billetype == "rub")
-                        rub.Add(op);
-                    if (op.billetype == "tg")
-                        tenge.Add(op);
-                    if (op.billetype == "deposit")
-                        deposit.Add(op);
-                }
-                rub.isActive = rub.history.Count > 0;
-                usd.isActive = usd.history.Count > 0;
-                tenge.isActive = tenge.history.Count > 0;
-                deposit.isActive = deposit.history.Count > 0;
-                //GetUser(ones);
+                GetUser(ones);
                 arr.Add(Objects.user);
                 logins.Add(Objects.user.cardNumber);
             }

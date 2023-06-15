@@ -1,6 +1,7 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Windows.Forms;
 using WinFormsTest;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Bank
@@ -11,19 +12,23 @@ namespace Bank
         {
             InitializeComponent();
             label3.Text = Objects.user.name + " " + Objects.user.surname;
-            label5.Text = Objects.current.Balance.ToString();
-            FillTable();
-            dataGridView_all.Refresh();
+            Reboot();
             if (Objects.user.clientNumber == 4)
             {
                 UserPictureBox.Image = Image.FromFile(@"../../../Images/-V1Q7WU1G70.jpg");
                 UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+        public void Reboot()
+        {
+            label5.Text = Objects.current.Balance.ToString() + " " + Objects.current.Account.ToString();
+            FillTable();
+            dataGridView_all.Refresh();
+        }
         public void FillTable()
         {
             dataGridView_all.Rows.Clear();
-            List<DataGridViewRow> rows = new List<DataGridViewRow>(); 
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
             for (int i = 0; i < Objects.current.history.Count; i++)
             {
                 DataGridViewRow row = AddRow(Objects.current.history[i]);
@@ -95,6 +100,26 @@ namespace Bank
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.ShowDialog();
             this.Close();
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                Objects.current = Objects.user.rub;
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                Objects.current = Objects.user.usd;
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                Objects.current = Objects.user.tenge;
+            }
+            else
+            {
+                Objects.current = Objects.user.rub; // По умолчанию рубли
+            }
+            Reboot();
         }
     }
 }

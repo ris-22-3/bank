@@ -44,6 +44,7 @@
             label1 = new Label();
             panel2 = new Panel();
             panel5 = new Panel();
+            comboBox1 = new ComboBox();
             label6 = new Label();
             Balance = new Label();
             label4 = new Label();
@@ -236,12 +237,26 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(comboBox1);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(Balance);
             panel5.Location = new Point(6, 54);
             panel5.Name = "panel5";
             panel5.Size = new Size(323, 110);
             panel5.TabIndex = 8;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FlatStyle = FlatStyle.System;
+            comboBox1.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "РУБ", "USD", "ТГ" });
+            comboBox1.Location = new Point(169, 6);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 35);
+            comboBox1.TabIndex = 2;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -299,7 +314,7 @@
             button_500rub.Name = "button_500rub";
             button_500rub.Size = new Size(163, 66);
             button_500rub.TabIndex = 5;
-            button_500rub.Text = "500 ₽";
+            button_500rub.Text = "500";
             button_500rub.UseVisualStyleBackColor = false;
             button_500rub.Click += button_500rub_Click;
             // 
@@ -315,7 +330,7 @@
             button_1000rub.Name = "button_1000rub";
             button_1000rub.Size = new Size(163, 66);
             button_1000rub.TabIndex = 6;
-            button_1000rub.Text = "1000 ₽";
+            button_1000rub.Text = "1000";
             button_1000rub.UseVisualStyleBackColor = false;
             button_1000rub.Click += button_1000rub_Click;
             // 
@@ -331,7 +346,7 @@
             button_5000rub.Name = "button_5000rub";
             button_5000rub.Size = new Size(163, 66);
             button_5000rub.TabIndex = 8;
-            button_5000rub.Text = "5000 ₽";
+            button_5000rub.Text = "5000";
             button_5000rub.UseVisualStyleBackColor = false;
             button_5000rub.Click += button_5000rub_Click;
             // 
@@ -347,7 +362,7 @@
             button_2000rub.Name = "button_2000rub";
             button_2000rub.Size = new Size(163, 66);
             button_2000rub.TabIndex = 7;
-            button_2000rub.Text = "2000 ₽";
+            button_2000rub.Text = "2000";
             button_2000rub.UseVisualStyleBackColor = false;
             button_2000rub.Click += button_2000rub_Click;
             // 
@@ -456,5 +471,6 @@
         private DataGridViewTextBoxColumn Data;
         private DataGridViewTextBoxColumn Sum;
         private DataGridViewTextBoxColumn Type;
+        private ComboBox comboBox1;
     }
 }
