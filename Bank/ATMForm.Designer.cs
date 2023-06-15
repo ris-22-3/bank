@@ -247,14 +247,15 @@
             // 
             // comboBox1
             // 
+            comboBox1.Dock = DockStyle.Right;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FlatStyle = FlatStyle.System;
             comboBox1.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "РУБ", "USD", "ТГ" });
-            comboBox1.Location = new Point(169, 6);
+            comboBox1.Location = new Point(203, 0);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 35);
+            comboBox1.Size = new Size(120, 35);
             comboBox1.TabIndex = 2;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
