@@ -61,8 +61,7 @@ namespace Bank
             return row;
         }
 
-
-        private void MyAccountsButton_Click(object sender, EventArgs e)
+        private void MyAccountsButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
@@ -70,7 +69,7 @@ namespace Bank
             this.Close();
         }
 
-        private void DepositButton_Click_1(object sender, EventArgs e)
+        private void DepositButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Deposit deposit = new Deposit();
@@ -78,7 +77,7 @@ namespace Bank
             this.Close();
         }
 
-        private void MortgageButton_Click_1(object sender, EventArgs e)
+        private void MortgageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Mortgage mortgageForm = new Mortgage();
@@ -86,7 +85,7 @@ namespace Bank
             this.Close();
         }
 
-        private void ATMButton_Click_1(object sender, EventArgs e)
+        private void ATMButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ATMForm aTMForm = new ATMForm();
@@ -94,14 +93,15 @@ namespace Bank
             this.Close();
         }
 
-        private void StatisticButton_Click(object sender, EventArgs e)
+        private void StatisticButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             StatisticsForm statisticsForm = new StatisticsForm();
             statisticsForm.ShowDialog();
             this.Close();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
             {
