@@ -32,7 +32,7 @@ namespace Bank
             if (_isIncome)
                 operationType = OperationType.Income;
             category = _category;
-            //type = _type;
+            type = _type;
             date = _date;
             billetype = _billetype;
             expendType = ToExpendType(type);
