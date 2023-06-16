@@ -28,417 +28,419 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainTopPanel = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.lHSE = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Balance = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.sumBox = new System.Windows.Forms.TextBox();
-            this.button_500rub = new System.Windows.Forms.Button();
-            this.button_1000rub = new System.Windows.Forms.Button();
-            this.button_5000rub = new System.Windows.Forms.Button();
-            this.button_2000rub = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.addCash_Button = new System.Windows.Forms.Button();
-            this.takeCash_Button = new System.Windows.Forms.Button();
-            this.MainTopPanel.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            MainTopPanel = new Panel();
+            panel12 = new Panel();
+            panel11 = new Panel();
+            lHSE = new Label();
+            label7 = new Label();
+            panel10 = new Panel();
+            BackButton = new Button();
+            panel1 = new Panel();
+            panel4 = new Panel();
+            dataGridView = new DataGridView();
+            Data = new DataGridViewTextBoxColumn();
+            Sum = new DataGridViewTextBoxColumn();
+            Type = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            panel2 = new Panel();
+            panel5 = new Panel();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            Balance = new Label();
+            label4 = new Label();
+            sumBox = new TextBox();
+            button_500rub = new Button();
+            button_1000rub = new Button();
+            button_5000rub = new Button();
+            button_2000rub = new Button();
+            panel3 = new Panel();
+            addCash_Button = new Button();
+            takeCash_Button = new Button();
+            MainTopPanel.SuspendLayout();
+            panel11.SuspendLayout();
+            panel10.SuspendLayout();
+            panel1.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panel2.SuspendLayout();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // MainTopPanel
             // 
-            this.MainTopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.MainTopPanel.Controls.Add(this.panel12);
-            this.MainTopPanel.Controls.Add(this.panel11);
-            this.MainTopPanel.Controls.Add(this.panel10);
-            this.MainTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MainTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainTopPanel.Name = "MainTopPanel";
-            this.MainTopPanel.Size = new System.Drawing.Size(782, 84);
-            this.MainTopPanel.TabIndex = 1;
+            MainTopPanel.BackColor = Color.FromArgb(16, 45, 105);
+            MainTopPanel.Controls.Add(panel12);
+            MainTopPanel.Controls.Add(panel11);
+            MainTopPanel.Controls.Add(panel10);
+            MainTopPanel.Dock = DockStyle.Top;
+            MainTopPanel.Location = new Point(0, 0);
+            MainTopPanel.Name = "MainTopPanel";
+            MainTopPanel.Size = new Size(782, 84);
+            MainTopPanel.TabIndex = 1;
             // 
             // panel12
             // 
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel12.Location = new System.Drawing.Point(150, 84);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(346, 0);
-            this.panel12.TabIndex = 5;
+            panel12.Dock = DockStyle.Left;
+            panel12.Location = new Point(150, 84);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(346, 0);
+            panel12.TabIndex = 5;
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.lHSE);
-            this.panel11.Controls.Add(this.label7);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(150, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(632, 84);
-            this.panel11.TabIndex = 4;
+            panel11.Controls.Add(lHSE);
+            panel11.Controls.Add(label7);
+            panel11.Dock = DockStyle.Top;
+            panel11.Location = new Point(150, 0);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(632, 84);
+            panel11.TabIndex = 4;
             // 
             // lHSE
             // 
-            this.lHSE.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lHSE.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lHSE.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lHSE.Location = new System.Drawing.Point(430, 0);
-            this.lHSE.Name = "lHSE";
-            this.lHSE.Size = new System.Drawing.Size(202, 84);
-            this.lHSE.TabIndex = 0;
-            this.lHSE.Text = "HSE Bank";
-            this.lHSE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lHSE.Dock = DockStyle.Right;
+            lHSE.Font = new Font("Palatino Linotype", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lHSE.ForeColor = SystemColors.ButtonFace;
+            lHSE.Location = new Point(430, 0);
+            lHSE.Name = "lHSE";
+            lHSE.Size = new Size(202, 84);
+            lHSE.TabIndex = 0;
+            lHSE.Text = "HSE Bank";
+            lHSE.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(71, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(353, 84);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Банкомат";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label7.Font = new Font("Palatino Linotype", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(71, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(353, 84);
+            label7.TabIndex = 0;
+            label7.Text = "Банкомат";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.BackButton);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(150, 84);
-            this.panel10.TabIndex = 3;
+            panel10.Controls.Add(BackButton);
+            panel10.Dock = DockStyle.Left;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(150, 84);
+            panel10.TabIndex = 3;
             // 
             // BackButton
             // 
-            this.BackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BackButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackButton.FlatAppearance.BorderSize = 0;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BackButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackButton.Location = new System.Drawing.Point(0, 0);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(150, 84);
-            this.BackButton.TabIndex = 2;
-            this.BackButton.Text = "Назад";
-            this.BackButton.UseVisualStyleBackColor = false;
+            BackButton.BackColor = Color.FromArgb(16, 45, 105);
+            BackButton.BackgroundImageLayout = ImageLayout.None;
+            BackButton.Dock = DockStyle.Fill;
+            BackButton.FlatAppearance.BorderSize = 0;
+            BackButton.FlatStyle = FlatStyle.Flat;
+            BackButton.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BackButton.ForeColor = SystemColors.ButtonFace;
+            BackButton.Location = new Point(0, 0);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(150, 84);
+            BackButton.TabIndex = 2;
+            BackButton.Text = "Назад";
+            BackButton.UseVisualStyleBackColor = false;
+            BackButton.Click += BackButton_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 84);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 469);
-            this.panel1.TabIndex = 2;
+            panel1.BackColor = Color.FromArgb(16, 45, 105);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 84);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(335, 469);
+            panel1.TabIndex = 2;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dataGridView);
-            this.panel4.Location = new System.Drawing.Point(6, 221);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(323, 236);
-            this.panel4.TabIndex = 9;
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(dataGridView);
+            panel4.Location = new Point(6, 221);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(323, 236);
+            panel4.TabIndex = 9;
             // 
             // dataGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.MenuBar;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data,
-            this.Sum,
-            this.Type});
-            this.dataGridView.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 29;
-            this.dataGridView.Size = new System.Drawing.Size(317, 230);
-            this.dataGridView.TabIndex = 0;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToResizeColumns = false;
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = SystemColors.MenuBar;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Data, Sum, Type });
+            dataGridView.Location = new Point(3, 3);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 29;
+            dataGridView.Size = new Size(317, 230);
+            dataGridView.TabIndex = 0;
             // 
             // Data
             // 
-            this.Data.FillWeight = 81.54242F;
-            this.Data.HeaderText = "Дата";
-            this.Data.MinimumWidth = 6;
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
+            Data.FillWeight = 81.54242F;
+            Data.HeaderText = "Дата";
+            Data.MinimumWidth = 6;
+            Data.Name = "Data";
+            Data.ReadOnly = true;
             // 
             // Sum
             // 
-            this.Sum.FillWeight = 98.1367F;
-            this.Sum.HeaderText = "Сумма";
-            this.Sum.MinimumWidth = 6;
-            this.Sum.Name = "Sum";
-            this.Sum.ReadOnly = true;
+            Sum.FillWeight = 98.1367F;
+            Sum.HeaderText = "Сумма";
+            Sum.MinimumWidth = 6;
+            Sum.Name = "Sum";
+            Sum.ReadOnly = true;
             // 
             // Type
             // 
-            this.Type.FillWeight = 120.3208F;
-            this.Type.HeaderText = "Тип операции";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
+            Type.FillWeight = 120.3208F;
+            Type.HeaderText = "Тип операции";
+            Type.MinimumWidth = 6;
+            Type.Name = "Type";
+            Type.ReadOnly = true;
             // 
             // label1
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(0, 169);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 38);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Все операции:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(0, 169);
+            label1.Name = "label1";
+            label1.Size = new Size(335, 38);
+            label1.TabIndex = 7;
+            label1.Text = "Все операции:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(335, 169);
-            this.panel2.TabIndex = 0;
+            panel2.BackColor = Color.FromArgb(16, 45, 105);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(label4);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(335, 169);
+            panel2.TabIndex = 0;
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.comboBox1);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.Balance);
-            this.panel5.Location = new System.Drawing.Point(6, 54);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(323, 110);
-            this.panel5.TabIndex = 8;
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(comboBox1);
+            panel5.Controls.Add(label6);
+            panel5.Controls.Add(Balance);
+            panel5.Location = new Point(6, 54);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(323, 110);
+            panel5.TabIndex = 8;
             // 
             // comboBox1
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "РУБ",
-            "USD",
-            "ТГ"});
-            this.comboBox1.Location = new System.Drawing.Point(203, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 35);
-            this.comboBox1.TabIndex = 2;
+            comboBox1.Dock = DockStyle.Right;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FlatStyle = FlatStyle.System;
+            comboBox1.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "РУБ", "USD", "ТГ" });
+            comboBox1.Location = new Point(213, 0);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(110, 35);
+            comboBox1.TabIndex = 2;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(63, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 23);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "HSE-card 12** **** **** ****";
+            label6.AutoSize = true;
+            label6.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(47, 72);
+            label6.Name = "label6";
+            label6.Size = new Size(201, 23);
+            label6.TabIndex = 1;
+            label6.Text = "HSE-card 12** **** **** ****";
             // 
             // Balance
             // 
-            this.Balance.AutoSize = true;
-            this.Balance.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Balance.Location = new System.Drawing.Point(110, 26);
-            this.Balance.Name = "Balance";
-            this.Balance.Size = new System.Drawing.Size(0, 31);
-            this.Balance.TabIndex = 0;
+            Balance.AutoSize = true;
+            Balance.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            Balance.Location = new Point(110, 26);
+            Balance.Name = "Balance";
+            Balance.Size = new Size(0, 31);
+            Balance.TabIndex = 0;
             // 
             // label4
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(335, 38);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Кошелёк:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Dock = DockStyle.Top;
+            label4.Font = new Font("Palatino Linotype", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(0, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(335, 38);
+            label4.TabIndex = 7;
+            label4.Text = "Кошелёк:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // sumBox
             // 
-            this.sumBox.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.sumBox.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sumBox.Location = new System.Drawing.Point(64, 28);
-            this.sumBox.Multiline = true;
-            this.sumBox.Name = "sumBox";
-            this.sumBox.Size = new System.Drawing.Size(326, 60);
-            this.sumBox.TabIndex = 3;
-            this.sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
+            sumBox.BackColor = SystemColors.MenuBar;
+            sumBox.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            sumBox.Location = new Point(64, 28);
+            sumBox.Multiline = true;
+            sumBox.Name = "sumBox";
+            sumBox.Size = new Size(326, 60);
+            sumBox.TabIndex = 3;
+            sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
+            sumBox.TextChanged += sumBox_TextChanged;
             // 
             // button_500rub
             // 
-            this.button_500rub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button_500rub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_500rub.FlatAppearance.BorderSize = 0;
-            this.button_500rub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_500rub.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_500rub.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_500rub.Location = new System.Drawing.Point(375, 219);
-            this.button_500rub.Name = "button_500rub";
-            this.button_500rub.Size = new System.Drawing.Size(163, 66);
-            this.button_500rub.TabIndex = 5;
-            this.button_500rub.Text = "500";
-            this.button_500rub.UseVisualStyleBackColor = false;
+            button_500rub.BackColor = Color.FromArgb(16, 45, 105);
+            button_500rub.BackgroundImageLayout = ImageLayout.None;
+            button_500rub.FlatAppearance.BorderSize = 0;
+            button_500rub.FlatStyle = FlatStyle.Flat;
+            button_500rub.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button_500rub.ForeColor = SystemColors.ButtonFace;
+            button_500rub.Location = new Point(375, 219);
+            button_500rub.Name = "button_500rub";
+            button_500rub.Size = new Size(163, 66);
+            button_500rub.TabIndex = 5;
+            button_500rub.Text = "500";
+            button_500rub.UseVisualStyleBackColor = false;
+            button_500rub.Click += button_500rub_Click;
             // 
             // button_1000rub
             // 
-            this.button_1000rub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button_1000rub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_1000rub.FlatAppearance.BorderSize = 0;
-            this.button_1000rub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_1000rub.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_1000rub.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_1000rub.Location = new System.Drawing.Point(580, 219);
-            this.button_1000rub.Name = "button_1000rub";
-            this.button_1000rub.Size = new System.Drawing.Size(163, 66);
-            this.button_1000rub.TabIndex = 6;
-            this.button_1000rub.Text = "1000";
-            this.button_1000rub.UseVisualStyleBackColor = false;
+            button_1000rub.BackColor = Color.FromArgb(16, 45, 105);
+            button_1000rub.BackgroundImageLayout = ImageLayout.None;
+            button_1000rub.FlatAppearance.BorderSize = 0;
+            button_1000rub.FlatStyle = FlatStyle.Flat;
+            button_1000rub.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button_1000rub.ForeColor = SystemColors.ButtonFace;
+            button_1000rub.Location = new Point(580, 219);
+            button_1000rub.Name = "button_1000rub";
+            button_1000rub.Size = new Size(163, 66);
+            button_1000rub.TabIndex = 6;
+            button_1000rub.Text = "1000";
+            button_1000rub.UseVisualStyleBackColor = false;
+            button_1000rub.Click += button_1000rub_Click;
             // 
             // button_5000rub
             // 
-            this.button_5000rub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button_5000rub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_5000rub.FlatAppearance.BorderSize = 0;
-            this.button_5000rub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_5000rub.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_5000rub.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_5000rub.Location = new System.Drawing.Point(580, 305);
-            this.button_5000rub.Name = "button_5000rub";
-            this.button_5000rub.Size = new System.Drawing.Size(163, 66);
-            this.button_5000rub.TabIndex = 8;
-            this.button_5000rub.Text = "5000";
-            this.button_5000rub.UseVisualStyleBackColor = false;
+            button_5000rub.BackColor = Color.FromArgb(16, 45, 105);
+            button_5000rub.BackgroundImageLayout = ImageLayout.None;
+            button_5000rub.FlatAppearance.BorderSize = 0;
+            button_5000rub.FlatStyle = FlatStyle.Flat;
+            button_5000rub.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button_5000rub.ForeColor = SystemColors.ButtonFace;
+            button_5000rub.Location = new Point(580, 305);
+            button_5000rub.Name = "button_5000rub";
+            button_5000rub.Size = new Size(163, 66);
+            button_5000rub.TabIndex = 8;
+            button_5000rub.Text = "5000";
+            button_5000rub.UseVisualStyleBackColor = false;
+            button_5000rub.Click += button_5000rub_Click;
             // 
             // button_2000rub
             // 
-            this.button_2000rub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.button_2000rub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_2000rub.FlatAppearance.BorderSize = 0;
-            this.button_2000rub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_2000rub.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_2000rub.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_2000rub.Location = new System.Drawing.Point(375, 305);
-            this.button_2000rub.Name = "button_2000rub";
-            this.button_2000rub.Size = new System.Drawing.Size(163, 66);
-            this.button_2000rub.TabIndex = 7;
-            this.button_2000rub.Text = "2000";
-            this.button_2000rub.UseVisualStyleBackColor = false;
+            button_2000rub.BackColor = Color.FromArgb(16, 45, 105);
+            button_2000rub.BackgroundImageLayout = ImageLayout.None;
+            button_2000rub.FlatAppearance.BorderSize = 0;
+            button_2000rub.FlatStyle = FlatStyle.Flat;
+            button_2000rub.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button_2000rub.ForeColor = SystemColors.ButtonFace;
+            button_2000rub.Location = new Point(375, 305);
+            button_2000rub.Name = "button_2000rub";
+            button_2000rub.Size = new Size(163, 66);
+            button_2000rub.TabIndex = 7;
+            button_2000rub.Text = "2000";
+            button_2000rub.UseVisualStyleBackColor = false;
+            button_2000rub.Click += button_2000rub_Click;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.panel3.Controls.Add(this.sumBox);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(335, 84);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(447, 111);
-            this.panel3.TabIndex = 9;
+            panel3.BackColor = Color.FromArgb(16, 45, 105);
+            panel3.Controls.Add(sumBox);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(335, 84);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(447, 111);
+            panel3.TabIndex = 9;
             // 
             // addCash_Button
             // 
-            this.addCash_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.addCash_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addCash_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.addCash_Button.FlatAppearance.BorderSize = 0;
-            this.addCash_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCash_Button.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addCash_Button.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.addCash_Button.Location = new System.Drawing.Point(335, 487);
-            this.addCash_Button.Name = "addCash_Button";
-            this.addCash_Button.Size = new System.Drawing.Size(447, 66);
-            this.addCash_Button.TabIndex = 10;
-            this.addCash_Button.Text = "Внести наличные";
-            this.addCash_Button.UseVisualStyleBackColor = false;
+            addCash_Button.BackColor = Color.FromArgb(16, 45, 105);
+            addCash_Button.BackgroundImageLayout = ImageLayout.None;
+            addCash_Button.Dock = DockStyle.Bottom;
+            addCash_Button.FlatAppearance.BorderSize = 0;
+            addCash_Button.FlatStyle = FlatStyle.Flat;
+            addCash_Button.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            addCash_Button.ForeColor = SystemColors.ButtonFace;
+            addCash_Button.Location = new Point(335, 487);
+            addCash_Button.Name = "addCash_Button";
+            addCash_Button.Size = new Size(447, 66);
+            addCash_Button.TabIndex = 10;
+            addCash_Button.Text = "Внести наличные";
+            addCash_Button.UseVisualStyleBackColor = false;
+            addCash_Button.Click += addCash_Button_Click;
             // 
             // takeCash_Button
             // 
-            this.takeCash_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.takeCash_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.takeCash_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.takeCash_Button.FlatAppearance.BorderSize = 0;
-            this.takeCash_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.takeCash_Button.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.takeCash_Button.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.takeCash_Button.Location = new System.Drawing.Point(335, 421);
-            this.takeCash_Button.Name = "takeCash_Button";
-            this.takeCash_Button.Size = new System.Drawing.Size(447, 66);
-            this.takeCash_Button.TabIndex = 11;
-            this.takeCash_Button.Text = "Снять наличные";
-            this.takeCash_Button.UseVisualStyleBackColor = false;
+            takeCash_Button.BackColor = Color.FromArgb(16, 45, 105);
+            takeCash_Button.BackgroundImageLayout = ImageLayout.None;
+            takeCash_Button.Dock = DockStyle.Bottom;
+            takeCash_Button.FlatAppearance.BorderSize = 0;
+            takeCash_Button.FlatStyle = FlatStyle.Flat;
+            takeCash_Button.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            takeCash_Button.ForeColor = SystemColors.ButtonFace;
+            takeCash_Button.Location = new Point(335, 421);
+            takeCash_Button.Name = "takeCash_Button";
+            takeCash_Button.Size = new Size(447, 66);
+            takeCash_Button.TabIndex = 11;
+            takeCash_Button.Text = "Снять наличные";
+            takeCash_Button.UseVisualStyleBackColor = false;
+            takeCash_Button.Click += takeCash_Button_Click;
             // 
             // ATMForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(782, 553);
-            this.Controls.Add(this.takeCash_Button);
-            this.Controls.Add(this.addCash_Button);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button_5000rub);
-            this.Controls.Add(this.button_2000rub);
-            this.Controls.Add(this.button_1000rub);
-            this.Controls.Add(this.button_500rub);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.MainTopPanel);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ATMForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
-            this.MainTopPanel.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(782, 553);
+            Controls.Add(takeCash_Button);
+            Controls.Add(addCash_Button);
+            Controls.Add(panel3);
+            Controls.Add(button_5000rub);
+            Controls.Add(button_2000rub);
+            Controls.Add(button_1000rub);
+            Controls.Add(button_500rub);
+            Controls.Add(panel1);
+            Controls.Add(MainTopPanel);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ATMForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = " ";
+            MainTopPanel.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panel2.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

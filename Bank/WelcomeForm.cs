@@ -11,6 +11,7 @@ namespace Bank
         public WelcomeForm()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
             label3.Text = Objects.user.name + " " + Objects.user.surname;
             Reboot();
             if (Objects.user.clientNumber == 4)

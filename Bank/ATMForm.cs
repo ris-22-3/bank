@@ -15,6 +15,7 @@ namespace Bank
         public ATMForm()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
             Reboot();
         }
         public void Reboot()
@@ -56,38 +57,6 @@ namespace Bank
             row.Cells.AddRange(date, sum, type);
             return row;
         }
-        private void button_500rub_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = 500.ToString();
-        }
-
-        private void button_1000rub_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = 1000.ToString();
-        }
-
-        private void button_2000rub_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = 2000.ToString();
-        }
-
-        private void button_5000rub_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = 5000.ToString();
-        }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new WelcomeForm().ShowDialog();
-            this.Close();
-        }
-
-        private void takeCash_Button_Click(object sender, EventArgs e)
-        {
-            TakeCash();
-            FillTable();
-        }
         public static int ToInt(string toint, int defaultValue = 0)
         {
             int n = defaultValue;
@@ -95,17 +64,6 @@ namespace Bank
             if (n >= int.MaxValue)
                 n = int.MaxValue - 1;
             return n;
-        }
-
-        private void addCash_Button_Click(object sender, EventArgs e)
-        {
-            AddCash();
-            FillTable();
-        }
-
-        private void sumBox_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = "";
         }
         private void AddCash()
         {
@@ -143,6 +101,50 @@ namespace Bank
                 Balance.Text = Objects.current.Balance.ToString();
             }
             sumBox.Text = default;
+        }
+
+        private void button_500rub_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = 500.ToString();
+        }
+
+        private void button_1000rub_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = 1000.ToString();
+        }
+
+        private void button_2000rub_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = 2000.ToString();
+        }
+
+        private void button_5000rub_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = 5000.ToString();
+        }
+
+        private void sumBox_TextChanged(object sender, EventArgs e)
+        {
+            sumBox.Text = "";
+        }
+
+        private void takeCash_Button_Click(object sender, EventArgs e)
+        {
+            TakeCash();
+            FillTable();
+        }
+
+        private void addCash_Button_Click(object sender, EventArgs e)
+        {
+            AddCash();
+            FillTable();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
