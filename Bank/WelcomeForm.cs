@@ -122,5 +122,13 @@ namespace Bank
             }
             Reboot();
         }
+
+        private void shopButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShopForms shop = new ShopForms();
+            shop.ShowDialog();
+            this.Close();
+        }
     }
 }
