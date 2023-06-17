@@ -301,7 +301,7 @@
             sumBox.Size = new Size(326, 60);
             sumBox.TabIndex = 3;
             sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
-            sumBox.TextChanged += sumBox_TextChanged;
+            sumBox.Click += sumBox_Click;
             // 
             // button_500rub
             // 

@@ -77,7 +77,7 @@ namespace Bank
                 Objects.current.Add(add, true);
                 Balance.Text = Objects.current.Balance.ToString();
             }
-            sumBox.Text = default;
+            sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
         }
         private void TakeCash()
         {
@@ -100,7 +100,7 @@ namespace Bank
                 Objects.current.Add(add, true);
                 Balance.Text = Objects.current.Balance.ToString();
             }
-            sumBox.Text = default;
+            sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
         }
 
         private void button_500rub_Click(object sender, EventArgs e)
@@ -123,10 +123,6 @@ namespace Bank
             sumBox.Text = 5000.ToString();
         }
 
-        private void sumBox_TextChanged(object sender, EventArgs e)
-        {
-            sumBox.Text = "";
-        }
 
         private void takeCash_Button_Click(object sender, EventArgs e)
         {
@@ -166,6 +162,11 @@ namespace Bank
                 Objects.current = Objects.user.rub; // По умолчанию рубли
             }
             Reboot();
+        }
+
+        private void sumBox_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = "";
         }
     }
 }
