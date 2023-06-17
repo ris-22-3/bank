@@ -41,16 +41,23 @@ namespace Bank
             {
                 if(value > 0)
                 {
-                    Operation add = new Operation(value, false, "rub", "Другое", "Переводы", DateTime.Now);
-                    Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
-                    Objects.user.rub.Add(add, true);
+                    if (value < Objects.user.rub.Balance)
+                    {
+                        Operation add = new Operation(value, false, "rub", "Другое", "Переводы", DateTime.Now);
+                        Objects.user.rub.Balance -= Convert.ToDecimal(textBox1.Text);
+                        Objects.user.rub.Add(add, true);
 
 
 
-                    Objects.user.deposit.Balance += value;
-                    Database.RewriteLine("deposit");
-                    label3.Text = Objects.user.rub.Balance.ToString() + " ₽";
-                    MessageBox.Show("Перевод выполнен успешно", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        Objects.user.deposit.Balance += value;
+                        Database.RewriteLine("deposit");
+                        label3.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                        MessageBox.Show("Перевод выполнен успешно", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Недостаточно средств для выполнения операции", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -70,16 +77,22 @@ namespace Bank
             {
                 if (value > 0)
                 {
-                    
-                    Objects.user.deposit.Balance -= value;
-                    Database.RewriteLine("deposit");
+                    if (value < Objects.user.deposit.Balance)
+                    {
+                        Objects.user.deposit.Balance -= value;
+                        Database.RewriteLine("deposit");
 
 
-                    Operation add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
-                    Objects.user.rub.Balance += value;
-                    Objects.user.rub.Add(add, true);
-                    label3.Text = Objects.user.rub.Balance.ToString() + " ₽";
-                    MessageBox.Show("Перевод выполнен успешно", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        Operation add = new Operation(value, true, "rub", "Другое", "Пополнение", DateTime.Now);
+                        Objects.user.rub.Balance += value;
+                        Objects.user.rub.Add(add, true);
+                        label3.Text = Objects.user.rub.Balance.ToString() + " ₽";
+                        MessageBox.Show("Перевод выполнен успешно", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Недостаточно средств для выполнения операции", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
