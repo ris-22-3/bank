@@ -115,14 +115,13 @@ namespace Bank
 
         private void button_2000rub_Click(object sender, EventArgs e)
         {
-            sumBox.Text = 2000.ToString();
+            sumBox.Text = 2900.ToString();
         }
 
         private void button_5000rub_Click(object sender, EventArgs e)
         {
             sumBox.Text = 5000.ToString();
         }
-
 
         private void takeCash_Button_Click(object sender, EventArgs e)
         {
@@ -141,6 +140,11 @@ namespace Bank
             this.Hide();
             new WelcomeForm().ShowDialog();
             this.Close();
+        }
+
+        private void sumBox_Click(object sender, EventArgs e)
+        {
+            sumBox.Text = "";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -162,11 +166,6 @@ namespace Bank
                 Objects.current = Objects.user.rub; // По умолчанию рубли
             }
             Reboot();
-        }
-
-        private void sumBox_Click(object sender, EventArgs e)
-        {
-            sumBox.Text = "";
         }
     }
 }
