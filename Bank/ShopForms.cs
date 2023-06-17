@@ -221,5 +221,19 @@ namespace Bank
                 MessageBox.Show("Недостаточно средств для выполнения операции", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void HSEBankLable_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
+        }
     }
 }

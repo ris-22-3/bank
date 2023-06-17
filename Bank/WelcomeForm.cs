@@ -62,27 +62,19 @@ namespace Bank
             return row;
         }
 
-        private void MyAccountsButton_Click_1(object sender, EventArgs e)
+        private void shopButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
-            curencyAccounts.ShowDialog();
+            ShopForms shop = new ShopForms();
+            shop.ShowDialog();
             this.Close();
         }
 
-        private void DepositButton_Click(object sender, EventArgs e)
+        private void StatisticButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Deposit deposit = new Deposit();
-            deposit.ShowDialog();
-            this.Close();
-        }
-
-        private void MortgageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Mortgage mortgageForm = new Mortgage();
-            mortgageForm.ShowDialog();
+            StatisticsForm statisticsForm = new StatisticsForm();
+            statisticsForm.ShowDialog();
             this.Close();
         }
 
@@ -94,15 +86,31 @@ namespace Bank
             this.Close();
         }
 
-        private void StatisticButton_Click_1(object sender, EventArgs e)
+        private void MortgageButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            StatisticsForm statisticsForm = new StatisticsForm();
-            statisticsForm.ShowDialog();
+            Mortgage mortgageForm = new Mortgage();
+            mortgageForm.ShowDialog();
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void DepositButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Deposit deposit = new Deposit();
+            deposit.ShowDialog();
+            this.Close();
+        }
+
+        private void MyAccountsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
+            curencyAccounts.ShowDialog();
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
             {
@@ -121,14 +129,6 @@ namespace Bank
                 Objects.current = Objects.user.rub; // По умолчанию рубли
             }
             Reboot();
-        }
-
-        private void shopButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ShopForms shop = new ShopForms();
-            shop.ShowDialog();
-            this.Close();
         }
     }
 }
