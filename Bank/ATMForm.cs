@@ -57,48 +57,79 @@ namespace Bank
             row.Cells.AddRange(date, sum, type);
             return row;
         }
-        public static int ToInt(string toint, int defaultValue = 0)
+        public static int ToInt(string toint, int defaultValue = 00)
         {
-            int n = defaultValue;
+            int n;
             bool isInt = int.TryParse(toint, out n);
-            if (n >= int.MaxValue)
-                n = int.MaxValue - 1;
+            if (!isInt)
+                n = -100;
             return n;
         }
         private void AddCash()
         {
-            int sum = ToInt(sumBox.Text);
-            if (sum <= 0)
-                MessageBox.Show("Вводите значения только больше нуля");
+            if (sumBox.Text == "" || sumBox.Text == " " || sumBox.Text == "0")
+                MessageBox.Show("Введите сумму или выберите одну из предложенных");
             else
             {
-                Operation add = new Operation(sum, true, Objects.current.history[0].billetype, "Другое", "Внесение наличных", DateTime.Now);
-                Objects.current.Balance += sum;
-                Objects.current.Add(add, true);
-                Balance.Text = Objects.current.Balance.ToString();
+                if (sumBox.Text.Any(c => !char.IsNumber(c)))
+                {
+                    if (sumBox.Text.Contains("-"))
+                        MessageBox.Show("Вводите только положительные числа");
+                    else
+                        MessageBox.Show("Вводите только числа");
+                }
+                else
+                {
+                    int sum = ToInt(sumBox.Text);
+                    if (sum <= 0 || Objects.current.Balance - sum < 0)
+                    {
+                        if (sum == -100)
+                            MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
+                        else
+                            MessageBox.Show("Недостаточно средств для выполнения операции");
+                    }
+                    else
+                    {
+                        Operation add = new Operation(sum, true, Objects.current.history[0].billetype, "Другое", "Внесение наличных", DateTime.Now);
+                        Objects.current.Balance -= sum;
+                        Objects.current.Add(add, true);
+                        Balance.Text = Objects.current.Balance.ToString();
+                    }
+                }
             }
             sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
         }
         private void TakeCash()
         {
-            int sum = ToInt(sumBox.Text);
-            if (sum <= 0 || Objects.current.Balance - sum < 0 || sumBox.Text == "" || sumBox.Text == " ")
-            {
-                if (sum <= 0)
-                    MessageBox.Show("Вводите значения только больше нуля");
-                if (sum == int.MaxValue)
-                    MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
-                if (Objects.current.Balance - sum < 0)
-                    MessageBox.Show("Недостаточно средств для выполнения операции");
-                if (sumBox.Text == "" || sumBox.Text == " ")
-                    MessageBox.Show("Введите сумму или выберите одну из предложенных");
-            }
+            if (sumBox.Text == "" || sumBox.Text == " " || sumBox.Text == "0")
+                MessageBox.Show("Введите сумму или выберите одну из предложенных");
             else
             {
-                Operation add = new Operation(sum, false, "rub", "Другое", "Выдача наличных", DateTime.Now);
-                Objects.current.Balance -= sum;
-                Objects.current.Add(add, true);
-                Balance.Text = Objects.current.Balance.ToString();
+                if (sumBox.Text.Any(c => !char.IsNumber(c)))
+                {
+                    if (sumBox.Text.Contains("-"))
+                        MessageBox.Show("Вводите только положительные числа");
+                    else
+                        MessageBox.Show("Вводите только числа");
+                }
+                else
+                {
+                    int sum = ToInt(sumBox.Text);
+                    if (sum <= 0 || Objects.current.Balance - sum < 0)
+                    {
+                        if (sum == -100)
+                            MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
+                        else
+                            MessageBox.Show("Недостаточно средств для выполнения операции");
+                    }
+                    else
+                    {
+                        Operation add = new Operation(sum, false, Objects.current.history[0].billetype, "Другое", "Выдача наличных", DateTime.Now);
+                        Objects.current.Balance -= sum;
+                        Objects.current.Add(add, true);
+                        Balance.Text = Objects.current.Balance.ToString();
+                    }
+                }
             }
             sumBox.Text = "Введите сумму или нажмите одну из клавиш ниже";
         }
