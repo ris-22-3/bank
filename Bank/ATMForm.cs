@@ -115,7 +115,7 @@ namespace Bank
 
         private void button_2000rub_Click(object sender, EventArgs e)
         {
-            sumBox.Text = 2900.ToString();
+            sumBox.Text = 2000.ToString();
         }
 
         private void button_5000rub_Click(object sender, EventArgs e)
