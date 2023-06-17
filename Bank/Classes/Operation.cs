@@ -17,7 +17,7 @@ namespace Bank
     public class Operation
     {
         public static Random rnd = new Random();
-        public static string[] categories = { "Переводы", "Рестораны", "Супермаркеты", "Транспорт", "Одежда", "Развлечения и хобби", "Другое" };
+        public static string[] categories = { "Переводы", "Рестораны", "Супермаркеты", "Транспорт", "Одежда", "Развлечения", "Другое" };
         public static string[] types = { "Переводы", "Покупка", "Выдача наличных", "Другое" };
         public decimal sum;
         public OperationType operationType = OperationType.Expenditure;

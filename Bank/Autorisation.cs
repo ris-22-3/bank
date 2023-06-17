@@ -43,7 +43,6 @@
             string loginUser = LoginField.Text;
             string passUser = PasswordField.Text;
             Database d = new Database();
-            clientNumber = Objects.user.clientNumber;
             if (!Database.logins.Contains(loginUser))
             {
                 MessageBox.Show("Пользователя с такими данными не существует");

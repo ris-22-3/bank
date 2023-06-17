@@ -18,10 +18,6 @@ namespace Bank
         public static List<User> arr = new List<User>();
         public static List<string> logins = new List<string>();
         public static string address = "../../../Data/UserDataBase.csv";
-        public static int Length
-        {
-            get => File.ReadAllLines(address).Length;
-        }
         public static List<String> ReadFile(string address)
         {
             List<string> strs = new List<string>();
@@ -44,7 +40,6 @@ namespace Bank
         public static DateTime ToDateTime(string date)
         {
             string[] data = date.Split(' ');
-            // 
             int month = 0 + 1;
             for (int i = 0; i < months.Length; i++)
             {
@@ -72,7 +67,7 @@ namespace Bank
             }
             return result;
         }
-        public static void GetUser(string[] ones)
+        public static User GetUser(string[] ones)
         {
             List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
             List<Operation> operations = GetOperations(ToInt(ones[0]));
@@ -84,8 +79,10 @@ namespace Bank
             usd.isActive = usd.history.Count > 0;
             tenge.isActive = tenge.history.Count > 0;
             deposit.isActive = deposit.history.Count > 0;
-            Objects.user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
+            User user = new User(int.Parse(ones[0]), ones[1], ones[2], ones[3], ones[4], ones[5], rub, usd, tenge, bool.Parse(ones[7]), bool.Parse(ones[8]), deposit);
+            return user;
         }
+
         public Database()
         {
             List<string> data = ReadFile(address);
@@ -94,11 +91,12 @@ namespace Bank
                 string[] ones = data[i].Split(new char[] { ';' });
                 if (ones[0] == "")
                     break;
-                GetUser(ones);
-                arr.Add(Objects.user);
-                logins.Add(Objects.user.cardNumber);
+                User user = GetUser(ones);
+                arr.Add(user);
+                logins.Add(user.cardNumber);
             }
         }
+
         public void Read()
         {
             List<string> data = ReadFile(address);
