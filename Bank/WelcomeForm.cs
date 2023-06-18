@@ -14,6 +14,11 @@ namespace Bank
             comboBox1.SelectedIndex = 0;
             label3.Text = Objects.user.name + " " + Objects.user.surname;
             Reboot();
+            if(Objects.user.clientNumber == 1)
+            {
+                UserPictureBox.Image = Image.FromFile(@"../../../Images/Нагиев.jpg");
+                UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
             if (Objects.user.clientNumber == 4)
             {
                 UserPictureBox.Image = Image.FromFile(@"../../../Images/-V1Q7WU1G70.jpg");
