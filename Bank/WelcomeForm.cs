@@ -88,6 +88,10 @@ namespace Bank
 
         private void ATMButton_Click_1(object sender, EventArgs e)
         {
+
+        }
+        private void MortgageButton_Click(object sender, EventArgs e)
+        {
             this.Hide();
             ATMForm aTMForm = new ATMForm();
             aTMForm.ShowDialog();
@@ -130,5 +134,7 @@ namespace Bank
             }
             Reboot();
         }
+
+
     }
 }
