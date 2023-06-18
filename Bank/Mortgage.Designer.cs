@@ -28,73 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mortgage));
-            this.MainTopPanel = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.lHSE = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bAccept = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lTerm = new System.Windows.Forms.Label();
-            this.tbTerm = new System.Windows.Forms.TrackBar();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lInitialFee = new System.Windows.Forms.Label();
-            this.tbInitialFee = new System.Windows.Forms.TrackBar();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lPrice = new System.Windows.Forms.Label();
-            this.tbPrice = new System.Windows.Forms.TrackBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbApartmentType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.bPaymentShedule = new System.Windows.Forms.Button();
-            this.bApply = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.NecessaryIncomeLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.MonthlyPaymentLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.InterestRateLable = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PaymentSheduleDGV = new System.Windows.Forms.DataGridView();
-            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RemainingPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MainTopPanel.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTerm)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbInitialFee)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPrice)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PaymentSheduleDGV)).BeginInit();
-            this.SuspendLayout();
+            MainTopPanel = new Panel();
+            panel12 = new Panel();
+            lHSE = new Label();
+            panel11 = new Panel();
+            label7 = new Label();
+            panel10 = new Panel();
+            BackButton = new Button();
+            label2 = new Label();
+            panel2 = new Panel();
+            bAccept = new Button();
+            panel6 = new Panel();
+            label9 = new Label();
+            lTerm = new Label();
+            tbTerm = new TrackBar();
+            label6 = new Label();
+            panel5 = new Panel();
+            lInitialFee = new Label();
+            tbInitialFee = new TrackBar();
+            label5 = new Label();
+            panel4 = new Panel();
+            lPrice = new Label();
+            tbPrice = new TrackBar();
+            label4 = new Label();
+            panel3 = new Panel();
+            cbApartmentType = new ComboBox();
+            label3 = new Label();
+            bPaymentShedule = new Button();
+            bApply = new Button();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            panel1 = new Panel();
+            panel15 = new Panel();
+            NecessaryIncomeLabel = new Label();
+            label11 = new Label();
+            panel14 = new Panel();
+            MonthlyPaymentLabel = new Label();
+            label10 = new Label();
+            panel13 = new Panel();
+            InterestRateLable = new Label();
+            label1 = new Label();
+            PaymentSheduleDGV = new DataGridView();
+            Year = new DataGridViewTextBoxColumn();
+            Month = new DataGridViewTextBoxColumn();
+            Payment = new DataGridViewTextBoxColumn();
+            RemainingPayment = new DataGridViewTextBoxColumn();
+            MainTopPanel.SuspendLayout();
+            panel12.SuspendLayout();
+            panel11.SuspendLayout();
+            panel10.SuspendLayout();
+            panel2.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbTerm).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbInitialFee).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tbPrice).BeginInit();
+            panel3.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel1.SuspendLayout();
+            panel15.SuspendLayout();
+            panel14.SuspendLayout();
+            panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PaymentSheduleDGV).BeginInit();
+            SuspendLayout();
             // 
             // MainTopPanel
             // 
@@ -595,20 +595,23 @@
             // 
             // PaymentSheduleDGV
             // 
-            this.PaymentSheduleDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.PaymentSheduleDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(74)))), ((int)(((byte)(154)))));
-            this.PaymentSheduleDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PaymentSheduleDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Month,
-            this.Payment,
-            this.RemainingPayment});
-            this.PaymentSheduleDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PaymentSheduleDGV.Location = new System.Drawing.Point(419, 204);
-            this.PaymentSheduleDGV.Name = "PaymentSheduleDGV";
-            this.PaymentSheduleDGV.RowHeadersWidth = 51;
-            this.PaymentSheduleDGV.RowTemplate.Height = 29;
-            this.PaymentSheduleDGV.Size = new System.Drawing.Size(763, 417);
-            this.PaymentSheduleDGV.TabIndex = 9;
+            PaymentSheduleDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            PaymentSheduleDGV.BackgroundColor = Color.FromArgb(36, 74, 154);
+            PaymentSheduleDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PaymentSheduleDGV.Columns.AddRange(new DataGridViewColumn[] { Year, Month, Payment, RemainingPayment });
+            PaymentSheduleDGV.Dock = DockStyle.Fill;
+            PaymentSheduleDGV.Location = new Point(419, 204);
+            PaymentSheduleDGV.Name = "PaymentSheduleDGV";
+            PaymentSheduleDGV.RowHeadersWidth = 51;
+            PaymentSheduleDGV.RowTemplate.Height = 29;
+            PaymentSheduleDGV.Size = new Size(763, 417);
+            PaymentSheduleDGV.TabIndex = 9;
+            // 
+            // Year
+            // 
+            Year.HeaderText = "Год";
+            Year.MinimumWidth = 6;
+            Year.Name = "Year";
             // 
             // Month
             // 
@@ -712,6 +715,7 @@
         private Label MonthlyPaymentLabel;
         private Label InterestRateLable;
         private DataGridView PaymentSheduleDGV;
+        private DataGridViewTextBoxColumn Year;
         private DataGridViewTextBoxColumn Month;
         private DataGridViewTextBoxColumn Payment;
         private DataGridViewTextBoxColumn RemainingPayment;
