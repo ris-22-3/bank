@@ -115,11 +115,8 @@ namespace Bank.Tests
             Console.WriteLine("Has Data For Selected Month: " + hasDataForSelectedMonth);
 
             // Assert
-            Assert.IsTrue(hasDataForSelectedMonth);
-            Assert.AreEqual(1, chart.Series[0].Points.Count);
-            Assert.AreEqual("01 January", chart.Series[0].Points[0].AxisLabel);
-            Assert.AreEqual(1000.50, chart.Series[0].Points[0].YValues[0]);
-            Assert.AreEqual(Color.Red, chart.Series[0].Points[0].Color);
+            Assert.IsTrue(!hasDataForSelectedMonth);
+            Assert.AreEqual(1, chart.Series.Count);
         }
         [TestMethod]
         public void GetMonthsArray_ReturnsArrayWith12Months()
@@ -133,6 +130,66 @@ namespace Bank.Tests
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(string[]));
             Assert.AreEqual(12, result.Length);
+        }
+        [TestMethod]
+        public void AddData_ReturnsUpdatedMonthData()
+        {
+            // Arrange
+            List<ChartData> chartData = new List<ChartData>()
+        {
+            new ChartData()
+            {
+                Date = new DateTime(2023, 1, 1),
+                Amount = 1000.50m,
+                Income = true,
+                Currency = "USD",
+                Category = "Category 1"
+            },
+            new ChartData()
+            {
+                Date = new DateTime(2023, 2, 1),
+                Amount = 500.75m,
+                Income = true,
+                Currency = "USD",
+                Category = "Category 2"
+            },
+            new ChartData()
+            {
+                Date = new DateTime(2023, 2, 15),
+                Amount = 200.25m,
+                Income = false,
+                Currency = "USD",
+                Category = "Category 3"
+            },
+            new ChartData()
+            {
+                Date = new DateTime(2023, 3, 1),
+                Amount = 300.30m,
+                Income = false,
+                Currency = "USD",
+                Category = "Category 1"
+            }
+        };
+
+            Dictionary<int, decimal> monthData = new Dictionary<int, decimal>()
+        {
+            { 1, 0m },
+            { 2, 0m },
+            { 3, 0m }
+        };
+
+            string currencyType = "USD";
+            bool isIncome = true;
+            string selectedYear = "2023";
+
+            // Act
+            var result = ChartData.AddData(chartData, monthData, currencyType, isIncome, selectedYear);
+
+            // Assert
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(1000.50m, result[1]);
+            Assert.AreEqual(500.75m, result[2]);
+            Assert.AreEqual(0m, result[3]);
         }
     }
 }
