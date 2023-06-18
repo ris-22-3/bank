@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.closeUsdButton = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.historyUsdButton = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -59,7 +58,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.closeTngButton = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.historyTngButton = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -69,10 +67,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.openTngButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -81,7 +82,6 @@
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -167,31 +167,15 @@
             // panel14
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.closeUsdButton);
             this.panel14.Location = new System.Drawing.Point(3, 293);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(319, 53);
             this.panel14.TabIndex = 6;
             // 
-            // closeUsdButton
-            // 
-            this.closeUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeUsdButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeUsdButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeUsdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeUsdButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeUsdButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.closeUsdButton.Location = new System.Drawing.Point(0, 0);
-            this.closeUsdButton.Name = "closeUsdButton";
-            this.closeUsdButton.Size = new System.Drawing.Size(317, 51);
-            this.closeUsdButton.TabIndex = 5;
-            this.closeUsdButton.Text = "Закрыть счёт";
-            this.closeUsdButton.UseVisualStyleBackColor = false;
-            this.closeUsdButton.Click += new System.EventHandler(this.closeUsdButton_Click);
-            // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.label11);
             this.panel13.Controls.Add(this.historyUsdButton);
             this.panel13.Location = new System.Drawing.Point(3, 234);
             this.panel13.Name = "panel13";
@@ -219,6 +203,7 @@
             // panel12
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.transferUsdButton);
             this.panel12.Location = new System.Drawing.Point(3, 175);
             this.panel12.Name = "panel12";
@@ -460,31 +445,15 @@
             // panel17
             // 
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.closeTngButton);
             this.panel17.Location = new System.Drawing.Point(3, 293);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(319, 53);
             this.panel17.TabIndex = 6;
             // 
-            // closeTngButton
-            // 
-            this.closeTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeTngButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeTngButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
-            this.closeTngButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeTngButton.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeTngButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.closeTngButton.Location = new System.Drawing.Point(0, 0);
-            this.closeTngButton.Name = "closeTngButton";
-            this.closeTngButton.Size = new System.Drawing.Size(317, 51);
-            this.closeTngButton.TabIndex = 6;
-            this.closeTngButton.Text = "Закрыть счёт";
-            this.closeTngButton.UseVisualStyleBackColor = false;
-            this.closeTngButton.Click += new System.EventHandler(this.closeTngButton_Click);
-            // 
             // panel16
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.label14);
             this.panel16.Controls.Add(this.historyTngButton);
             this.panel16.Location = new System.Drawing.Point(3, 234);
             this.panel16.Name = "panel16";
@@ -512,6 +481,7 @@
             // panel15
             // 
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.label13);
             this.panel15.Controls.Add(this.transferTngButton);
             this.panel15.Location = new System.Drawing.Point(3, 175);
             this.panel15.Name = "panel15";
@@ -599,7 +569,47 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "TNG";
             // 
-            // CurrencyAccounts
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(277, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 30);
+            this.label11.TabIndex = 7;
+            this.label11.Text = ">";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(277, 7);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 30);
+            this.label12.TabIndex = 8;
+            this.label12.Text = ">";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(277, 7);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 30);
+            this.label13.TabIndex = 8;
+            this.label13.Text = ">";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(277, 8);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 30);
+            this.label14.TabIndex = 8;
+            this.label14.Text = ">";
+            // 
+            // CurrencyAccountForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1132, 603);
@@ -609,7 +619,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CurrencyAccounts";
+            this.Name = "CurrencyAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Мои счета";
             this.panel1.ResumeLayout(false);
@@ -617,9 +627,10 @@
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -632,9 +643,10 @@
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
@@ -682,7 +694,9 @@
         private Label label10;
         private Label balanseUsdLabel;
         private Label balanseTngLabel;
-        private Button closeUsdButton;
-        private Button closeTngButton;
+        private Label label11;
+        private Label label12;
+        private Label label14;
+        private Label label13;
     }
 }
