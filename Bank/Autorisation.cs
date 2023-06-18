@@ -27,7 +27,7 @@
             }
             else
             {
-                for (int i = 1; i < Database.arr.Count; i++)
+                for (int i = 0; i < Database.arr.Count; i++)
                 {
                     if (Database.arr[i].cardNumber == loginUser && Database.arr[i].password == passUser)
                     {

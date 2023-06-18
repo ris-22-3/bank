@@ -81,17 +81,12 @@ namespace Bank
                 else
                 {
                     int sum = ToInt(sumBox.Text);
-                    if (sum <= 0 || Objects.current.Balance - sum < 0)
-                    {
-                        if (sum == -100)
-                            MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
-                        else
-                            MessageBox.Show("Недостаточно средств для выполнения операции");
-                    }
+                    if (sum == -100)
+                        MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
                     else
                     {
                         Operation add = new Operation(sum, true, Objects.current.history[0].billetype, "Другое", "Внесение наличных", DateTime.Now);
-                        Objects.current.Balance -= sum;
+                        Objects.current.Balance += sum;
                         Objects.current.Add(add, true);
                         Balance.Text = Objects.current.Balance.ToString();
                     }

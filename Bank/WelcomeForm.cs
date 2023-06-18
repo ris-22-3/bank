@@ -14,7 +14,7 @@ namespace Bank
             comboBox1.SelectedIndex = 0;
             label3.Text = Objects.user.name + " " + Objects.user.surname;
             Reboot();
-            if(Objects.user.clientNumber == 1)
+            if (Objects.user.clientNumber == 1)
             {
                 UserPictureBox.Image = Image.FromFile(@"../../../Images/Нагиев.jpg");
                 UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@ namespace Bank
             return row;
         }
 
-        private void MyAccountsButton_Click_1(object sender, EventArgs e)
+        private void MyAccountsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             CurrencyAccountForm curencyAccounts = new CurrencyAccountForm();
@@ -85,7 +85,7 @@ namespace Bank
             this.Close();
         }
 
-        private void DepositButton_Click_1(object sender, EventArgs e)
+        private void DepositButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Deposit deposit = new Deposit();
@@ -101,12 +101,15 @@ namespace Bank
             this.Close();
         }
 
-        private void ATMButton_Click_1(object sender, EventArgs e)
+        private void ATMButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            ATMForm aTM = new ATMForm();
+            aTM.ShowDialog();
+            this.Close();
         }
-        
-        private void StatisticButton_Click_1(object sender, EventArgs e)
+
+        private void StatisticButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             StatisticsForm statisticsForm = new StatisticsForm();
@@ -114,7 +117,7 @@ namespace Bank
             this.Close();
         }
 
-        private void shopButton_Click_1(object sender, EventArgs e)
+        private void shopButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ShopForms shop = new ShopForms();
@@ -122,7 +125,7 @@ namespace Bank
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
             {
