@@ -47,12 +47,11 @@ namespace WinFormsTest
             decimal totalPayment = customer.RealEstatePrice + customer.RealEstatePrice * (customer.FindPercent() / 100) - customer.InitialFee;
             for (int i = 0; i < numberOfMonths; i++)
             {
-                string year = currentDate.AddYears((i+5)/12).ToString("yyyy");
                 decimal monthlyPayment = customer.FindMonthlyPayment();
                 decimal remainingPayment = Math.Round(totalPayment - (monthlyPayment * (i + 1)));
                 string monthName = currentDate.AddMonths(i).ToString("MMMM");
                 // добавление строки в таблицу
-                dgv.Rows.Add(year, monthName, Math.Round(monthlyPayment), Math.Round(remainingPayment));
+                dgv.Rows.Add(monthName, Math.Round(monthlyPayment), Math.Round(remainingPayment));
             }
 
         }
