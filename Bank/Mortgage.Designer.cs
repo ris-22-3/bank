@@ -28,633 +28,635 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MainTopPanel = new Panel();
-            panel12 = new Panel();
-            lHSE = new Label();
-            panel11 = new Panel();
-            label7 = new Label();
-            panel10 = new Panel();
-            BackButton = new Button();
-            label2 = new Label();
-            panel2 = new Panel();
-            bAccept = new Button();
-            panel6 = new Panel();
-            label9 = new Label();
-            lTerm = new Label();
-            tbTerm = new TrackBar();
-            label6 = new Label();
-            panel5 = new Panel();
-            lInitialFee = new Label();
-            tbInitialFee = new TrackBar();
-            label5 = new Label();
-            panel4 = new Panel();
-            lPrice = new Label();
-            tbPrice = new TrackBar();
-            label4 = new Label();
-            panel3 = new Panel();
-            cbApartmentType = new ComboBox();
-            label3 = new Label();
-            bPaymentShedule = new Button();
-            bApply = new Button();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            panel1 = new Panel();
-            panel15 = new Panel();
-            NecessaryIncomeLabel = new Label();
-            label11 = new Label();
-            panel14 = new Panel();
-            MonthlyPaymentLabel = new Label();
-            label10 = new Label();
-            panel13 = new Panel();
-            InterestRateLable = new Label();
-            label1 = new Label();
-            PaymentSheduleDGV = new DataGridView();
-            Month = new DataGridViewTextBoxColumn();
-            Payment = new DataGridViewTextBoxColumn();
-            RemainingPayment = new DataGridViewTextBoxColumn();
-            MainTopPanel.SuspendLayout();
-            panel12.SuspendLayout();
-            panel11.SuspendLayout();
-            panel10.SuspendLayout();
-            panel2.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbTerm).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbInitialFee).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tbPrice).BeginInit();
-            panel3.SuspendLayout();
-            panel7.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
-            panel1.SuspendLayout();
-            panel15.SuspendLayout();
-            panel14.SuspendLayout();
-            panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PaymentSheduleDGV).BeginInit();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mortgage));
+            this.MainTopPanel = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.lHSE = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bAccept = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lTerm = new System.Windows.Forms.Label();
+            this.tbTerm = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lInitialFee = new System.Windows.Forms.Label();
+            this.tbInitialFee = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lPrice = new System.Windows.Forms.Label();
+            this.tbPrice = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbApartmentType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bPaymentShedule = new System.Windows.Forms.Button();
+            this.bApply = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.NecessaryIncomeLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.MonthlyPaymentLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.InterestRateLable = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PaymentSheduleDGV = new System.Windows.Forms.DataGridView();
+            this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemainingPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MainTopPanel.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTerm)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbInitialFee)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrice)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentSheduleDGV)).BeginInit();
+            this.SuspendLayout();
             // 
             // MainTopPanel
             // 
-            MainTopPanel.BackColor = Color.FromArgb(16, 45, 105);
-            MainTopPanel.Controls.Add(panel12);
-            MainTopPanel.Controls.Add(panel11);
-            MainTopPanel.Controls.Add(panel10);
-            MainTopPanel.Dock = DockStyle.Top;
-            MainTopPanel.Location = new Point(0, 0);
-            MainTopPanel.Name = "MainTopPanel";
-            MainTopPanel.Size = new Size(1182, 84);
-            MainTopPanel.TabIndex = 0;
+            this.MainTopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.MainTopPanel.Controls.Add(this.panel12);
+            this.MainTopPanel.Controls.Add(this.panel11);
+            this.MainTopPanel.Controls.Add(this.panel10);
+            this.MainTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MainTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainTopPanel.Name = "MainTopPanel";
+            this.MainTopPanel.Size = new System.Drawing.Size(1182, 84);
+            this.MainTopPanel.TabIndex = 0;
             // 
             // panel12
             // 
-            panel12.Controls.Add(lHSE);
-            panel12.Dock = DockStyle.Left;
-            panel12.Location = new Point(859, 0);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(346, 84);
-            panel12.TabIndex = 5;
+            this.panel12.Controls.Add(this.lHSE);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(859, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(346, 84);
+            this.panel12.TabIndex = 5;
             // 
             // lHSE
             // 
-            lHSE.Dock = DockStyle.Fill;
-            lHSE.Font = new Font("Palatino Linotype", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            lHSE.ForeColor = SystemColors.ButtonFace;
-            lHSE.Location = new Point(0, 0);
-            lHSE.Name = "lHSE";
-            lHSE.Size = new Size(346, 84);
-            lHSE.TabIndex = 0;
-            lHSE.Text = "HSE Bank";
-            lHSE.TextAlign = ContentAlignment.MiddleCenter;
+            this.lHSE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lHSE.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lHSE.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lHSE.Location = new System.Drawing.Point(0, 0);
+            this.lHSE.Name = "lHSE";
+            this.lHSE.Size = new System.Drawing.Size(346, 84);
+            this.lHSE.TabIndex = 0;
+            this.lHSE.Text = "HSE Bank";
+            this.lHSE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel11
             // 
-            panel11.Controls.Add(label7);
-            panel11.Dock = DockStyle.Left;
-            panel11.Location = new Point(150, 0);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(709, 84);
-            panel11.TabIndex = 4;
+            this.panel11.Controls.Add(this.label7);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel11.Location = new System.Drawing.Point(150, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(709, 84);
+            this.panel11.TabIndex = 4;
             // 
             // label7
             // 
-            label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Palatino Linotype", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(0, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(709, 84);
-            label7.TabIndex = 0;
-            label7.Text = "Ипотечное кредитование";
-            label7.TextAlign = ContentAlignment.MiddleRight;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(709, 84);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Ипотечное кредитование";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel10
             // 
-            panel10.Controls.Add(BackButton);
-            panel10.Dock = DockStyle.Left;
-            panel10.Location = new Point(0, 0);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(150, 84);
-            panel10.TabIndex = 3;
+            this.panel10.Controls.Add(this.BackButton);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(150, 84);
+            this.panel10.TabIndex = 3;
             // 
             // BackButton
             // 
-            BackButton.BackColor = Color.FromArgb(16, 45, 105);
-            BackButton.BackgroundImageLayout = ImageLayout.None;
-            BackButton.Dock = DockStyle.Fill;
-            BackButton.FlatAppearance.BorderSize = 0;
-            BackButton.FlatStyle = FlatStyle.Flat;
-            BackButton.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            BackButton.ForeColor = SystemColors.ButtonFace;
-            BackButton.Location = new Point(0, 0);
-            BackButton.Name = "BackButton";
-            BackButton.Size = new Size(150, 84);
-            BackButton.TabIndex = 2;
-            BackButton.Text = "Назад";
-            BackButton.UseVisualStyleBackColor = false;
-            BackButton.Click += BackButton_Click;
+            this.BackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BackButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(150, 84);
+            this.BackButton.TabIndex = 2;
+            this.BackButton.Text = "Назад";
+            this.BackButton.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
-            label2.Font = new Font("Palatino Linotype", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(30, -29);
-            label2.Name = "label2";
-            label2.Size = new Size(416, 40);
-            label2.TabIndex = 1;
-            label2.Text = "Ипотечное кредитование";
-            label2.TextAlign = ContentAlignment.BottomCenter;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(30, -29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(416, 40);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ипотечное кредитование";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(36, 74, 154);
-            panel2.Controls.Add(bAccept);
-            panel2.Controls.Add(panel6);
-            panel2.Controls.Add(panel5);
-            panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 84);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(419, 621);
-            panel2.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(74)))), ((int)(((byte)(154)))));
+            this.panel2.Controls.Add(this.bAccept);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(419, 621);
+            this.panel2.TabIndex = 1;
             // 
             // bAccept
             // 
-            bAccept.BackColor = Color.FromArgb(16, 45, 105);
-            bAccept.BackgroundImageLayout = ImageLayout.None;
-            bAccept.FlatAppearance.BorderSize = 0;
-            bAccept.FlatStyle = FlatStyle.Flat;
-            bAccept.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bAccept.ForeColor = SystemColors.ButtonFace;
-            bAccept.Location = new Point(98, 497);
-            bAccept.Name = "bAccept";
-            bAccept.Size = new Size(210, 60);
-            bAccept.TabIndex = 4;
-            bAccept.Text = "Подтвердить";
-            bAccept.UseVisualStyleBackColor = false;
-            bAccept.Click += bAccept_Click_1;
+            this.bAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.bAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bAccept.FlatAppearance.BorderSize = 0;
+            this.bAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAccept.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAccept.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bAccept.Location = new System.Drawing.Point(98, 497);
+            this.bAccept.Name = "bAccept";
+            this.bAccept.Size = new System.Drawing.Size(210, 60);
+            this.bAccept.TabIndex = 4;
+            this.bAccept.Text = "Подтвердить";
+            this.bAccept.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
-            panel6.Controls.Add(label9);
-            panel6.Controls.Add(lTerm);
-            panel6.Controls.Add(tbTerm);
-            panel6.Controls.Add(label6);
-            panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(0, 360);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(419, 120);
-            panel6.TabIndex = 3;
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.lTerm);
+            this.panel6.Controls.Add(this.tbTerm);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 360);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(419, 120);
+            this.panel6.TabIndex = 3;
             // 
             // label9
             // 
-            label9.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.ButtonFace;
-            label9.Location = new Point(280, -21);
-            label9.Name = "label9";
-            label9.Size = new Size(33, 21);
-            label9.TabIndex = 5;
-            label9.Text = "1";
-            label9.TextAlign = ContentAlignment.MiddleRight;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(280, -21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 21);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "1";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lTerm
             // 
-            lTerm.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lTerm.ForeColor = SystemColors.ButtonFace;
-            lTerm.Location = new Point(194, 32);
-            lTerm.Name = "lTerm";
-            lTerm.Size = new Size(82, 21);
-            lTerm.TabIndex = 4;
-            lTerm.Text = "1 год";
-            lTerm.TextAlign = ContentAlignment.MiddleLeft;
+            this.lTerm.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lTerm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lTerm.Location = new System.Drawing.Point(194, 32);
+            this.lTerm.Name = "lTerm";
+            this.lTerm.Size = new System.Drawing.Size(82, 21);
+            this.lTerm.TabIndex = 4;
+            this.lTerm.Text = "1 год";
+            this.lTerm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbTerm
             // 
-            tbTerm.AutoSize = false;
-            tbTerm.Cursor = Cursors.Hand;
-            tbTerm.Dock = DockStyle.Bottom;
-            tbTerm.LargeChange = 1;
-            tbTerm.Location = new Point(0, 72);
-            tbTerm.Maximum = 30;
-            tbTerm.Minimum = 1;
-            tbTerm.Name = "tbTerm";
-            tbTerm.Size = new Size(419, 48);
-            tbTerm.TabIndex = 3;
-            tbTerm.TickStyle = TickStyle.TopLeft;
-            tbTerm.Value = 1;
-            tbTerm.Scroll += tbTerm_Scroll;
+            this.tbTerm.AutoSize = false;
+            this.tbTerm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbTerm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbTerm.LargeChange = 1;
+            this.tbTerm.Location = new System.Drawing.Point(0, 72);
+            this.tbTerm.Maximum = 30;
+            this.tbTerm.Minimum = 1;
+            this.tbTerm.Name = "tbTerm";
+            this.tbTerm.Size = new System.Drawing.Size(419, 48);
+            this.tbTerm.TabIndex = 3;
+            this.tbTerm.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.tbTerm.Value = 1;
             // 
             // label6
             // 
-            label6.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.ButtonFace;
-            label6.Location = new Point(38, 28);
-            label6.Name = "label6";
-            label6.Size = new Size(150, 24);
-            label6.TabIndex = 1;
-            label6.Text = "Срок кредита:";
-            label6.TextAlign = ContentAlignment.TopCenter;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(38, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 24);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Срок кредита:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel5
             // 
-            panel5.Controls.Add(lInitialFee);
-            panel5.Controls.Add(tbInitialFee);
-            panel5.Controls.Add(label5);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 240);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(419, 120);
-            panel5.TabIndex = 2;
+            this.panel5.Controls.Add(this.lInitialFee);
+            this.panel5.Controls.Add(this.tbInitialFee);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 240);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(419, 120);
+            this.panel5.TabIndex = 2;
             // 
             // lInitialFee
             // 
-            lInitialFee.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lInitialFee.ForeColor = SystemColors.ButtonFace;
-            lInitialFee.Location = new Point(314, 30);
-            lInitialFee.Name = "lInitialFee";
-            lInitialFee.Size = new Size(101, 21);
-            lInitialFee.TabIndex = 6;
-            lInitialFee.Text = "500 тыс. ₽";
-            lInitialFee.TextAlign = ContentAlignment.MiddleLeft;
+            this.lInitialFee.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lInitialFee.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lInitialFee.Location = new System.Drawing.Point(314, 30);
+            this.lInitialFee.Name = "lInitialFee";
+            this.lInitialFee.Size = new System.Drawing.Size(101, 21);
+            this.lInitialFee.TabIndex = 6;
+            this.lInitialFee.Text = "500 тыс. ₽";
+            this.lInitialFee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbInitialFee
             // 
-            tbInitialFee.AutoSize = false;
-            tbInitialFee.Dock = DockStyle.Bottom;
-            tbInitialFee.Location = new Point(0, 76);
-            tbInitialFee.Maximum = 90;
-            tbInitialFee.Minimum = 10;
-            tbInitialFee.Name = "tbInitialFee";
-            tbInitialFee.Size = new Size(419, 44);
-            tbInitialFee.TabIndex = 2;
-            tbInitialFee.TickFrequency = 2;
-            tbInitialFee.TickStyle = TickStyle.TopLeft;
-            tbInitialFee.Value = 10;
-            tbInitialFee.Scroll += tbInitialFee_Scroll;
-            tbInitialFee.ValueChanged += tbInitialFee_ValueChanged;
+            this.tbInitialFee.AutoSize = false;
+            this.tbInitialFee.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbInitialFee.Location = new System.Drawing.Point(0, 76);
+            this.tbInitialFee.Maximum = 90;
+            this.tbInitialFee.Minimum = 10;
+            this.tbInitialFee.Name = "tbInitialFee";
+            this.tbInitialFee.Size = new System.Drawing.Size(419, 44);
+            this.tbInitialFee.TabIndex = 2;
+            this.tbInitialFee.TickFrequency = 2;
+            this.tbInitialFee.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.tbInitialFee.Value = 10;
             // 
             // label5
             // 
-            label5.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(38, 30);
-            label5.Name = "label5";
-            label5.Size = new Size(238, 25);
-            label5.TabIndex = 1;
-            label5.Text = "Первоначальный взнос:";
-            label5.TextAlign = ContentAlignment.TopCenter;
+            this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(38, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(238, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Первоначальный взнос:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel4
             // 
-            panel4.Controls.Add(lPrice);
-            panel4.Controls.Add(tbPrice);
-            panel4.Controls.Add(label4);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 120);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(419, 120);
-            panel4.TabIndex = 1;
+            this.panel4.Controls.Add(this.lPrice);
+            this.panel4.Controls.Add(this.tbPrice);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 120);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(419, 120);
+            this.panel4.TabIndex = 1;
             // 
             // lPrice
             // 
-            lPrice.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lPrice.ForeColor = SystemColors.ButtonFace;
-            lPrice.Location = new Point(314, 29);
-            lPrice.Name = "lPrice";
-            lPrice.Size = new Size(101, 21);
-            lPrice.TabIndex = 5;
-            lPrice.Text = "500 тыс. ₽";
-            lPrice.TextAlign = ContentAlignment.MiddleLeft;
+            this.lPrice.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lPrice.Location = new System.Drawing.Point(314, 29);
+            this.lPrice.Name = "lPrice";
+            this.lPrice.Size = new System.Drawing.Size(101, 21);
+            this.lPrice.TabIndex = 5;
+            this.lPrice.Text = "500 тыс. ₽";
+            this.lPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbPrice
             // 
-            tbPrice.AutoSize = false;
-            tbPrice.Dock = DockStyle.Bottom;
-            tbPrice.LargeChange = 1;
-            tbPrice.Location = new Point(0, 79);
-            tbPrice.Maximum = 500;
-            tbPrice.Minimum = 5;
-            tbPrice.Name = "tbPrice";
-            tbPrice.Size = new Size(419, 41);
-            tbPrice.SmallChange = 2;
-            tbPrice.TabIndex = 3;
-            tbPrice.TickFrequency = 10;
-            tbPrice.TickStyle = TickStyle.TopLeft;
-            tbPrice.Value = 5;
-            tbPrice.Scroll += tbPrice_Scroll;
-            tbPrice.ValueChanged += tbPrice_ValueChanged;
+            this.tbPrice.AutoSize = false;
+            this.tbPrice.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbPrice.LargeChange = 1;
+            this.tbPrice.Location = new System.Drawing.Point(0, 79);
+            this.tbPrice.Maximum = 500;
+            this.tbPrice.Minimum = 5;
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(419, 41);
+            this.tbPrice.SmallChange = 2;
+            this.tbPrice.TabIndex = 3;
+            this.tbPrice.TickFrequency = 10;
+            this.tbPrice.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.tbPrice.Value = 5;
             // 
             // label4
             // 
-            label4.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(38, 25);
-            label4.Name = "label4";
-            label4.Size = new Size(270, 25);
-            label4.TabIndex = 1;
-            label4.Text = "Стоимость недвижимости:";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(38, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(270, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Стоимость недвижимости:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            panel3.Controls.Add(cbApartmentType);
-            panel3.Controls.Add(label3);
-            panel3.Dock = DockStyle.Top;
-            panel3.ForeColor = SystemColors.ActiveCaptionText;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(419, 120);
-            panel3.TabIndex = 0;
+            this.panel3.Controls.Add(this.cbApartmentType);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(419, 120);
+            this.panel3.TabIndex = 0;
             // 
             // cbApartmentType
             // 
-            cbApartmentType.BackColor = Color.FromArgb(16, 45, 105);
-            cbApartmentType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbApartmentType.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbApartmentType.ForeColor = SystemColors.ButtonFace;
-            cbApartmentType.FormattingEnabled = true;
-            cbApartmentType.Items.AddRange(new object[] { "Квартира", "Дом", "Гараж", "Коммерческая недвижимость" });
-            cbApartmentType.Location = new Point(70, 54);
-            cbApartmentType.Name = "cbApartmentType";
-            cbApartmentType.Size = new Size(286, 35);
-            cbApartmentType.TabIndex = 1;
+            this.cbApartmentType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.cbApartmentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbApartmentType.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbApartmentType.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbApartmentType.FormattingEnabled = true;
+            this.cbApartmentType.Items.AddRange(new object[] {
+            "Квартира",
+            "Дом",
+            "Гараж",
+            "Коммерческая недвижимость"});
+            this.cbApartmentType.Location = new System.Drawing.Point(70, 54);
+            this.cbApartmentType.Name = "cbApartmentType";
+            this.cbApartmentType.Size = new System.Drawing.Size(286, 35);
+            this.cbApartmentType.TabIndex = 1;
             // 
             // label3
             // 
-            label3.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(0, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(419, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Тип недвижимости";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(0, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(419, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Тип недвижимости";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bPaymentShedule
             // 
-            bPaymentShedule.BackColor = Color.FromArgb(16, 45, 105);
-            bPaymentShedule.BackgroundImageLayout = ImageLayout.None;
-            bPaymentShedule.Dock = DockStyle.Fill;
-            bPaymentShedule.FlatAppearance.BorderSize = 0;
-            bPaymentShedule.FlatStyle = FlatStyle.Flat;
-            bPaymentShedule.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bPaymentShedule.ForeColor = SystemColors.ButtonFace;
-            bPaymentShedule.Location = new Point(0, 0);
-            bPaymentShedule.Name = "bPaymentShedule";
-            bPaymentShedule.Size = new Size(763, 42);
-            bPaymentShedule.TabIndex = 3;
-            bPaymentShedule.Text = "График платежей";
-            bPaymentShedule.UseVisualStyleBackColor = false;
-            bPaymentShedule.Click += bPaymentShedule_Click;
+            this.bPaymentShedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.bPaymentShedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bPaymentShedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bPaymentShedule.FlatAppearance.BorderSize = 0;
+            this.bPaymentShedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bPaymentShedule.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bPaymentShedule.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bPaymentShedule.Location = new System.Drawing.Point(0, 0);
+            this.bPaymentShedule.Name = "bPaymentShedule";
+            this.bPaymentShedule.Size = new System.Drawing.Size(763, 42);
+            this.bPaymentShedule.TabIndex = 3;
+            this.bPaymentShedule.Text = "График платежей";
+            this.bPaymentShedule.UseVisualStyleBackColor = false;
             // 
             // bApply
             // 
-            bApply.BackColor = Color.FromArgb(16, 45, 105);
-            bApply.BackgroundImageLayout = ImageLayout.None;
-            bApply.Dock = DockStyle.Fill;
-            bApply.FlatAppearance.BorderSize = 0;
-            bApply.FlatStyle = FlatStyle.Flat;
-            bApply.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            bApply.ForeColor = SystemColors.ButtonFace;
-            bApply.Location = new Point(0, 0);
-            bApply.Name = "bApply";
-            bApply.Size = new Size(763, 42);
-            bApply.TabIndex = 4;
-            bApply.Text = "Подать заявку";
-            bApply.UseVisualStyleBackColor = false;
+            this.bApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.bApply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bApply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bApply.FlatAppearance.BorderSize = 0;
+            this.bApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bApply.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bApply.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bApply.Location = new System.Drawing.Point(0, 0);
+            this.bApply.Name = "bApply";
+            this.bApply.Size = new System.Drawing.Size(763, 42);
+            this.bApply.TabIndex = 4;
+            this.bApply.Text = "Подать заявку";
+            this.bApply.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
-            panel7.Controls.Add(panel8);
-            panel7.Dock = DockStyle.Bottom;
-            panel7.Location = new Point(419, 663);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(763, 42);
-            panel7.TabIndex = 5;
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(419, 663);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(763, 42);
+            this.panel7.TabIndex = 5;
             // 
             // panel8
             // 
-            panel8.Controls.Add(bApply);
-            panel8.Controls.Add(label2);
-            panel8.Dock = DockStyle.Bottom;
-            panel8.Location = new Point(0, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(763, 42);
-            panel8.TabIndex = 6;
+            this.panel8.Controls.Add(this.bApply);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(763, 42);
+            this.panel8.TabIndex = 6;
             // 
             // panel9
             // 
-            panel9.Controls.Add(bPaymentShedule);
-            panel9.Dock = DockStyle.Bottom;
-            panel9.Location = new Point(419, 621);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(763, 42);
-            panel9.TabIndex = 6;
+            this.panel9.Controls.Add(this.bPaymentShedule);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(419, 621);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(763, 42);
+            this.panel9.TabIndex = 6;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(36, 74, 154);
-            panel1.Controls.Add(panel15);
-            panel1.Controls.Add(panel14);
-            panel1.Controls.Add(panel13);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(419, 84);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(763, 120);
-            panel1.TabIndex = 8;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(74)))), ((int)(((byte)(154)))));
+            this.panel1.Controls.Add(this.panel15);
+            this.panel1.Controls.Add(this.panel14);
+            this.panel1.Controls.Add(this.panel13);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(419, 84);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(763, 120);
+            this.panel1.TabIndex = 8;
             // 
             // panel15
             // 
-            panel15.Controls.Add(NecessaryIncomeLabel);
-            panel15.Controls.Add(label11);
-            panel15.Dock = DockStyle.Left;
-            panel15.Location = new Point(510, 0);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(263, 120);
-            panel15.TabIndex = 2;
+            this.panel15.Controls.Add(this.NecessaryIncomeLabel);
+            this.panel15.Controls.Add(this.label11);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel15.Location = new System.Drawing.Point(510, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(263, 120);
+            this.panel15.TabIndex = 2;
             // 
             // NecessaryIncomeLabel
             // 
-            NecessaryIncomeLabel.Dock = DockStyle.Fill;
-            NecessaryIncomeLabel.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            NecessaryIncomeLabel.ForeColor = SystemColors.ButtonFace;
-            NecessaryIncomeLabel.Location = new Point(0, 38);
-            NecessaryIncomeLabel.Name = "NecessaryIncomeLabel";
-            NecessaryIncomeLabel.Size = new Size(263, 82);
-            NecessaryIncomeLabel.TabIndex = 9;
-            NecessaryIncomeLabel.Text = "0 ₽";
-            NecessaryIncomeLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.NecessaryIncomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NecessaryIncomeLabel.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NecessaryIncomeLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NecessaryIncomeLabel.Location = new System.Drawing.Point(0, 38);
+            this.NecessaryIncomeLabel.Name = "NecessaryIncomeLabel";
+            this.NecessaryIncomeLabel.Size = new System.Drawing.Size(263, 82);
+            this.NecessaryIncomeLabel.TabIndex = 9;
+            this.NecessaryIncomeLabel.Text = "0 ₽";
+            this.NecessaryIncomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
-            label11.Dock = DockStyle.Top;
-            label11.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = SystemColors.ButtonFace;
-            label11.Location = new Point(0, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(263, 38);
-            label11.TabIndex = 8;
-            label11.Text = "Необходимый доход";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(263, 38);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Необходимый доход";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel14
             // 
-            panel14.Controls.Add(MonthlyPaymentLabel);
-            panel14.Controls.Add(label10);
-            panel14.Dock = DockStyle.Left;
-            panel14.Location = new Point(250, 0);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(260, 120);
-            panel14.TabIndex = 1;
+            this.panel14.Controls.Add(this.MonthlyPaymentLabel);
+            this.panel14.Controls.Add(this.label10);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel14.Location = new System.Drawing.Point(250, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(260, 120);
+            this.panel14.TabIndex = 1;
             // 
             // MonthlyPaymentLabel
             // 
-            MonthlyPaymentLabel.Dock = DockStyle.Fill;
-            MonthlyPaymentLabel.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            MonthlyPaymentLabel.ForeColor = SystemColors.ButtonFace;
-            MonthlyPaymentLabel.Location = new Point(0, 38);
-            MonthlyPaymentLabel.Name = "MonthlyPaymentLabel";
-            MonthlyPaymentLabel.Size = new Size(260, 82);
-            MonthlyPaymentLabel.TabIndex = 9;
-            MonthlyPaymentLabel.Text = "0 ₽";
-            MonthlyPaymentLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.MonthlyPaymentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MonthlyPaymentLabel.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MonthlyPaymentLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.MonthlyPaymentLabel.Location = new System.Drawing.Point(0, 38);
+            this.MonthlyPaymentLabel.Name = "MonthlyPaymentLabel";
+            this.MonthlyPaymentLabel.Size = new System.Drawing.Size(260, 82);
+            this.MonthlyPaymentLabel.TabIndex = 9;
+            this.MonthlyPaymentLabel.Text = "0 ₽";
+            this.MonthlyPaymentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
-            label10.Dock = DockStyle.Top;
-            label10.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.ButtonFace;
-            label10.Location = new Point(0, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(260, 38);
-            label10.TabIndex = 8;
-            label10.Text = "Ежемесячный платёж";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(260, 38);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Ежемесячный платёж";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel13
             // 
-            panel13.Controls.Add(InterestRateLable);
-            panel13.Controls.Add(label1);
-            panel13.Dock = DockStyle.Left;
-            panel13.Location = new Point(0, 0);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(250, 120);
-            panel13.TabIndex = 0;
+            this.panel13.Controls.Add(this.InterestRateLable);
+            this.panel13.Controls.Add(this.label1);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(250, 120);
+            this.panel13.TabIndex = 0;
             // 
             // InterestRateLable
             // 
-            InterestRateLable.Dock = DockStyle.Fill;
-            InterestRateLable.Font = new Font("Palatino Linotype", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
-            InterestRateLable.ForeColor = SystemColors.ButtonFace;
-            InterestRateLable.Location = new Point(0, 38);
-            InterestRateLable.Name = "InterestRateLable";
-            InterestRateLable.Size = new Size(250, 82);
-            InterestRateLable.TabIndex = 8;
-            InterestRateLable.Text = "0%";
-            InterestRateLable.TextAlign = ContentAlignment.MiddleCenter;
+            this.InterestRateLable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InterestRateLable.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InterestRateLable.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.InterestRateLable.Location = new System.Drawing.Point(0, 38);
+            this.InterestRateLable.Name = "InterestRateLable";
+            this.InterestRateLable.Size = new System.Drawing.Size(250, 82);
+            this.InterestRateLable.TabIndex = 8;
+            this.InterestRateLable.Text = "0%";
+            this.InterestRateLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Palatino Linotype", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(250, 38);
-            label1.TabIndex = 7;
-            label1.Text = "Процентная ставка";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(250, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Процентная ставка";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PaymentSheduleDGV
             // 
-            PaymentSheduleDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            PaymentSheduleDGV.BackgroundColor = Color.FromArgb(36, 74, 154);
-            PaymentSheduleDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PaymentSheduleDGV.Columns.AddRange(new DataGridViewColumn[] { Month, Payment, RemainingPayment });
-            PaymentSheduleDGV.Dock = DockStyle.Fill;
-            PaymentSheduleDGV.Location = new Point(419, 204);
-            PaymentSheduleDGV.Name = "PaymentSheduleDGV";
-            PaymentSheduleDGV.RowHeadersWidth = 51;
-            PaymentSheduleDGV.RowTemplate.Height = 29;
-            PaymentSheduleDGV.Size = new Size(763, 417);
-            PaymentSheduleDGV.TabIndex = 9;
+            this.PaymentSheduleDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PaymentSheduleDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(74)))), ((int)(((byte)(154)))));
+            this.PaymentSheduleDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PaymentSheduleDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Month,
+            this.Payment,
+            this.RemainingPayment});
+            this.PaymentSheduleDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PaymentSheduleDGV.Location = new System.Drawing.Point(419, 204);
+            this.PaymentSheduleDGV.Name = "PaymentSheduleDGV";
+            this.PaymentSheduleDGV.RowHeadersWidth = 51;
+            this.PaymentSheduleDGV.RowTemplate.Height = 29;
+            this.PaymentSheduleDGV.Size = new System.Drawing.Size(763, 417);
+            this.PaymentSheduleDGV.TabIndex = 9;
             // 
             // Month
             // 
-            Month.HeaderText = "Месяц";
-            Month.MinimumWidth = 6;
-            Month.Name = "Month";
+            this.Month.HeaderText = "Месяц";
+            this.Month.MinimumWidth = 6;
+            this.Month.Name = "Month";
             // 
             // Payment
             // 
-            Payment.HeaderText = "Платёж";
-            Payment.MinimumWidth = 6;
-            Payment.Name = "Payment";
+            this.Payment.HeaderText = "Платёж";
+            this.Payment.MinimumWidth = 6;
+            this.Payment.Name = "Payment";
             // 
             // RemainingPayment
             // 
-            RemainingPayment.HeaderText = "Остаток платежа";
-            RemainingPayment.MinimumWidth = 6;
-            RemainingPayment.Name = "RemainingPayment";
+            this.RemainingPayment.HeaderText = "Остаток платежа";
+            this.RemainingPayment.MinimumWidth = 6;
+            this.RemainingPayment.Name = "RemainingPayment";
             // 
             // Mortgage
             // 
-            AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1182, 705);
-            Controls.Add(PaymentSheduleDGV);
-            Controls.Add(panel1);
-            Controls.Add(panel9);
-            Controls.Add(panel7);
-            Controls.Add(panel2);
-            Controls.Add(MainTopPanel);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "Mortgage";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "HSE Bank";
-            MainTopPanel.ResumeLayout(false);
-            panel12.ResumeLayout(false);
-            panel11.ResumeLayout(false);
-            panel10.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tbTerm).EndInit();
-            panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tbInitialFee).EndInit();
-            panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)tbPrice).EndInit();
-            panel3.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel15.ResumeLayout(false);
-            panel14.ResumeLayout(false);
-            panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)PaymentSheduleDGV).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1182, 705);
+            this.Controls.Add(this.PaymentSheduleDGV);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.MainTopPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Mortgage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HSE Bank";
+            this.MainTopPanel.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbTerm)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbInitialFee)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbPrice)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentSheduleDGV)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

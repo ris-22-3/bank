@@ -28,130 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AutorisationDownPanel = new Panel();
-            label3 = new Label();
-            label2 = new Label();
-            AutorisationButton = new Button();
-            PasswordField = new TextBox();
-            LoginField = new TextBox();
-            AutorisationTopPanel = new Panel();
-            label1 = new Label();
-            AutorisationDownPanel.SuspendLayout();
-            AutorisationTopPanel.SuspendLayout();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autorisation));
+            this.AutorisationDownPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AutorisationButton = new System.Windows.Forms.Button();
+            this.PasswordField = new System.Windows.Forms.TextBox();
+            this.LoginField = new System.Windows.Forms.TextBox();
+            this.AutorisationTopPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AutorisationDownPanel.SuspendLayout();
+            this.AutorisationTopPanel.SuspendLayout();
+            this.SuspendLayout();
             // 
             // AutorisationDownPanel
             // 
-            AutorisationDownPanel.Controls.Add(label3);
-            AutorisationDownPanel.Controls.Add(label2);
-            AutorisationDownPanel.Controls.Add(AutorisationButton);
-            AutorisationDownPanel.Controls.Add(PasswordField);
-            AutorisationDownPanel.Controls.Add(LoginField);
-            AutorisationDownPanel.Dock = DockStyle.Bottom;
-            AutorisationDownPanel.Location = new Point(0, 113);
-            AutorisationDownPanel.Margin = new Padding(3, 4, 3, 4);
-            AutorisationDownPanel.Name = "AutorisationDownPanel";
-            AutorisationDownPanel.Size = new Size(600, 287);
-            AutorisationDownPanel.TabIndex = 2;
-            AutorisationDownPanel.MouseDown += AutorisationDownPanel_MouseDown;
-            AutorisationDownPanel.MouseMove += AutorisationDownPanel_MouseMove;
+            this.AutorisationDownPanel.Controls.Add(this.label3);
+            this.AutorisationDownPanel.Controls.Add(this.label2);
+            this.AutorisationDownPanel.Controls.Add(this.AutorisationButton);
+            this.AutorisationDownPanel.Controls.Add(this.PasswordField);
+            this.AutorisationDownPanel.Controls.Add(this.LoginField);
+            this.AutorisationDownPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AutorisationDownPanel.Location = new System.Drawing.Point(0, 113);
+            this.AutorisationDownPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AutorisationDownPanel.Name = "AutorisationDownPanel";
+            this.AutorisationDownPanel.Size = new System.Drawing.Size(600, 287);
+            this.AutorisationDownPanel.TabIndex = 2;
             // 
             // label3
             // 
-            label3.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(264, 101);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 27);
-            label3.TabIndex = 4;
-            label3.Text = "Пароль";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(264, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 27);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Пароль";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.Font = new Font("Palatino Linotype", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(264, 16);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 27);
-            label2.TabIndex = 3;
-            label2.Text = "Логин";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(264, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 27);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Логин";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AutorisationButton
             // 
-            AutorisationButton.BackColor = Color.FromArgb(16, 45, 105);
-            AutorisationButton.Cursor = Cursors.Hand;
-            AutorisationButton.Dock = DockStyle.Bottom;
-            AutorisationButton.FlatAppearance.BorderColor = Color.Black;
-            AutorisationButton.FlatStyle = FlatStyle.Flat;
-            AutorisationButton.Font = new Font("Palatino Linotype", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            AutorisationButton.ForeColor = SystemColors.ButtonFace;
-            AutorisationButton.Location = new Point(0, 211);
-            AutorisationButton.Margin = new Padding(3, 4, 3, 4);
-            AutorisationButton.Name = "AutorisationButton";
-            AutorisationButton.Size = new Size(600, 76);
-            AutorisationButton.TabIndex = 2;
-            AutorisationButton.Text = "Войти";
-            AutorisationButton.UseVisualStyleBackColor = false;
-            AutorisationButton.Click += AutorisationButton_Click;
+            this.AutorisationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.AutorisationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AutorisationButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AutorisationButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AutorisationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AutorisationButton.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AutorisationButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AutorisationButton.Location = new System.Drawing.Point(0, 211);
+            this.AutorisationButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AutorisationButton.Name = "AutorisationButton";
+            this.AutorisationButton.Size = new System.Drawing.Size(600, 76);
+            this.AutorisationButton.TabIndex = 2;
+            this.AutorisationButton.Text = "Войти";
+            this.AutorisationButton.UseVisualStyleBackColor = false;
             // 
             // PasswordField
             // 
-            PasswordField.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            PasswordField.Location = new Point(125, 132);
-            PasswordField.Margin = new Padding(3, 4, 3, 4);
-            PasswordField.Name = "PasswordField";
-            PasswordField.Size = new Size(340, 45);
-            PasswordField.TabIndex = 1;
-            PasswordField.UseSystemPasswordChar = true;
+            this.PasswordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PasswordField.Location = new System.Drawing.Point(125, 132);
+            this.PasswordField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PasswordField.Name = "PasswordField";
+            this.PasswordField.Size = new System.Drawing.Size(340, 45);
+            this.PasswordField.TabIndex = 1;
+            this.PasswordField.UseSystemPasswordChar = true;
             // 
             // LoginField
             // 
-            LoginField.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            LoginField.Location = new Point(125, 47);
-            LoginField.Margin = new Padding(3, 4, 3, 4);
-            LoginField.Name = "LoginField";
-            LoginField.Size = new Size(340, 45);
-            LoginField.TabIndex = 0;
+            this.LoginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginField.Location = new System.Drawing.Point(125, 47);
+            this.LoginField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LoginField.Name = "LoginField";
+            this.LoginField.Size = new System.Drawing.Size(340, 45);
+            this.LoginField.TabIndex = 0;
             // 
             // AutorisationTopPanel
             // 
-            AutorisationTopPanel.Controls.Add(label1);
-            AutorisationTopPanel.Dock = DockStyle.Fill;
-            AutorisationTopPanel.Location = new Point(0, 0);
-            AutorisationTopPanel.Name = "AutorisationTopPanel";
-            AutorisationTopPanel.Size = new Size(600, 113);
-            AutorisationTopPanel.TabIndex = 3;
+            this.AutorisationTopPanel.Controls.Add(this.label1);
+            this.AutorisationTopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutorisationTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.AutorisationTopPanel.Name = "AutorisationTopPanel";
+            this.AutorisationTopPanel.Size = new System.Drawing.Size(600, 113);
+            this.AutorisationTopPanel.TabIndex = 3;
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(16, 45, 105);
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Palatino Linotype", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(600, 113);
-            label1.TabIndex = 0;
-            label1.Text = "Авторизация";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(600, 113);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Авторизация";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Autorisation
             // 
-            AcceptButton = AutorisationButton;
-            AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(600, 400);
-            Controls.Add(AutorisationTopPanel);
-            Controls.Add(AutorisationDownPanel);
-            Margin = new Padding(3, 4, 3, 4);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "Autorisation";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Autorisation";
-            AutorisationDownPanel.ResumeLayout(false);
-            AutorisationDownPanel.PerformLayout();
-            AutorisationTopPanel.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AcceptButton = this.AutorisationButton;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.AutorisationTopPanel);
+            this.Controls.Add(this.AutorisationDownPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Autorisation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Autorisation";
+            this.AutorisationDownPanel.ResumeLayout(false);
+            this.AutorisationDownPanel.PerformLayout();
+            this.AutorisationTopPanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
