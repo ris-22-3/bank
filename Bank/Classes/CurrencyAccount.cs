@@ -42,5 +42,18 @@ namespace Bank
                 Database.AddOperation(op); //добавление в файл
             history.Add(op);
         }
+        public override string ToString()
+        {
+            switch (Account)
+            {
+                case Currency.RUB:
+                    return "rub";
+                case Currency.USD:
+                    return "USD";
+                case Currency.TNG:
+                    return "tg";
+            }
+            return "rub";
+        }
     }
 }

@@ -35,18 +35,27 @@ namespace Bank.Tests
             DateTime test = Database.ToDateTime("12 марта 2004 г.");
             Assert.AreEqual(test, new DateTime(2004, 3, 12));
         }
-        //[TestMethod]
-        //public void TestGetOperations()
-        //{
-        //    List<Operation> operations = Database.GetOperations(66666);
-        //    Assert.IsTrue(operations.Count == 199);
-        //}
-        //[TestMethod]
-        //public void TestGetUser()
-        //{
-        //    List<string> strs = Database.ReadFile("../../../Data/TestDataBase.csv");
-        //    User user = Database.GetUser(strs[2].Split(";"));
-        //    Assert.AreEqual(user.cardNumber, 232323);
-        //}
+        [TestMethod]
+        public void TestGetOperations()
+        {
+            List<Operation> operations = Database.GetOperations(66666);
+            Assert.IsTrue(operations.Count == 199);
+        }
+        [TestMethod]
+        public void TestGetUser()
+        {
+            List<string> strs = Database.ReadFile("../../../Data/TestDataBase.csv");
+            User user = Database.GetUser(strs[2].Split(";"));
+            Assert.AreEqual(user.cardNumber, 232323);
+        }
+        [TestMethod]
+        public void TestAddOperation()
+        {
+            Database d = new Database();
+            decimal last = Objects.current.Balance;
+            Objects.current.history.Add(new Operation(35, true, "rub", "test", "test", DateTime.Now));
+            decimal expected = last + 35;
+            Assert.AreEqual(expected, Objects.current.Balance);
+        }
     }
 }
