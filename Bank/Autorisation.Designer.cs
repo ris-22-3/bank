@@ -54,6 +54,8 @@
             this.AutorisationDownPanel.Name = "AutorisationDownPanel";
             this.AutorisationDownPanel.Size = new System.Drawing.Size(600, 287);
             this.AutorisationDownPanel.TabIndex = 2;
+            this.AutorisationDownPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AutorisationDownPanel_MouseDown_1);
+            this.AutorisationDownPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AutorisationDownPanel_MouseMove_1);
             // 
             // label3
             // 
@@ -91,6 +93,7 @@
             this.AutorisationButton.TabIndex = 2;
             this.AutorisationButton.Text = "Войти";
             this.AutorisationButton.UseVisualStyleBackColor = false;
+            this.AutorisationButton.Click += new System.EventHandler(this.AutorisationButton_Click_1);
             // 
             // PasswordField
             // 
@@ -119,6 +122,8 @@
             this.AutorisationTopPanel.Name = "AutorisationTopPanel";
             this.AutorisationTopPanel.Size = new System.Drawing.Size(600, 113);
             this.AutorisationTopPanel.TabIndex = 3;
+            this.AutorisationTopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AutorisationTopPanel_MouseDown_1);
+            this.AutorisationTopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AutorisationTopPanel_MouseMove_1);
             // 
             // label1
             // 

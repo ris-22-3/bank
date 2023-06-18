@@ -39,61 +39,6 @@ namespace WinFormsTest
             }
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new WelcomeForm().ShowDialog();
-            this.Close();
-        }
-
-        public void bAccept_Click_1(object sender, EventArgs e)
-        {
-            bApply.Enabled = true;
-            bPaymentShedule.Enabled = true;
-            customer = new MortgageCalculation();
-            customer.RealEstateType = cbApartmentType.Text;
-            customer.RealEstatePrice = tbPrice.Value * 100000;
-            customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
-            customer.Term = tbTerm.Value;
-            InterestRateLable.Text = customer.FindPercent().ToString() + "%";
-            MonthlyPaymentLabel.Text = Math.Round(customer.FindMonthlyPayment()) + " ₽";
-            NecessaryIncomeLabel.Text = customer.FindNecessaryIncome() + " ₽";
-
-        }
-
-        private void tbPrice_Scroll(object sender, EventArgs e)
-        {
-            decimal price = (decimal)tbPrice.Value * 100000;
-            decimal initialFee = price * tbInitialFee.Value / 100;
-
-            if (price / 1000 < 1000) lPrice.Text = (price / 1000) + " тыс. ₽";
-            else lPrice.Text = (price / 1000000) + " млн. ₽";
-            if (initialFee / 1000 < 1000) lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
-            else lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
-        }
-
-        private void tbInitialFee_Scroll(object sender, EventArgs e)
-        {
-            decimal price = (decimal)tbPrice.Value * 100000;
-            decimal initialFee = price * tbInitialFee.Value / 100;
-            if (initialFee / 1000 < 1000)
-            {
-                lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
-            }
-            else
-            {
-                lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
-            }
-
-        }
-
-        private void tbTerm_Scroll(object sender, EventArgs e)
-        {
-            if (tbTerm.Value == 1) { lTerm.Text = $"1 год"; };
-            if (tbTerm.Value <= 4 && tbTerm.Value != 1) { lTerm.Text = $"{tbTerm.Value} года"; }
-            if (tbTerm.Value > 4 && tbTerm.Value != 1) lTerm.Text = $"{tbTerm.Value} лет";
-
-        }
 
         public void PrintDataGrid(DataGridView dgv, MortgageCalculation customer)
         {
@@ -111,22 +56,76 @@ namespace WinFormsTest
 
         }
 
-        private void bPaymentShedule_Click(object sender, EventArgs e)
+
+        private void BackButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
+        }
+
+        private void tbTerm_Scroll_1(object sender, EventArgs e)
+        {
+            if (tbTerm.Value == 1) { lTerm.Text = $"1 год"; };
+            if (tbTerm.Value <= 4 && tbTerm.Value != 1) { lTerm.Text = $"{tbTerm.Value} года"; }
+            if (tbTerm.Value > 4 && tbTerm.Value != 1) lTerm.Text = $"{tbTerm.Value} лет";
+        }
+
+        private void tbInitialFee_Scroll_1(object sender, EventArgs e)
+        {
+            decimal price = (decimal)tbPrice.Value * 100000;
+            decimal initialFee = price * tbInitialFee.Value / 100;
+            if (initialFee / 1000 < 1000)
+            {
+                lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
+            }
+            else
+            {
+                lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
+            }
+        }
+
+        private void tbPrice_Scroll_1(object sender, EventArgs e)
+        {
+            decimal price = (decimal)tbPrice.Value * 100000;
+            decimal initialFee = price * tbInitialFee.Value / 100;
+
+            if (price / 1000 < 1000) lPrice.Text = (price / 1000) + " тыс. ₽";
+            else lPrice.Text = (price / 1000000) + " млн. ₽";
+            if (initialFee / 1000 < 1000) lInitialFee.Text = (initialFee / 1000) + " тыс. ₽";
+            else lInitialFee.Text = (initialFee / 1000000) + " млн. ₽";
+        }
+
+        private void bAccept_Click(object sender, EventArgs e)
+        {
+            bApply.Enabled = true;
+            bPaymentShedule.Enabled = true;
+            customer = new MortgageCalculation();
+            customer.RealEstateType = cbApartmentType.Text;
+            customer.RealEstatePrice = tbPrice.Value * 100000;
+            customer.InitialFee = customer.RealEstatePrice * tbInitialFee.Value / 100;
+            customer.Term = tbTerm.Value;
+            InterestRateLable.Text = customer.FindPercent().ToString() + "%";
+            MonthlyPaymentLabel.Text = Math.Round(customer.FindMonthlyPayment()) + " ₽";
+            NecessaryIncomeLabel.Text = customer.FindNecessaryIncome() + " ₽";
+        }
+
+        private void bPaymentShedule_Click_1(object sender, EventArgs e)
         {
             PrintDataGrid(PaymentSheduleDGV, customer);
         }
 
-        private void tbPrice_ValueChanged(object sender, EventArgs e)
+        private void tbPrice_ValueChanged_1(object sender, EventArgs e)
         {
             PaymentSheduleDGV.Rows.Clear();
         }
 
-        private void tbInitialFee_ValueChanged(object sender, EventArgs e)
+        private void tbInitialFee_ValueChanged_1(object sender, EventArgs e)
         {
             PaymentSheduleDGV.Rows.Clear();
         }
 
-        private void tbTerm_VakueChanged(object sender, EventArgs e)
+        private void tbTerm_ValueChanged(object sender, EventArgs e)
         {
             PaymentSheduleDGV.Rows.Clear();
         }

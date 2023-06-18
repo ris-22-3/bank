@@ -174,6 +174,7 @@
             this.BackButton.TabIndex = 2;
             this.BackButton.Text = "Назад";
             this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click_1);
             // 
             // label2
             // 
@@ -214,6 +215,7 @@
             this.bAccept.TabIndex = 4;
             this.bAccept.Text = "Подтвердить";
             this.bAccept.UseVisualStyleBackColor = false;
+            this.bAccept.Click += new System.EventHandler(this.bAccept_Click);
             // 
             // panel6
             // 
@@ -263,6 +265,8 @@
             this.tbTerm.TabIndex = 3;
             this.tbTerm.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tbTerm.Value = 1;
+            this.tbTerm.Scroll += new System.EventHandler(this.tbTerm_Scroll_1);
+            this.tbTerm.ValueChanged += new System.EventHandler(this.tbTerm_ValueChanged);
             // 
             // label6
             // 
@@ -310,6 +314,8 @@
             this.tbInitialFee.TickFrequency = 2;
             this.tbInitialFee.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tbInitialFee.Value = 10;
+            this.tbInitialFee.Scroll += new System.EventHandler(this.tbInitialFee_Scroll_1);
+            this.tbInitialFee.ValueChanged += new System.EventHandler(this.tbInitialFee_ValueChanged_1);
             // 
             // label5
             // 
@@ -359,6 +365,8 @@
             this.tbPrice.TickFrequency = 10;
             this.tbPrice.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tbPrice.Value = 5;
+            this.tbPrice.Scroll += new System.EventHandler(this.tbPrice_Scroll_1);
+            this.tbPrice.ValueChanged += new System.EventHandler(this.tbPrice_ValueChanged_1);
             // 
             // label4
             // 
@@ -425,6 +433,7 @@
             this.bPaymentShedule.TabIndex = 3;
             this.bPaymentShedule.Text = "График платежей";
             this.bPaymentShedule.UseVisualStyleBackColor = false;
+            this.bPaymentShedule.Click += new System.EventHandler(this.bPaymentShedule_Click_1);
             // 
             // bApply
             // 

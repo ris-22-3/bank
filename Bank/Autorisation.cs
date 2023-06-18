@@ -11,33 +11,9 @@
         }
 
         Point lastPoint;
-        private void AutorisationTopPanel_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
 
-        private void AutorisationTopPanel_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
 
-        private void AutorisationDownPanel_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-        private void AutorisationDownPanel_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-        private void AutorisationButton_Click(object sender, EventArgs e)
+        private void AutorisationButton_Click_1(object sender, EventArgs e)
         {
             bool isRight = false;
             string loginUser = LoginField.Text;
@@ -71,6 +47,34 @@
                     MessageBox.Show("Вы неправильно ввели пароль");
                     PasswordField.Clear();
                 }
+            }
+        }
+
+        private void AutorisationDownPanel_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void AutorisationDownPanel_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void AutorisationTopPanel_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void AutorisationTopPanel_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
             }
         }
     }
