@@ -61,7 +61,8 @@
                         Objects.current = Objects.user.rub;
                         clientNumber = Objects.user.clientNumber;
                         d.Read();
-                        new WelcomeForm().ShowDialog();
+                        WelcomeForm welcomeForm = new WelcomeForm();
+                        welcomeForm.ShowDialog();
                         this.Close();
                     }
                 }
