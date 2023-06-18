@@ -74,11 +74,11 @@ namespace Bank
             List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
             List<Operation> operations = GetOperations(ToInt(ones[0]));
             CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), 
-                GetOperations(ToInt(ones[0])).Where(x => x.billetype == "rub").ToList(), Currency.RUB);
+                operations.Where(x => x.billetype == "rub").ToList(), Currency.RUB);
             CurrencyAccount usd = new CurrencyAccount(ToInt(ones[10]), 
-                GetOperations(ToInt(ones[0])).Where(x => x.billetype == "USD").ToList(), Currency.USD);
+                operations.Where(x => x.billetype == "USD").ToList(), Currency.USD);
             CurrencyAccount tenge = new CurrencyAccount(ToInt(ones[11]), 
-                GetOperations(ToInt(ones[0])).Where(x => x.billetype == "tg").ToList(), Currency.TNG);
+                operations.Where(x => x.billetype == "tg").ToList(), Currency.TNG);
             CurrencyAccount deposit = new CurrencyAccount(ToInt(ones[14]), Currency.DEPOSIT);
             rub.isActive = rub.history.Count > 0;
             usd.isActive = usd.history.Count > 0;
