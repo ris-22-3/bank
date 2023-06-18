@@ -90,14 +90,7 @@ namespace Bank
         {
 
         }
-        private void MortgageButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ATMForm aTMForm = new ATMForm();
-            aTMForm.ShowDialog();
-            this.Close();
-        }
-
+        
         private void StatisticButton_Click_1(object sender, EventArgs e)
         {
             this.Hide();

@@ -11,12 +11,15 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace WinFormsTest
 {
     public partial class Mortgage : Form
     {
         private MortgageCalculation customer;
+        DateTime currentDate;
+        string filePath = "../../../Docx/CredDogovor.docx";
 
         public Mortgage()
         {
@@ -42,16 +45,17 @@ namespace WinFormsTest
 
         public void PrintDataGrid(DataGridView dgv, MortgageCalculation customer)
         {
-            DateTime currentDate = DateTime.Now; // Получение текущей даты
+            currentDate = DateTime.Now; // Получение текущей даты
             int numberOfMonths = customer.Term * 12;
-            decimal totalPayment = customer.RealEstatePrice + customer.RealEstatePrice * (customer.FindPercent() / 100) - customer.InitialFee;
+            decimal totalPayment = customer.FindTotalPayment();
             for (int i = 0; i < numberOfMonths; i++)
             {
+                string year = currentDate.AddYears((i + 5) / 12).ToString("yyyy");
                 decimal monthlyPayment = customer.FindMonthlyPayment();
                 decimal remainingPayment = Math.Round(totalPayment - (monthlyPayment * (i + 1)));
                 string monthName = currentDate.AddMonths(i).ToString("MMMM");
                 // добавление строки в таблицу
-                dgv.Rows.Add(monthName, Math.Round(monthlyPayment), Math.Round(remainingPayment));
+                dgv.Rows.Add(year, monthName, Math.Round(monthlyPayment), Math.Round(remainingPayment));
             }
 
         }
@@ -128,6 +132,42 @@ namespace WinFormsTest
         private void tbTerm_ValueChanged(object sender, EventArgs e)
         {
             PaymentSheduleDGV.Rows.Clear();
+        }
+
+        private void bApply_Click(object sender, EventArgs e)
+        {
+            var fullName = Objects.user.surname + " " + Objects.user.name;
+            var totalPayment = customer.FindTotalPayment();
+            var lastDate = currentDate.AddYears(customer.Term).ToString("dd.MM.yyyy");
+            var percent = customer.FindPercent();
+            var term = customer.Term;
+            var monthlyPayment = customer.FindMonthlyPayment;
+            var firstDate = currentDate.ToString("dd.MM.yyyy");
+            // Заполнение шаблона
+            var wordApp = new Word.Application();
+            wordApp.Visible = false;
+
+            var wordAgreement = wordApp.Documents.Open(filePath);
+            try
+            {
+                ReplaceWordStub("<fullName>", fullName, wordAgreement);
+
+                wordAgreement.SaveAs("CredDogovor.docx");
+                wordApp.Visible = true;
+
+            }
+            catch 
+            {
+                MessageBox.Show(" Error!");
+            }
+            
+        }
+
+        private void ReplaceWordStub(string stubToReplace, string text, Word.Document wordDocument) 
+        {
+            var range = wordDocument.Content;
+            range.Find.ClearFormatting();
+            range.Find.Execute(FindText: stubToReplace, ReplaceWith: text);
         }
     }
 }

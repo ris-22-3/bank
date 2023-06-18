@@ -31,9 +31,18 @@ namespace WinFormsTest
             decimal percent;
 
             // Минимальная процентная ставка в зависимости от типа недвижимости
-            if (RealEstateType == "Коммерческая недвижимость") percent = 12.4m;
-            if (RealEstateType == "Гараж") percent = 11.4m;
-            else percent = 5.7m;
+            switch (RealEstateType)
+            {
+                case "Гараж":
+                    percent = 11.4m;
+                    break;
+                case "Коммерческая недвижимость":
+                    percent = 12.2m;
+                    break;
+                default:
+                    percent = 5.7m;
+                    break;
+            }
             // Расчёт добавочных процентов
             if (InitialFee < RealEstatePrice * 0.4m) percent += 0.5m;
             if (Term > 15) percent += 0.3m;
@@ -49,7 +58,12 @@ namespace WinFormsTest
 
         public decimal FindNecessaryIncome()
         {
-            return Math.Round(this.FindMonthlyPayment() * 1.3m);
+            return Math.Round(this.FindMonthlyPayment() * 1.3m); // Ежемесячный платёж должен составлять не больше 70% от дохода
+        }
+
+        public decimal FindTotalPayment() 
+        {
+            return RealEstatePrice + RealEstatePrice * (FindPercent() / 100) - InitialFee;
         }
     }
 }
