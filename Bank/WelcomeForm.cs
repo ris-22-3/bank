@@ -19,6 +19,16 @@ namespace Bank
                 UserPictureBox.Image = Image.FromFile(@"../../../Images/Нагиев.jpg");
                 UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            if (Objects.user.clientNumber == 2)
+            {
+                UserPictureBox.Image = Image.FromFile(@"../../../Images/Пугачёва.jpg");
+                UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            if (Objects.user.clientNumber == 3)
+            {
+                UserPictureBox.Image = Image.FromFile(@"../../../Images/Петя.jpg");
+                UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
             if (Objects.user.clientNumber == 4)
             {
                 UserPictureBox.Image = Image.FromFile(@"../../../Images/-V1Q7WU1G70.jpg");
