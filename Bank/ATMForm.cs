@@ -161,13 +161,6 @@ namespace Bank
             FillTable();
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new WelcomeForm().ShowDialog();
-            this.Close();
-        }
-
         private void sumBox_Click(object sender, EventArgs e)
         {
             sumBox.Text = "";
@@ -192,6 +185,13 @@ namespace Bank
                 Objects.current = Objects.user.rub; // По умолчанию рубли
             }
             Reboot();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new WelcomeForm().ShowDialog();
+            this.Close();
         }
     }
 }
