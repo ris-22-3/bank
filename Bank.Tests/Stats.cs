@@ -183,7 +183,7 @@ namespace Bank.Tests
             string selectedYear = "2023";
 
             // Act
-            var result = ChartData.AddData(chartData, monthData, currencyType, isIncome, selectedYear);
+            var result = ChartData.AddData(ref chartData, monthData, currencyType, isIncome, selectedYear);
 
             // Assert
             Assert.AreEqual(3, result.Count);

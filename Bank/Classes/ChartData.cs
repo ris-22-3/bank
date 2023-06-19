@@ -79,7 +79,7 @@ namespace Bank
             foreach (ChartData data in chartData)
             {
                 bool isInSelectedMonth = data.Date.Month == selectedMonth;
-                if (!data.Income && data.Currency == currencyType && isInSelectedMonth)
+                if (data.Income && data.Currency == currencyType && isInSelectedMonth)
                 {
                     DataPoint dataPoint = new DataPoint();
                     dataPoint.AxisLabel = data.Date.ToString("dd MMMM");
@@ -103,7 +103,7 @@ namespace Bank
             foreach (ChartData data in chartData)
             {
                 bool isInSelectedYear = data.Date.Year.ToString() == selectedYear;
-                if (_isIncome)
+                if (_isIncome == true)
                 {
                     if (data.Income && data.Currency == currencyType && isInSelectedYear)
                     {

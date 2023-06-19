@@ -417,7 +417,6 @@ namespace Bank
                 {
                     monthData[i] = 0;
                 }
-
                 // Суммирование данных по месяцам
                 monthData = ChartData.AddData(chartData, monthData, GetSelectedCurrencyType(currencyTypeComboBox1),true, selectedYear);
 
@@ -464,7 +463,7 @@ namespace Bank
                 if (selectedMonthData.Count > 0)
                 {
                     // Добавление данных в диаграмму
-                    ChartData.AddDataMonth(ref chartData, GetSelectedCurrencyType(currencyTypeComboBox1), selectedMonth, ref chart1, ref hasDataForSelectedMonth, columnColors);
+                    ChartData.AddDataMonth(ref selectedMonthData, GetSelectedCurrencyType(currencyTypeComboBox1), selectedMonth, ref chart1, ref hasDataForSelectedMonth, columnColors);
                 }
                 // Проверка наличия данных для выбранного месяца
                 if (!hasDataForSelectedMonth)
