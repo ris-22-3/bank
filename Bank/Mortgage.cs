@@ -19,7 +19,7 @@ namespace WinFormsTest
     {
         private MortgageCalculation customer;
         DateTime currentDate;
-        string filePath = "../../../Docx/CredDogovor.docx";
+        string filePath = "C:\\Users\\Amir\\source\\repos\\bank\\Bank\\Docx\\CredDogovor.docx";
 
         public Mortgage()
         {
@@ -136,12 +136,13 @@ namespace WinFormsTest
 
         private void bApply_Click(object sender, EventArgs e)
         {
+            currentDate = DateTime.Now;
             var fullName = Objects.user.surname + " " + Objects.user.name;
-            var totalPayment = customer.FindTotalPayment();
+            var totalPayment = Math.Round(customer.FindTotalPayment()).ToString() + " руб.";
             var lastDate = currentDate.AddYears(customer.Term).ToString("dd.MM.yyyy");
-            var percent = customer.FindPercent();
-            var term = customer.Term;
-            var monthlyPayment = customer.FindMonthlyPayment;
+            var percent = customer.FindPercent().ToString();
+            var term = customer.Term.ToString();
+            var monthlyPayment = Math.Round(customer.FindMonthlyPayment()).ToString() + " руб.";
             var firstDate = currentDate.ToString("dd.MM.yyyy");
             // Заполнение шаблона
             var wordApp = new Word.Application();
@@ -151,6 +152,13 @@ namespace WinFormsTest
             try
             {
                 ReplaceWordStub("<fullName>", fullName, wordAgreement);
+                ReplaceWordStub("<totalPayment>", totalPayment, wordAgreement);
+                ReplaceWordStub("<totalPayment>", totalPayment, wordAgreement);
+                ReplaceWordStub("<lastDate>", lastDate, wordAgreement);
+                ReplaceWordStub("<percent>", percent, wordAgreement);
+                ReplaceWordStub("<term>", term, wordAgreement);
+                ReplaceWordStub("<monthlyPayment>", monthlyPayment, wordAgreement);
+                ReplaceWordStub("<firstDate>", firstDate, wordAgreement);
 
                 wordAgreement.SaveAs("CredDogovor.docx");
                 wordApp.Visible = true;
