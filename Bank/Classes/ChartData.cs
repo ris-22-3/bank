@@ -18,7 +18,7 @@ namespace Bank
         public static List<ChartData> LoadChartData()
         {
             List<ChartData> chartData = new List<ChartData>();
-            string csvFilePath = "../../../../Bank/Data/" + Objects.user.clientNumber.ToString() + ".csv";
+            string csvFilePath = "./Data/" + Objects.user.clientNumber.ToString() + ".csv";
             using (var reader = new StreamReader(csvFilePath))
             {
                 // Пропускаем заголовок

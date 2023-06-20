@@ -17,7 +17,7 @@ namespace Bank
         static string[] months = { "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря" };
         public static List<User> arr = new List<User>();
         public static List<string> logins = new List<string>();
-        public static string address = "../../../Data/UserDataBase.csv";
+        public static string address = "./Data/UserDataBase.csv";
         public static List<String> ReadFile(string address)
         {
             List<string> strs = new List<string>();
@@ -55,7 +55,7 @@ namespace Bank
 
         public static List<Operation> GetOperations(int clientNumber)
         {
-            List<string> operationsUser = ReadFile("../../../Data/" + clientNumber.ToString() + ".csv");
+            List<string> operationsUser = ReadFile("./Data/" + clientNumber.ToString() + ".csv");
             List<Operation> result = new List<Operation>();
             for (int i = 1; i < operationsUser.Count; i++)
             {
@@ -71,7 +71,7 @@ namespace Bank
 
         public static User GetUser(string[] ones)
         {
-            List<string> operationsUser = ReadFile("../../../Data/" + ones[0].ToString() + ".csv");
+            List<string> operationsUser = ReadFile("./Data/" + ones[0].ToString() + ".csv");
             List<Operation> operations = GetOperations(ToInt(ones[0]));
             CurrencyAccount rub = new CurrencyAccount(ToInt(ones[6]), 
                 operations.Where(x => x.billetype == "rub").ToList(), Currency.RUB);
@@ -134,7 +134,7 @@ namespace Bank
                 Objects.user.tenge.Balance.ToString(), op.sum.ToString(), isIncome.ToString(), 
                 op.billetype.ToString(), op.category, op.type, date 
             };
-            StreamWriter rd = new StreamWriter("../../../Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
+            StreamWriter rd = new StreamWriter("./Data/" + Objects.user.clientNumber.ToString() + ".csv", true);
             rd.WriteLine(String.Join(";", operation));
             rd.Close();
             RewriteLine(op.billetype);
