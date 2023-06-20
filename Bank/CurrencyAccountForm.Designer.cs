@@ -36,8 +36,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.historyUsdButton = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.transferUsdButton = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.balanseUsdLabel = new System.Windows.Forms.Label();
@@ -59,18 +61,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.historyTngButton = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.transferTngButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.balanseTngLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.openTngButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -182,6 +182,16 @@
             this.panel13.Size = new System.Drawing.Size(319, 53);
             this.panel13.TabIndex = 8;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(277, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 30);
+            this.label11.TabIndex = 7;
+            this.label11.Text = ">";
+            // 
             // historyUsdButton
             // 
             this.historyUsdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
@@ -209,6 +219,16 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(319, 53);
             this.panel12.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(277, 7);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 30);
+            this.label12.TabIndex = 8;
+            this.label12.Text = ">";
             // 
             // transferUsdButton
             // 
@@ -460,6 +480,16 @@
             this.panel16.Size = new System.Drawing.Size(319, 53);
             this.panel16.TabIndex = 6;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(277, 8);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 30);
+            this.label14.TabIndex = 8;
+            this.label14.Text = ">";
+            // 
             // historyTngButton
             // 
             this.historyTngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(45)))), ((int)(((byte)(105)))));
@@ -487,6 +517,16 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(319, 53);
             this.panel15.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(277, 7);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 30);
+            this.label13.TabIndex = 8;
+            this.label13.Text = ">";
             // 
             // transferTngButton
             // 
@@ -569,46 +609,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "TNG";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(277, 8);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 30);
-            this.label11.TabIndex = 7;
-            this.label11.Text = ">";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(277, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 30);
-            this.label12.TabIndex = 8;
-            this.label12.Text = ">";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(277, 7);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 30);
-            this.label13.TabIndex = 8;
-            this.label13.Text = ">";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(277, 8);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 30);
-            this.label14.TabIndex = 8;
-            this.label14.Text = ">";
-            // 
             // CurrencyAccountForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -621,7 +621,7 @@
             this.MinimizeBox = false;
             this.Name = "CurrencyAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Мои счета";
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);

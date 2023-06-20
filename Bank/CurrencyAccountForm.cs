@@ -121,16 +121,6 @@ namespace Bank
             this.Close();
         }
 
-        private void closeTngButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void closeUsdButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void historyRubButton_Click(object sender, EventArgs e)
         {
             historyRubUsdOrTng = 1;
