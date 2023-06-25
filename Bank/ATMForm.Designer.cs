@@ -1,4 +1,7 @@
-﻿namespace Bank
+﻿using Bank.Properties;
+using System.Windows.Forms;
+
+namespace Bank
 {
     partial class ATMForm
     {
@@ -28,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ATMForm));
             MainTopPanel = new Panel();
             panel12 = new Panel();
             panel11 = new Panel();
@@ -424,11 +428,12 @@
             Controls.Add(button_500rub);
             Controls.Add(panel1);
             Controls.Add(MainTopPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ATMForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = " ";
+            Text = "Банкомат";
             MainTopPanel.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel10.ResumeLayout(false);
