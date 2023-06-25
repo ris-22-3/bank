@@ -11,7 +11,7 @@ namespace Bank
         public WelcomeForm()
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 0;
+            comboBox1_SelectedIndexFirst();
             label3.Text = Objects.user.name + " " + Objects.user.surname;
             Reboot();
             if (Objects.user.clientNumber == 1)
@@ -145,7 +145,22 @@ namespace Bank
             }
             Reboot();
         }
-
+        private void comboBox1_SelectedIndexFirst()
+        {
+            if (Objects.current == Objects.user.rub)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
+            else if (Objects.current == Objects.user.usd)
+            {
+                comboBox1.SelectedIndex = 1;
+            }
+            else if (Objects.current == Objects.user.tenge)
+            {
+                comboBox1.SelectedIndex = 2;
+            }
+            Reboot();
+        }
 
     }
 }

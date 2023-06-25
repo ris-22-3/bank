@@ -15,7 +15,7 @@ namespace Bank
         public ATMForm()
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 0;
+            comboBox1_SelectedIndexFirst();
             Reboot();
         }
         public void Reboot()
@@ -183,6 +183,22 @@ namespace Bank
             else
             {
                 Objects.current = Objects.user.rub; // По умолчанию рубли
+            }
+            Reboot();
+        }
+        private void comboBox1_SelectedIndexFirst()
+        {
+            if (Objects.current == Objects.user.rub)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
+            else if (Objects.current == Objects.user.usd)
+            {
+                comboBox1.SelectedIndex = 1;
+            }
+            else if (Objects.current == Objects.user.tenge)
+            {
+                comboBox1.SelectedIndex = 2;
             }
             Reboot();
         }
