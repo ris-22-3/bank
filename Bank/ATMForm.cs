@@ -85,7 +85,7 @@ namespace Bank
                         MessageBox.Show($"Вводите значения меньше {int.MaxValue - 1}");
                     else
                     {
-                        Operation add = new Operation(sum, true, Objects.current.Account.ToString(), "Другое", "Внесение наличных", DateTime.Now);
+                        Operation add = new Operation(sum, true, Objects.current.Format(), "Другое", "Внесение наличных", DateTime.Now);
                         Objects.current.Balance += sum;
                         Objects.current.Add(add, true);
                         Balance.Text = Objects.current.Balance.ToString();
@@ -119,7 +119,8 @@ namespace Bank
                     }
                     else
                     {
-                        Operation add = new Operation(sum, false, Objects.current.Account.ToString(), "Другое", "Выдача наличных", DateTime.Now);
+                        string str = Objects.current.Account.ToString();
+                        Operation add = new Operation(sum, false, Objects.current.Format(), "Другое", "Выдача наличных", DateTime.Now);
                         Objects.current.Balance -= sum;
                         Objects.current.Add(add, true);
                         Balance.Text = Objects.current.Balance.ToString();

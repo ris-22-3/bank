@@ -42,7 +42,7 @@ namespace Bank
                 Database.AddOperation(op); //добавление в файл
             history.Add(op);
         }
-        public override string ToString()
+        public string Format()
         {
             switch (Account)
             {
